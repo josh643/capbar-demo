@@ -20,11 +20,12 @@ window.CAPBAR_SETTINGS = {
    PRODUCTS
    - price:        EXAMPLE PRICES ONLY (placeholders for the demo). Replace with
                    The Cap Bar's real prices.
-   - image:        the product's main picture (1040x715, 16:11). A color can have its
-                   own image; colors WITHOUT one show the main picture with a small
-                   "Pictured: ..." note (pictureName says which color the main picture is).
-                   Files ending in "-photo.webp" are The Cap Bar's REAL photos (Oct 8, 2026).
-                   signature-black, denim-*, beanie-* are still STAND-IN 3D RENDERS.
+   - image:        the product's main picture (square, hat on a mannequin when we have one).
+                   A color can have its own image; colors WITHOUT one show the main picture
+                   with a small "Pictured: ..." note (pictureName says which color that is).
+                   Files ending in "-photo.webp" are The Cap Bar's REAL mannequin photos (Oct 8, 2026).
+                   signature-black, denim-*, beanie-* are still STAND-IN 3D RENDERS
+                   (no mannequin photo of those blanks yet).
    - colors:       beanie / denim / distressed color names were read off the supplier
                    screenshots the owner sent (Oct 8) as a color reference. Supplier
                    images are NOT used on the site. Confirm names/stock with the owner.
@@ -55,6 +56,8 @@ window.CAPBAR_PRODUCTS = [
     description: "Foam front, breathable mesh back. Pick your color and your patches, pressed in-house.",
     price: 30, // EXAMPLE PRICE
     size: "One size · adjustable snap",
+    image: "images/products/trucker-pink-photo.webp",
+    pictureName: "Pink",
     colors: [
       { name: "Pink", swatch: "#f2b8cc", image: "images/products/trucker-pink-photo.webp", paymentLink: "", soldOut: false },
       { name: "Royal blue", swatch: "#1f5fd0", image: "images/products/trucker-royal-blue-photo.webp", paymentLink: "", soldOut: false },
@@ -112,11 +115,10 @@ window.CAPBAR_PRODUCTS = [
     colors: [
       { name: "Blue", swatch: "#5e6b90", image: "images/products/distressed-blue-photo.webp", paymentLink: "", soldOut: false },
       { name: "Khaki", swatch: "#b49a7e", image: "images/products/distressed-khaki-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Gray", swatch: "#8b8d93", image: "images/products/distressed-gray-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Green", swatch: "#1f7a62", image: "images/products/distressed-green-photo.webp", paymentLink: "", soldOut: false },
       { name: "Black / gray", swatch: "#474749", image: "images/products/distressed-black-photo.webp", paymentLink: "", soldOut: false },
       { name: "Navy", swatch: "#1d2235", image: "images/products/distressed-navy-photo.webp", paymentLink: "", soldOut: false },
       { name: "Hot pink", swatch: "#d0306f", image: "images/products/distressed-hot-pink-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Washed red", swatch: "#b15c76", paymentLink: "", soldOut: false },
     ],
     image: "images/products/distressed-blue-photo.webp",
     pictureName: "Blue",
@@ -129,11 +131,12 @@ window.CAPBAR_PRODUCTS = [
     price: 40, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     note: "After checkout we'll reach out to finalize your design.",
+    image: "images/products/custom-black-snapback-photo.webp",
+    pictureName: "Black snapback",
     colors: [
       { name: "Black snapback", swatch: "#1b1c20", image: "images/products/custom-black-snapback-photo.webp", paymentLink: "", soldOut: false },
       { name: "Olive snapback", swatch: "#4f5a2a", image: "images/products/custom-olive-snapback-photo.webp", paymentLink: "", soldOut: false },
       { name: "Camo", swatch: "linear-gradient(135deg, #e8e8e8 0 30%, #5b5b5b 30% 55%, #1c1c1c 55% 75%, #9a9a9a 75%)", image: "images/products/custom-camo-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Pink trucker", swatch: "#f2b8cc", image: "images/products/custom-pink-photo.webp", paymentLink: "", soldOut: false },
     ],
   },
   {

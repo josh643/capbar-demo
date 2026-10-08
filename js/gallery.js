@@ -10,12 +10,18 @@
    other camera info were removed from the web copies.
    ========================================================================== */
 window.CAPBAR_GALLERY = [
-  { src: "images/gallery/peace-love-truckers.jpg", thumb: "images/gallery/peace-love-truckers-thumb.jpg", webp: true, featured: true,
+  { src: "images/gallery/queen-bling-black-trucker.jpg", thumb: "images/gallery/queen-bling-black-trucker-thumb.jpg", webp: true, featured: true,
+    alt: "Black trucker hat on a mannequin with a Queen script patch, roses, a bee and a leopard lightning bolt", caption: "Queen Bling Collection" },
+  { src: "images/gallery/husbands-tab-front.jpg", thumb: "images/gallery/husbands-tab-front-thumb.jpg", webp: true,
+    alt: "Light blue trucker on a mannequin with a Put It On My Husband's Tab patch", caption: "Pretty & Spoiled Collection" },
+  { src: "images/gallery/i-will-trust-camo.jpg", thumb: "images/gallery/i-will-trust-camo-thumb.jpg", webp: true,
+    alt: "Gray camo cap on a mannequin with an I Will Trust patch", caption: "The Trinity Collection" },
+  { src: "images/gallery/green-boss-lady.jpg", thumb: "images/gallery/green-boss-lady-thumb.jpg", webp: true,
+    alt: "Green distressed cap on a mannequin with a Boss Lady OMG patch", caption: "Boss Lady Collection" },
+  { src: "images/gallery/peace-love-truckers.jpg", thumb: "images/gallery/peace-love-truckers-thumb.jpg", webp: true,
     alt: "Four royal blue and white trucker hats with colorful Peace, Love and VW bus patches", caption: "Love & Peace Collection" },
   { src: "images/gallery/pretty-spoiled-pink-trucker-1.jpg", thumb: "images/gallery/pretty-spoiled-pink-trucker-1-thumb.jpg", webp: true,
     alt: "Pink and white trucker hat with Main Character Energy, Pink, Limited Edition and Pretty Girls patches", caption: "Pretty & Spoiled Collection" },
-  { src: "images/gallery/queen-bling-black-trucker.jpg", thumb: "images/gallery/queen-bling-black-trucker-thumb.jpg", webp: true,
-    alt: "Black trucker hat with a Queen script patch, roses, a bee and a leopard lightning bolt", caption: "Queen Bling Collection" },
   { src: "images/gallery/trinity-camo-caps.jpg", thumb: "images/gallery/trinity-camo-caps-thumb.jpg", webp: true,
     alt: "Grey camo and blue camo caps with I Will Trust and Faith Over Fear patches on display heads", caption: "The Trinity Collection" },
   { src: "images/gallery/blue-collar-spoiled-trucker.jpg", thumb: "images/gallery/blue-collar-spoiled-trucker-thumb.jpg", webp: true,
