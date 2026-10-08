@@ -347,3 +347,31 @@ p { text-wrap: pretty; }
   .price { font-size: 18px; }
   .card-head { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
+
+/* our story (mission statement) */
+.story { padding-top: 40px; padding-bottom: 40px; }
+.story-card { display: grid; gap: 0; border: 1px solid rgba(212,175,90,.4); border-radius: 24px; overflow: hidden;
+  background: radial-gradient(80% 60% at 70% 0%, rgba(212,175,90,.12), transparent 70%), var(--bg-2); }
+.story-photo { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid rgba(212,175,90,.3); }
+.story-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+.story-body { padding: 30px 22px 32px; }
+.story-body h2 { margin-bottom: 18px; }
+.story-body p:not(.eyebrow) { color: #d8d1c4; font-size: 17px; margin: 0 0 16px; }
+.story-body strong { color: var(--gold-hi); font-weight: 700; }
+.story-body .story-callout { margin: 24px 0 0; padding: 16px 18px; border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0;
+  background: rgba(212,175,90,.1); font: 400 clamp(20px, 5.4vw, 26px)/1.2 var(--block); letter-spacing: .02em; }
+.story-callout strong { font-weight: 400; color: var(--gold-hi); }
+@media (min-width: 900px) {
+  .story { padding-top: 56px; padding-bottom: 56px; }
+  .story-card { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: stretch; }
+  .story-photo { position: relative; aspect-ratio: auto; min-height: 420px; border-bottom: 0; border-right: 1px solid rgba(212,175,90,.3); }
+  .story-photo img { position: absolute; inset: 0; object-position: 50% 60%; }
+  .story-body { padding: 52px 52px 50px; align-self: center; }
+}
+/* 7 nav links: keep each on one line and tighten spacing on mid-size screens */
+.nav a, .brand-name { white-space: nowrap; }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .site-header { padding: 0 20px; }
+  .nav { gap: 16px; }
+  .nav a { font-size: 13px; letter-spacing: .01em; }
+}

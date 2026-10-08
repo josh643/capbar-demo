@@ -5,7 +5,7 @@ footer. No server, no database, no monthly platform fee. Payments are handled en
 **The Cap Bar's own Stripe account** through Stripe Payment Links.
 
 ```
-index.html            home: hero, shop, Our work gallery, experience, coming-soon
+index.html            home: hero, shop, Our work gallery, experience, Our story, coming-soon
 contact.html          contact page: mission statement (draft), testimonials, contact info + form
 thanks.html           "Thank you for your order" page (Stripe redirects here after payment)
 css/styles.css        all styling (black / gold / white)
@@ -37,7 +37,7 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | "Our work" gallery | **21 real photos** picked from the owner's 29 (Oct 8). Skipped: near-duplicates IMG_6694, 6750, 6762, 6760, 6764, 6745 (hats small/cluttered) and IMG_6924 + 6802 (patches with profanity; add back in `js/gallery.js` if the owner wants them). Location/camera data stripped. Captions use the owner's own collection names. |
 | Collections section | The owner's 6 collection images (Love & Peace, Boss Lady, The 901, Pretty & Spoiled, Queen Bling, Good Vibes), cropped to the hats + title (QR code and brush logo cropped off). |
 | Colors (denim, beanie, distressed) | Read off supplier screenshots the owner sent as a color reference (supplier images are NOT on the site). Confirm names/stock. |
-| Mission statement (contact page) | **Draft** written for the demo; the owner should approve or edit it. |
+| Mission statement | **Owner's own words** (Oct 8): full text in the Our Story section of index.html; short version on the contact page. |
 | Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
 | Contact form | Opens the visitor's email app (no server in stage 1). |
 | Checkout | Demo pop-up (`demoMode: true`). Goes live once Payment Links are pasted in. |
