@@ -16,14 +16,6 @@
     return n;
   }
 
-  // ---- demo ribbon + links
-  if (S.demoMode) document.documentElement.classList.add("is-demo");
-  document.querySelectorAll("[data-email]").forEach(function (a) {
-    a.href = "mailto:" + S.email; if (!a.textContent.trim()) a.textContent = S.email;
-  });
-  document.querySelectorAll("[data-facebook]").forEach(function (a) { a.href = S.facebook; });
-  var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
-
   // ---- shop
   var grid = document.getElementById("shop-grid");
   P.forEach(function (p) {
@@ -72,6 +64,42 @@
     ]);
     grid.appendChild(card);
   });
+
+  // ---- gallery / our work (js/gallery.js)
+  var G = (window.CAPBAR_GALLERY || []).filter(function (g) { return g && g.src; });
+  var gGrid = document.getElementById("gallery-grid");
+  var gEmpty = document.getElementById("gallery-empty");
+  var lb = document.getElementById("lightbox");
+  if (gGrid) {
+    if (!G.length) { gGrid.hidden = true; gEmpty.hidden = false; }
+    G.forEach(function (g, i) {
+      var b = el("button", { class: "g-item", type: "button", "aria-label": "View photo: " + (g.alt || "Cap Bar hat") }, [
+        el("img", { src: g.src, alt: g.alt || "Custom hat by The Cap Bar", loading: "lazy" }),
+        g.caption ? el("span", { class: "g-cap", text: g.caption }) : null,
+      ]);
+      b.addEventListener("click", function () { openLb(i); });
+      gGrid.appendChild(b);
+    });
+  }
+  var lbIndex = 0;
+  function openLb(i) {
+    lbIndex = (i + G.length) % G.length;
+    var g = G[lbIndex];
+    var im = document.getElementById("lb-img"); im.src = g.src; im.alt = g.alt || "";
+    document.getElementById("lb-cap").textContent = g.caption || "";
+    if (!lb.open) { if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); }
+  }
+  if (lb) {
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb || e.target.closest("[data-close]")) lb.close();
+      else if (e.target.closest("[data-prev]")) openLb(lbIndex - 1);
+      else if (e.target.closest("[data-next]")) openLb(lbIndex + 1);
+    });
+    lb.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") openLb(lbIndex - 1);
+      if (e.key === "ArrowRight") openLb(lbIndex + 1);
+    });
+  }
 
   // ---- checkout
   var dlg = document.getElementById("checkout");

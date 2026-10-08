@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
-"""Generate placeholder artwork for The Cap Bar demo site.
-
-  - images/logo.svg            vector re-draw of the round Cap Bar badge (temporary until
-                               the client sends the original logo file)
-  - images/products/*.svg      placeholder cap illustrations (swap for real photos later)
-
-Run:  python3 tools/make_art.py     (needs: pip install fonttools)
+"""Font helpers (text -> SVG outlines) used by tools/make_logo.py.
+(Earlier versions also drew the v1 placeholder logo and cartoon caps.)
 Fonts are read from the system Google Fonts folder (all SIL Open Font License).
 """
 import os
@@ -191,22 +186,6 @@ def make_cap(fname, style, front, back, brim, patch="badge", seam_color=None):
     open(os.path.join(ROOT, "images", "products", fname), "w").write(svg)
 
 
-PINK, BLUE, BLACK, WHITE = "#e94f8a", "#2f6fd6", "#151515", "#f2f0ea"
-
 if __name__ == "__main__":
-    make_logo()
-    # Custom Trucker (front colour, white mesh)
-    make_cap("trucker-pink.svg", "trucker", PINK, WHITE, PINK)
-    make_cap("trucker-blue.svg", "trucker", BLUE, WHITE, BLUE)
-    make_cap("trucker-black.svg", "trucker", BLACK, "#2a2a2a", BLACK, seam_color="#444")
-    # Snapback (solid)
-    make_cap("snapback-black.svg", "snapback", BLACK, BLACK, BLACK, patch="script", seam_color="#3a3a3a")
-    make_cap("snapback-pink.svg", "snapback", PINK, PINK, PINK, patch="script")
-    make_cap("snapback-blue.svg", "snapback", BLUE, BLUE, BLUE, patch="script")
-    # Signature (black + gold badge)
-    make_cap("signature-black.svg", "snapback", BLACK, BLACK, "#0d0d0d", patch="badge", seam_color="#3a3a3a")
-    # Custom design / logo pattern
-    make_cap("custom-pattern-black.svg", "trucker", BLACK, "#2a2a2a", BLACK, patch="pattern", seam_color="#444")
-    make_cap("custom-pattern-pink.svg", "trucker", PINK, WHITE, PINK, patch="pattern")
-    make_cap("custom-pattern-blue.svg", "trucker", BLUE, WHITE, BLUE, patch="pattern")
-    print("art written")
+    print("make_art.py is now just the font/outline helper used by make_logo.py.\n"
+          "Logo: python3 tools/make_logo.py   Product renders: see tools/render_hats.py")

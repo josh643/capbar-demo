@@ -22,6 +22,9 @@ window.CAPBAR_SETTINGS = {
                    custom caps sell for). Replace with The Cap Bar's real prices.
    - image:        put the real product photos in images/products/ and change
                    the file name here (jpg/png/webp all fine, square-ish works best).
+                   NOTE: the .webp pictures shipping with the demo are STAND-IN RENDERS
+                   (studio-style 3D shots), not the owner's photos. Swap them out when the
+                   real photos arrive.
    - paymentLink:  paste the Stripe Payment Link for that exact product + color
                    (looks like https://buy.stripe.com/xxxxxxxx). Leave "" until
                    the client's Stripe account is set up. See README.md.
@@ -36,7 +39,7 @@ window.CAPBAR_PRODUCTS = [
     price: 35, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     colors: [
-      { name: "Black / Gold", swatch: "#111111", image: "images/products/signature-black.svg", paymentLink: "", soldOut: false },
+      { name: "Black / Gold", swatch: "#111111", image: "images/products/signature-black.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
@@ -47,36 +50,49 @@ window.CAPBAR_PRODUCTS = [
     price: 30, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     colors: [
-      { name: "Pink", swatch: "#e94f8a", image: "images/products/trucker-pink.svg", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#2f6fd6", image: "images/products/trucker-blue.svg", paymentLink: "", soldOut: false },
-      { name: "Black", swatch: "#151515", image: "images/products/trucker-black.svg", paymentLink: "", soldOut: false },
+      { name: "Pink", swatch: "#e94f8a", image: "images/products/trucker-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Blue", swatch: "#2f6fd6", image: "images/products/trucker-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Black", swatch: "#151515", image: "images/products/trucker-black.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
-    id: "script-snapback",
-    name: "Script Snapback",
-    tag: "Snapback",
-    description: "Structured six-panel snapback with gold script lettering.",
+    id: "ladies-denim",
+    name: "Ladies Denim Hat",
+    tag: "Denim",
+    description: "A softer dad-cap shape in washed denim, sized for a ladies fit. Add your own design in-house.",
     price: 32, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     colors: [
-      { name: "Black", swatch: "#151515", image: "images/products/snapback-black.svg", paymentLink: "", soldOut: false },
-      { name: "Pink", swatch: "#e94f8a", image: "images/products/snapback-pink.svg", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#2f6fd6", image: "images/products/snapback-blue.svg", paymentLink: "", soldOut: false },
+      { name: "Medium wash", swatch: "#3e5f8f", image: "images/products/denim-medium.webp", paymentLink: "", soldOut: false },
+      { name: "Light wash", swatch: "#a9c2d8", image: "images/products/denim-light.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
     id: "design-your-own",
-    name: "Design Your Own",
+    name: "Design Your Own Cap",
     tag: "Custom pattern",
     description: "Tell us your idea and we design a one-of-one logo pattern for you, then press it in under 10 minutes.",
     price: 40, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     note: "After checkout we'll reach out to finalize your design.",
     colors: [
-      { name: "Black", swatch: "#151515", image: "images/products/custom-pattern-black.svg", paymentLink: "", soldOut: false },
-      { name: "Pink", swatch: "#e94f8a", image: "images/products/custom-pattern-pink.svg", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#2f6fd6", image: "images/products/custom-pattern-blue.svg", paymentLink: "", soldOut: false },
+      { name: "Black", swatch: "#151515", image: "images/products/custom-black.webp", paymentLink: "", soldOut: false },
+      { name: "Pink", swatch: "#e94f8a", image: "images/products/custom-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Blue", swatch: "#2f6fd6", image: "images/products/custom-blue.webp", paymentLink: "", soldOut: false },
+    ],
+  },
+  {
+    id: "design-your-own-beanie",
+    name: "Design Your Own Beanie",
+    tag: "Beanie",
+    description: "A custom knit beanie with your own design embroidered or patched on. Warm, one-of-one, made with you.",
+    price: 30, // EXAMPLE PRICE
+    size: "One size · stretch fit",
+    note: "After checkout we'll reach out to finalize your design.",
+    colors: [
+      { name: "Black", swatch: "#151515", image: "images/products/beanie-black.webp", paymentLink: "", soldOut: false },
+      { name: "Pink", swatch: "#e94f8a", image: "images/products/beanie-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Blue", swatch: "#2f6fd6", image: "images/products/beanie-blue.webp", paymentLink: "", soldOut: false },
     ],
   },
 ];

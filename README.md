@@ -5,16 +5,22 @@ footer. No server, no database, no monthly platform fee. Payments are handled en
 **The Cap Bar's own Stripe account** through Stripe Payment Links.
 
 ```
-index.html          the page
-thanks.html         "Thank you for your order" page (Stripe redirects here after payment)
-css/styles.css      all styling (black / gold / white)
-js/products.js      <- EDIT THIS: settings, products, prices, photos, Stripe links
-js/app.js           shop + checkout behaviour (no need to touch)
-images/logo.svg     temporary vector re-draw of the round badge logo (swap for the original file)
-images/products/    product images (currently placeholder illustrations)
-images/og.png       link-preview image for Facebook / texts
-fonts/              self-hosted Google Fonts (Anton, Inter, Great Vibes, Yellowtail; SIL OFL)
-tools/make_art.py   regenerates the placeholder logo + cap illustrations
+index.html            home: hero, shop, Our work gallery, experience, coming-soon
+contact.html          contact page: mission statement (draft), testimonials, contact info + form
+thanks.html           "Thank you for your order" page (Stripe redirects here after payment)
+css/styles.css        all styling (black / gold / white)
+js/products.js        <- EDIT: settings, products, prices, photos, Stripe links
+js/gallery.js         <- EDIT: list of real photos for the "Our work" gallery
+js/testimonials.js    <- EDIT: real customer reviews for the contact page
+js/site.js, app.js, contact.js   page behaviour (no need to touch)
+images/logo.svg       badge logo: round black/gold badge + the client's cap art + The / CAP BAR / tagline
+images/cap-mark.png   the cap cut out of the client's new logo art (transparent PNG)
+images/products/      product pictures (currently stand-in 3D renders, .webp)
+images/gallery/       real photos of the owner's designs go here
+images/og.jpg         link-preview image for Facebook / texts; favicon.png + icon-180.png = icons
+fonts/                self-hosted Google Fonts (Anton, Inter, Great Vibes, Yellowtail; SIL OFL)
+tools/                cut_cap.py (cap cut-out), make_logo.py (logo), make_textures.py +
+                      render_hats.py (Blender product renders), og.html (preview image)
 ```
 
 Preview locally: `cd site && python3 -m http.server 8000`, then open http://localhost:8000
@@ -25,9 +31,13 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | Item | Status |
 |---|---|
 | Prices ($30–$40) | **Example prices only**. Replace in `js/products.js`. |
-| Product photos | **Placeholder illustrations**. Put real photos in `images/products/` and update the `image:` paths. |
-| Product names / descriptions | Drafts based on the Facebook page (truckers + snapbacks, pink / blue / black, custom logo patterns). |
-| Logo | Vector re-draw of the Facebook badge. Replace `images/logo.svg` with the original artwork when available. |
+| Product pictures | **Stand-in 3D renders** (Blender, `tools/render_hats.py`), not real photos. Put the owner's photos in `images/products/` and update the `image:` paths. |
+| Product names / descriptions | Drafts based on the Facebook page and the client's feedback (signature snapback, truckers, ladies denim, design-your-own cap and beanie). |
+| Logo | Our round badge with the cap cut out of the client's new logo art. If the client has the original high-res/vector file of that cap, re-run `tools/cut_cap.py` + `tools/make_logo.py` or drop in a finished logo. |
+| "Our work" gallery | Empty, shows "Photos coming soon". Add real photos via `js/gallery.js`. |
+| Mission statement (contact page) | **Draft** written for the demo; the owner should approve or edit it. |
+| Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
+| Contact form | Opens the visitor's email app (no server in stage 1). |
 | Checkout | Demo pop-up (`demoMode: true`). Goes live once Payment Links are pasted in. |
 | "Notify me" form | Opens the visitor's email app addressed to thomasmarlonr@gmail.com (no server in stage 1). |
 | Email + Facebook links | Real (from the Facebook page). |
@@ -37,6 +47,20 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 Everything lives in `js/products.js`. Each product has a name, description, `price`, and a list of
 `colors`. Each color has its own `image`, `paymentLink` and `soldOut` flag. Add a product by copying
 one `{ ... }` block. Keep the commas between blocks.
+
+## Gallery ("Our work") and reviews
+
+- Gallery: copy photos into `images/gallery/` and add a line per photo in `js/gallery.js`
+  (`{ src: "images/gallery/name.jpg", alt: "what's in the photo", caption: "optional" }`).
+  Clicking a photo opens a full-screen viewer. With an empty list the section shows "Photos coming soon".
+- Reviews: add real reviews (with the customer's OK) to `js/testimonials.js`
+  (`{ quote: "...", name: "Jasmine R.", detail: "Custom trucker" }`). Empty list = placeholder + "Share your experience".
+
+## Product renders
+
+The product pictures are stand-in 3D renders made on the build box:
+`python3 tools/make_textures.py && blender -b -P tools/render_hats.py -- --samples 64 --res 1040x715`
+then converted to .webp (~40–120 KB each). Replace them with real product photos when available.
 
 ## Going live with Stripe (client's own account)
 
