@@ -22,9 +22,10 @@ window.CAPBAR_SETTINGS = {
                    custom caps sell for). Replace with The Cap Bar's real prices.
    - image:        put the real product photos in images/products/ and change
                    the file name here (jpg/png/webp all fine, square-ish works best).
-                   NOTE: the .webp pictures shipping with the demo are STAND-IN RENDERS
-                   (studio-style 3D shots), not the owner's photos. Swap them out when the
-                   real photos arrive.
+                   NOTE: files ending in "-photo.webp" are The Cap Bar's REAL photos
+                   (sent Oct 8, 2026). The others (signature-black, trucker-black,
+                   denim-light, beanie-*) are still STAND-IN 3D RENDERS: swap them for
+                   real photos when available. Product pictures are 1040x715 (16:11).
    - paymentLink:  paste the Stripe Payment Link for that exact product + color
                    (looks like https://buy.stripe.com/xxxxxxxx). Leave "" until
                    the client's Stripe account is set up. See README.md.
@@ -50,9 +51,10 @@ window.CAPBAR_PRODUCTS = [
     price: 30, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     colors: [
-      { name: "Pink", swatch: "#e94f8a", image: "images/products/trucker-pink.webp", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#2f6fd6", image: "images/products/trucker-blue.webp", paymentLink: "", soldOut: false },
-      { name: "Black", swatch: "#151515", image: "images/products/trucker-black.webp", paymentLink: "", soldOut: false },
+      { name: "Pink", swatch: "#f2b8cc", image: "images/products/trucker-pink-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Royal blue", swatch: "#1f5fd0", image: "images/products/trucker-royal-blue-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Light blue", swatch: "#7fb0e6", image: "images/products/trucker-light-blue-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Black", swatch: "#151515", image: "images/products/trucker-black.webp", paymentLink: "", soldOut: false }, // render
     ],
   },
   {
@@ -63,22 +65,22 @@ window.CAPBAR_PRODUCTS = [
     price: 32, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     colors: [
-      { name: "Medium wash", swatch: "#3e5f8f", image: "images/products/denim-medium.webp", paymentLink: "", soldOut: false },
-      { name: "Light wash", swatch: "#a9c2d8", image: "images/products/denim-light.webp", paymentLink: "", soldOut: false },
+      { name: "Medium wash", swatch: "#4f6f93", image: "images/products/denim-medium-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Light wash", swatch: "#a9c2d8", image: "images/products/denim-light.webp", paymentLink: "", soldOut: false }, // render
     ],
   },
   {
     id: "design-your-own",
     name: "Design Your Own Cap",
     tag: "Custom pattern",
-    description: "Tell us your idea and we design a one-of-one logo pattern for you, then press it in under 10 minutes.",
+    description: "Tell us your idea and we design a one-of-one look for you, from scripture patches to full patch stacks, pressed in under 10 minutes.",
     price: 40, // EXAMPLE PRICE
     size: "One size · adjustable snap",
     note: "After checkout we'll reach out to finalize your design.",
     colors: [
-      { name: "Black", swatch: "#151515", image: "images/products/custom-black.webp", paymentLink: "", soldOut: false },
-      { name: "Pink", swatch: "#e94f8a", image: "images/products/custom-pink.webp", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#2f6fd6", image: "images/products/custom-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Camo", swatch: "linear-gradient(135deg, #e8e8e8 0 30%, #5b5b5b 30% 55%, #1c1c1c 55% 75%, #9a9a9a 75%)", image: "images/products/custom-camo-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Pink trucker", swatch: "#f2b8cc", image: "images/products/custom-pink-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Distressed", swatch: "#b8a581", image: "images/products/custom-distressed-photo.webp", paymentLink: "", soldOut: false },
     ],
   },
   {

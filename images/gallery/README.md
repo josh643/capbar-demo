@@ -1,2 +1,3 @@
-Put the owner's real hat photos here (jpg/webp, ~1200px long side, under ~300 KB),
-then list them in js/gallery.js. While that list is empty the site shows "Photos coming soon".
+Real photos of hats designed at The Cap Bar (owner photos, Oct 8 2026).
+Each photo: name.jpg + name.webp (~1600px, lightbox) and name-thumb.jpg/.webp (square grid tile).
+Camera/GPS metadata removed. List them in js/gallery.js.

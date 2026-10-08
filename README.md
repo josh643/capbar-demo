@@ -15,8 +15,8 @@ js/testimonials.js    <- EDIT: real customer reviews for the contact page
 js/site.js, app.js, contact.js   page behaviour (no need to touch)
 images/logo.svg       badge logo: round black/gold badge + the client's cap art + The / CAP BAR / tagline
 images/cap-mark.png   the cap cut out of the client's new logo art (transparent PNG)
-images/products/      product pictures (currently stand-in 3D renders, .webp)
-images/gallery/       real photos of the owner's designs go here
+images/products/      product pictures, 1040x715 .webp (*-photo.webp = real photos; the rest are stand-in renders)
+images/gallery/       real photos of the owner's designs (1600px .jpg/.webp + 800px square -thumb)
 images/og.jpg         link-preview image for Facebook / texts; favicon.png + icon-180.png = icons
 fonts/                self-hosted Google Fonts (Anton, Inter, Great Vibes, Yellowtail; SIL OFL)
 tools/                cut_cap.py (cap cut-out), make_logo.py (logo), make_textures.py +
@@ -31,10 +31,10 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | Item | Status |
 |---|---|
 | Prices ($30–$40) | **Example prices only**. Replace in `js/products.js`. |
-| Product pictures | **Stand-in 3D renders** (Blender, `tools/render_hats.py`), not real photos. Put the owner's photos in `images/products/` and update the `image:` paths. |
+| Product pictures | **Mostly real photos** from the owner (Oct 8): Custom Trucker pink/royal blue/light blue, Ladies Denim medium wash, Design Your Own Cap (camo, pink trucker, distressed). **Still stand-in 3D renders:** Signature Snapback (black/gold), Custom Trucker black, Ladies Denim light wash, all Design Your Own Beanie colors. |
 | Product names / descriptions | Drafts based on the Facebook page and the client's feedback (signature snapback, truckers, ladies denim, design-your-own cap and beanie). |
 | Logo | Our round badge with the cap cut out of the client's new logo art. If the client has the original high-res/vector file of that cap, re-run `tools/cut_cap.py` + `tools/make_logo.py` or drop in a finished logo. |
-| "Our work" gallery | Empty, shows "Photos coming soon". Add real photos via `js/gallery.js`. |
+| "Our work" gallery | **Real photos** (9 of the owner's 10; IMG_6694 skipped as a near-duplicate of IMG_6693). Location/camera data stripped. Captions "Pretty & Spoiled Collection" and "The Trinity Collection" come from the owner's own photo text. |
 | Mission statement (contact page) | **Draft** written for the demo; the owner should approve or edit it. |
 | Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
 | Contact form | Opens the visitor's email app (no server in stage 1). |
@@ -51,7 +51,9 @@ one `{ ... }` block. Keep the commas between blocks.
 ## Gallery ("Our work") and reviews
 
 - Gallery: copy photos into `images/gallery/` and add a line per photo in `js/gallery.js`
-  (`{ src: "images/gallery/name.jpg", alt: "what's in the photo", caption: "optional" }`).
+  (`{ src: "images/gallery/name.jpg", thumb: "images/gallery/name-thumb.jpg", webp: true, alt: "what's in the photo", caption: "optional" }`).
+  `webp: true` means a .webp copy with the same name exists (faster on phones). The web copies are made by
+  `../tools_photos/process.py` on the build box (fixes rotation, strips GPS/camera data, resizes).
   Clicking a photo opens a full-screen viewer. With an empty list the section shows "Photos coming soon".
 - Reviews: add real reviews (with the customer's OK) to `js/testimonials.js`
   (`{ quote: "...", name: "Jasmine R.", detail: "Custom trucker" }`). Empty list = placeholder + "Share your experience".

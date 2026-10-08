@@ -70,11 +70,16 @@
   var gGrid = document.getElementById("gallery-grid");
   var gEmpty = document.getElementById("gallery-empty");
   var lb = document.getElementById("lightbox");
+  var canWebp = (function () { try { return document.createElement("canvas").toDataURL("image/webp").indexOf("data:image/webp") === 0; } catch (e) { return false; } })();
+  function webpOf(src) { return src.replace(/\.(jpe?g|png)$/i, ".webp"); }
   if (gGrid) {
     if (!G.length) { gGrid.hidden = true; gEmpty.hidden = false; }
     G.forEach(function (g, i) {
-      var b = el("button", { class: "g-item", type: "button", "aria-label": "View photo: " + (g.alt || "Cap Bar hat") }, [
-        el("img", { src: g.src, alt: g.alt || "Custom hat by The Cap Bar", loading: "lazy" }),
+      var tsrc = g.thumb || g.src;
+      var img = el("img", { src: tsrc, alt: g.alt || "Custom hat by The Cap Bar", loading: i < 2 ? "eager" : "lazy", decoding: "async", width: "800", height: "800" });
+      var pic = g.webp ? el("picture", null, [el("source", { type: "image/webp", srcset: webpOf(tsrc) }), img]) : img;
+      var b = el("button", { class: "g-item" + (g.featured ? " g-featured" : ""), type: "button", "aria-label": "View photo: " + (g.alt || "Cap Bar hat") }, [
+        pic,
         g.caption ? el("span", { class: "g-cap", text: g.caption }) : null,
       ]);
       b.addEventListener("click", function () { openLb(i); });
@@ -85,7 +90,7 @@
   function openLb(i) {
     lbIndex = (i + G.length) % G.length;
     var g = G[lbIndex];
-    var im = document.getElementById("lb-img"); im.src = g.src; im.alt = g.alt || "";
+    var im = document.getElementById("lb-img"); im.src = (g.webp && canWebp) ? webpOf(g.src) : g.src; im.alt = g.alt || "";
     document.getElementById("lb-cap").textContent = g.caption || "";
     if (!lb.open) { if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); }
   }
