@@ -18,19 +18,26 @@
 
   // ---- shop
   var grid = document.getElementById("shop-grid");
+  function imgOf(p, c) { return c.image || p.image || p.colors[0].image; }
   P.forEach(function (p) {
     var state = { color: 0 };
-    var img = el("img", { src: p.colors[0].image, alt: p.name + " in " + p.colors[0].name, loading: "lazy", width: "520", height: "370" });
+    var many = p.colors.length > 8;
+    var img = el("img", { src: imgOf(p, p.colors[0]), alt: p.name, loading: "lazy", width: "520", height: "370" });
     var colorLabel = el("span", { class: "color-name", text: p.colors[0].name });
+    var pictured = el("span", { class: "card-pictured" });
     var buy = el("button", { class: "btn btn-gold btn-block", type: "button" });
     function refresh() {
       var c = p.colors[state.color];
-      img.src = c.image; img.alt = p.name + " in " + c.name;
+      var src = imgOf(p, c), own = !!c.image;
+      if (img.getAttribute("src") !== src) img.src = src;
+      img.alt = own || !p.pictureName ? p.name + " in " + c.name : p.name + " (pictured in " + p.pictureName + ")";
       colorLabel.textContent = c.name;
+      pictured.textContent = (!own && p.pictureName && c.name !== p.pictureName) ? "Pictured: " + p.pictureName : "";
+      pictured.hidden = !pictured.textContent;
       buy.disabled = !!c.soldOut;
       buy.textContent = c.soldOut ? "Sold out" : "Buy now · " + money.format(p.price);
     }
-    var swatches = el("div", { class: "swatches", role: "radiogroup", "aria-label": "Color" });
+    var swatches = el("div", { class: "swatches" + (many ? " swatches-many" : ""), role: "radiogroup", "aria-label": p.name + " color" });
     p.colors.forEach(function (c, i) {
       var b = el("button", {
         class: "swatch" + (i === 0 ? " is-on" : ""), type: "button", role: "radio",
@@ -48,15 +55,21 @@
     });
     buy.addEventListener("click", function () { checkout(p, p.colors[state.color]); });
     refresh();
+    var optRow = many
+      ? el("div", { class: "card-opts card-opts-many" }, [
+          el("div", { class: "opt" }, [el("span", { class: "opt-label", text: "Color:" }), colorLabel, el("span", { class: "opt-count", text: " · " + p.colors.length + " colors" })]),
+          swatches,
+        ])
+      : el("div", { class: "card-opts" }, [
+          p.colors.length > 1 ? swatches : el("span", { class: "swatch swatch-static", style: "--sw:" + p.colors[0].swatch, "aria-hidden": "true" }),
+          el("div", { class: "opt" }, [el("span", { class: "sr-only", text: "Color: " }), colorLabel]),
+        ]);
     var card = el("article", { class: "card" }, [
-      el("div", { class: "card-media" }, [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null]),
+      el("div", { class: "card-media" }, [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null, pictured]),
       el("div", { class: "card-body" }, [
         el("div", { class: "card-head" }, [el("h3", { text: p.name }), el("p", { class: "price", text: money.format(p.price) })]),
         el("p", { class: "card-desc", text: p.description }),
-        el("div", { class: "card-opts" }, [
-          p.colors.length > 1 ? swatches : el("span", { class: "swatch swatch-static", style: "--sw:" + p.colors[0].swatch, "aria-hidden": "true" }),
-          el("div", { class: "opt" }, [el("span", { class: "sr-only", text: "Color: " }), colorLabel]),
-        ]),
+        optRow,
         el("p", { class: "card-size", text: p.size || "" }),
         p.note ? el("p", { class: "card-note", text: p.note }) : null,
         buy,
@@ -116,7 +129,7 @@
     dlg.querySelectorAll(".co-live").forEach(function (n) { n.hidden = !live; });
     document.getElementById("co-eyebrow").textContent = live ? "Order" : "Demo checkout";
     document.getElementById("co-mail").href = "mailto:" + S.email + "?subject=" + encodeURIComponent("Order: " + p.name + " (" + c.name + ")");
-    document.getElementById("co-img").src = c.image;
+    document.getElementById("co-img").src = imgOf(p, c);
     document.getElementById("co-img").alt = p.name + " in " + c.name;
     document.getElementById("co-name").textContent = p.name;
     document.getElementById("co-variant").textContent = c.name + " · One size";

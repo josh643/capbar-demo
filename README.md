@@ -31,10 +31,12 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | Item | Status |
 |---|---|
 | Prices ($30–$40) | **Example prices only**. Replace in `js/products.js`. |
-| Product pictures | **Mostly real photos** from the owner (Oct 8): Custom Trucker pink/royal blue/light blue, Ladies Denim medium wash, Design Your Own Cap (camo, pink trucker, distressed). **Still stand-in 3D renders:** Signature Snapback (black/gold), Custom Trucker black, Ladies Denim light wash, all Design Your Own Beanie colors. |
-| Product names / descriptions | Drafts based on the Facebook page and the client's feedback (signature snapback, truckers, ladies denim, design-your-own cap and beanie). |
+| Product pictures | **Mostly real photos** from the owner (Oct 8): Custom Trucker (all 4 colors), Vintage Distressed Denim (6 of 7 colors), Design Your Own Cap (black/olive snapback, camo, pink trucker). **Still stand-in 3D renders:** Signature Snapback, Ladies Denim Hat, Design Your Own Beanie. Colors without their own picture show the main picture with a "Pictured: ..." tag. |
+| Product names / descriptions | Drafts based on the Facebook page and the client's feedback (signature snapback, truckers, ladies denim, vintage distressed denim, design-your-own cap and beanie). |
 | Logo | Our round badge with the cap cut out of the client's new logo art. If the client has the original high-res/vector file of that cap, re-run `tools/cut_cap.py` + `tools/make_logo.py` or drop in a finished logo. |
-| "Our work" gallery | **Real photos** (9 of the owner's 10; IMG_6694 skipped as a near-duplicate of IMG_6693). Location/camera data stripped. Captions "Pretty & Spoiled Collection" and "The Trinity Collection" come from the owner's own photo text. |
+| "Our work" gallery | **21 real photos** picked from the owner's 29 (Oct 8). Skipped: near-duplicates IMG_6694, 6750, 6762, 6760, 6764, 6745 (hats small/cluttered) and IMG_6924 + 6802 (patches with profanity; add back in `js/gallery.js` if the owner wants them). Location/camera data stripped. Captions use the owner's own collection names. |
+| Collections section | The owner's 6 collection images (Love & Peace, Boss Lady, The 901, Pretty & Spoiled, Queen Bling, Good Vibes), cropped to the hats + title (QR code and brush logo cropped off). |
+| Colors (denim, beanie, distressed) | Read off supplier screenshots the owner sent as a color reference (supplier images are NOT on the site). Confirm names/stock. |
 | Mission statement (contact page) | **Draft** written for the demo; the owner should approve or edit it. |
 | Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
 | Contact form | Opens the visitor's email app (no server in stage 1). |
@@ -104,6 +106,11 @@ Note: Stripe doesn't track stock counts the way a full store does. Use "Limit th
 - Sales tax: Stripe Tax is optional and costs extra. Many small shops start by setting tax manually.
 
 ## Hosting and domain
+
+**Live:** https://capbarexperience.com/ (Cloudflare Pages project `capbar`, account 21779b…; www.capbarexperience.com too).
+Redeploy: `cd ../cf && CLOUDFLARE_ACCOUNT_ID=21779b260eff4cd8fdd71c920eaec8ab npx wrangler@3 pages deploy ../site --project-name capbar --branch main`.
+GitHub Pages copy: https://josh643.github.io/capbar-demo/ (push to main).
+
 
 Any static host works and is free for a site this size: Cloudflare Pages, Netlify, or GitHub Pages.
 A domain costs about $10–20 per year (e.g. `thecapbarshop.com` looked unregistered on Oct 8, 2026;
