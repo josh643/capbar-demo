@@ -1,0 +1,106 @@
+(function () {
+  "use strict";
+  var S = window.CAPBAR_SETTINGS || {};
+  var P = window.CAPBAR_PRODUCTS || [];
+  var money = new Intl.NumberFormat("en-US", { style: "currency", currency: S.currency || "USD", maximumFractionDigits: 2, minimumFractionDigits: 0 });
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === "class") n.className = attrs[k];
+      else if (k === "text") n.textContent = attrs[k];
+      else if (k.slice(0, 2) === "on") n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) { if (c) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+
+  // ---- demo ribbon + links
+  if (S.demoMode) document.documentElement.classList.add("is-demo");
+  document.querySelectorAll("[data-email]").forEach(function (a) {
+    a.href = "mailto:" + S.email; if (!a.textContent.trim()) a.textContent = S.email;
+  });
+  document.querySelectorAll("[data-facebook]").forEach(function (a) { a.href = S.facebook; });
+  var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
+
+  // ---- shop
+  var grid = document.getElementById("shop-grid");
+  P.forEach(function (p) {
+    var state = { color: 0 };
+    var img = el("img", { src: p.colors[0].image, alt: p.name + " in " + p.colors[0].name, loading: "lazy", width: "520", height: "370" });
+    var colorLabel = el("span", { class: "color-name", text: p.colors[0].name });
+    var buy = el("button", { class: "btn btn-gold btn-block", type: "button" });
+    function refresh() {
+      var c = p.colors[state.color];
+      img.src = c.image; img.alt = p.name + " in " + c.name;
+      colorLabel.textContent = c.name;
+      buy.disabled = !!c.soldOut;
+      buy.textContent = c.soldOut ? "Sold out" : "Buy now · " + money.format(p.price);
+    }
+    var swatches = el("div", { class: "swatches", role: "radiogroup", "aria-label": "Color" });
+    p.colors.forEach(function (c, i) {
+      var b = el("button", {
+        class: "swatch" + (i === 0 ? " is-on" : ""), type: "button", role: "radio",
+        "aria-checked": i === 0 ? "true" : "false", "aria-label": c.name, title: c.name,
+        style: "--sw:" + c.swatch,
+        onclick: function () {
+          state.color = i;
+          swatches.querySelectorAll(".swatch").forEach(function (s, j) {
+            s.classList.toggle("is-on", j === i); s.setAttribute("aria-checked", j === i ? "true" : "false");
+          });
+          refresh();
+        },
+      });
+      swatches.appendChild(b);
+    });
+    buy.addEventListener("click", function () { checkout(p, p.colors[state.color]); });
+    refresh();
+    var card = el("article", { class: "card" }, [
+      el("div", { class: "card-media" }, [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null]),
+      el("div", { class: "card-body" }, [
+        el("div", { class: "card-head" }, [el("h3", { text: p.name }), el("p", { class: "price", text: money.format(p.price) })]),
+        el("p", { class: "card-desc", text: p.description }),
+        el("div", { class: "card-opts" }, [
+          p.colors.length > 1 ? swatches : el("span", { class: "swatch swatch-static", style: "--sw:" + p.colors[0].swatch, "aria-hidden": "true" }),
+          el("div", { class: "opt" }, [el("span", { class: "sr-only", text: "Color: " }), colorLabel]),
+        ]),
+        el("p", { class: "card-size", text: p.size || "" }),
+        p.note ? el("p", { class: "card-note", text: p.note }) : null,
+        buy,
+      ]),
+    ]);
+    grid.appendChild(card);
+  });
+
+  // ---- checkout
+  var dlg = document.getElementById("checkout");
+  function checkout(p, c) {
+    if (!S.demoMode && c.paymentLink) { window.location.href = c.paymentLink; return; }
+    // demo mode -> demo checkout notice; live mode without a link -> "email to order"
+    var live = !S.demoMode;
+    dlg.querySelectorAll(".co-demo").forEach(function (n) { n.hidden = live; });
+    dlg.querySelectorAll(".co-live").forEach(function (n) { n.hidden = !live; });
+    document.getElementById("co-eyebrow").textContent = live ? "Order" : "Demo checkout";
+    document.getElementById("co-mail").href = "mailto:" + S.email + "?subject=" + encodeURIComponent("Order: " + p.name + " (" + c.name + ")");
+    document.getElementById("co-img").src = c.image;
+    document.getElementById("co-img").alt = p.name + " in " + c.name;
+    document.getElementById("co-name").textContent = p.name;
+    document.getElementById("co-variant").textContent = c.name + " · One size";
+    document.getElementById("co-price").textContent = money.format(p.price);
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+
+  // ---- "notify me" form -> opens an email to the shop (stage 1 has no server)
+  var form = document.getElementById("notify");
+  if (form) form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var who = form.querySelector("input[type=email]").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(who)) { form.querySelector(".form-msg").textContent = "Please enter a valid email."; return; }
+    var subject = encodeURIComponent("Let me know when The Cap Bar opens");
+    var body = encodeURIComponent("Hi! Please let me know when your location opens.\n\nMy email: " + who);
+    window.location.href = "mailto:" + S.email + "?subject=" + subject + "&body=" + body;
+    form.querySelector(".form-msg").textContent = "Thanks! Your email app should open to send it.";
+  });
+})();
