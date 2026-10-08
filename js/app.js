@@ -2,6 +2,7 @@
   "use strict";
   var S = window.CAPBAR_SETTINGS || {};
   var P = window.CAPBAR_PRODUCTS || [];
+  var API = "https://admin.capbarexperience.com";
   var money = new Intl.NumberFormat("en-US", { style: "currency", currency: S.currency || "USD", maximumFractionDigits: 2, minimumFractionDigits: 0 });
 
   function el(tag, attrs, children) {
@@ -18,8 +19,11 @@
 
   // ---- shop
   var grid = document.getElementById("shop-grid");
-  function imgOf(p, c) { return c.image || p.image || p.colors[0].image; }
-  P.forEach(function (p) {
+  function imgOf(p, c) { return (c && c.image) || p.image || (p.colors[0] && p.colors[0].image) || ""; }
+  function renderShop() {
+    if (!grid) return;
+    grid.textContent = "";
+    P.forEach(function (p) {
     var state = { color: 0 };
     var many = p.colors.length > 5;
     var img = el("img", { src: imgOf(p, p.colors[0]), alt: p.name, loading: "lazy", width: "520", height: "370" });
@@ -76,7 +80,8 @@
       ]),
     ]);
     grid.appendChild(card);
-  });
+    });
+  }
 
   // ---- gallery / our work (js/gallery.js)
   var G = (window.CAPBAR_GALLERY || []).filter(function (g) { return g && g.src; });
@@ -122,8 +127,23 @@
   // ---- checkout
   var dlg = document.getElementById("checkout");
   function checkout(p, c) {
+    if (c && c.id) {
+      fetch(API + "/api/public/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ variantId: c.id, quantity: 1 }),
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) { return { ok: r.ok, body: body }; });
+      }).then(function (res) {
+        if (res.ok && res.body && res.body.url) { window.location.href = res.body.url; return; }
+        openDemo(p, c);
+      }).catch(function () { openDemo(p, c); });
+      return;
+    }
     if (!S.demoMode && c.paymentLink) { window.location.href = c.paymentLink; return; }
-    // demo mode -> demo checkout notice; live mode without a link -> "email to order"
+    openDemo(p, c);
+  }
+  function openDemo(p, c) {
     var live = !S.demoMode;
     dlg.querySelectorAll(".co-demo").forEach(function (n) { n.hidden = live; });
     dlg.querySelectorAll(".co-live").forEach(function (n) { n.hidden = !live; });
@@ -149,4 +169,34 @@
     window.location.href = "mailto:" + S.email + "?subject=" + subject + "&body=" + body;
     form.querySelector(".form-msg").textContent = "Thanks! Your email app should open to send it.";
   });
+
+  function loadShop() {
+    var done = false;
+    var timer = setTimeout(function () { if (!done) { done = true; renderShop(); } }, 4000);
+    fetch(API + "/api/public/products").then(function (r) {
+      if (!r.ok) throw new Error("api");
+      return r.json();
+    }).then(function (data) {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      if (data && data.products && data.products.length) {
+        P = data.products;
+        window.CAPBAR_PRODUCTS = data.products;
+        if (data.currency) S.currency = data.currency;
+        if (typeof data.demoMode === "boolean") {
+          S.demoMode = data.demoMode;
+          if (window.CAPBAR_SETTINGS) window.CAPBAR_SETTINGS.demoMode = data.demoMode;
+          document.documentElement.classList.toggle("is-demo", !!data.demoMode);
+        }
+      }
+      renderShop();
+    }).catch(function () {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      renderShop();
+    });
+  }
+  if (grid) loadShop();
 })();

@@ -44,6 +44,15 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | "Notify me" form | Opens the visitor's email app addressed to thomasmarlonr@gmail.com (no server in stage 1). |
 | Email + Facebook links | Real (from the Facebook page). |
 
+## Shop data and checkout
+
+The shop loads products, photos, and stock from the admin at
+`https://admin.capbarexperience.com/api/public/products`. If that API is down,
+it falls back to `js/products.js`. Buy now asks the admin to start Stripe Checkout.
+Until Marlon links his own Stripe key, that call stays in demo mode and the demo
+ribbon and demo checkout stay up. Example prices in the admin are placeholders
+(stock is seeded at 10 per color).
+
 ## Editing products
 
 Everything lives in `js/products.js`. Each product has a name, description, `price`, and a list of
