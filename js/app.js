@@ -21,7 +21,7 @@
   function imgOf(p, c) { return c.image || p.image || p.colors[0].image; }
   P.forEach(function (p) {
     var state = { color: 0 };
-    var many = p.colors.length > 8;
+    var many = p.colors.length > 5;
     var img = el("img", { src: imgOf(p, p.colors[0]), alt: p.name, loading: "lazy", width: "520", height: "370" });
     var colorLabel = el("span", { class: "color-name", text: p.colors[0].name });
     var pictured = el("span", { class: "card-pictured" });
