@@ -19,26 +19,34 @@
   <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/greatvibes.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* Old one-page links (capbarexperience.com/#shop etc.) now live on their own pages. */
+    (function () {
+      var m = { "#shop": "shop.html", "#collections": "collections.html", "#camo": "collections.html#camo",
+                "#gallery": "gallery.html", "#story": "story.html", "#mission": "story.html", "#contact": "contact.html" };
+      var t = m[location.hash.toLowerCase()];
+      if (t) location.replace(t);
+    })();
+  </script>
 </head>
-<body>
+<body class="page-home">
   <div class="demo-ribbon" role="note">Preview · online checkout coming soon</div>
 
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="The Cap Bar home">
+    <a class="brand" href="index.html" aria-label="The Cap Bar home">
       <img src="images/logo.svg" alt="" width="44" height="44">
       <span class="brand-name"><em>The</em> Cap Bar</span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="#shop">Shop</a>
-      <a href="#collections">Collections</a>
-      <a href="#camo">Camo</a>
-      <a href="#gallery">Our work</a>
-      <a href="#experience">The experience</a>
-      <a href="#story">Our story</a>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="collections.html">Collections</a>
+      <a href="gallery.html">Our work</a>
+      <a href="story.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-gold btn-sm" href="#shop">Shop hats</a>
+      <a class="btn btn-gold btn-sm" href="shop.html">Shop hats</a>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -58,7 +66,7 @@
         <h1 id="hero-title">Custom hats<br><span class="gold">made in 10&nbsp;minutes.</span></h1>
         <p class="hero-script">It's not just a custom hat shop, <span class="nw">it's an experience!</span></p>
         <div class="hero-ctas">
-          <a class="btn btn-gold" href="#shop">Shop hats</a>
+          <a class="btn btn-gold" href="shop.html">Shop hats</a>
           <a class="btn btn-ghost" href="#experience">Get yours customized in 10 minutes</a>
         </div>
       </div>
@@ -71,20 +79,24 @@
       </div>
     </div>
 
-    <!-- SHOP -->
-    <section id="shop" class="section shop" aria-labelledby="shop-title">
-      <div class="section-head">
-        <p class="eyebrow">Shop</p>
-        <h2 id="shop-title">Pick your cap</h2>
-        <p class="lead">Snapbacks, truckers, denim, vintage distressed caps and beanies, finished with a Cap Bar design or one made just for you.</p>
+    <!-- OUR STORY teaser (full text on story.html) -->
+    <section id="story-teaser" class="section story story-teaser" aria-labelledby="story-title">
+      <div class="story-card">
+        <figure class="story-photo">
+          <img src="images/products/trucker-royal-blue-photo.webp" alt="Royal blue and white trucker with a colorful Peace patch on a mannequin" loading="lazy" width="1200" height="1200">
+        </figure>
+        <div class="story-body">
+          <p class="eyebrow">Our story</p>
+          <h2 id="story-title">Our <span class="gold">mission</span></h2>
+          <p><strong>The Cap Bar</strong> is a family oriented custom hat experience where creativity, individuality, and community come together under one roof.</p>
+          <p class="story-callout"><strong>THE CAP BAR IS MORE THAN JUST A HAT SHOP — IT'S AN EXPERIENCE!</strong></p>
+          <p class="teaser-cta"><a class="btn btn-gold" href="story.html">Read our story</a></p>
+        </div>
       </div>
-      <div id="shop-grid" class="grid"></div>
-      <p class="secure"><span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></svg>
-        Secure checkout powered by Stripe · cards, Apple Pay &amp; Google Pay</span></p>
     </section>
 
     <!-- FEATURED COLLECTIONS (owner's collection images, Oct 8; QR codes/branding cropped off) -->
-    <section id="collections" class="section collections" aria-labelledby="coll-title">
+    <section id="collections-teaser" class="section collections" aria-labelledby="coll-title">
       <div class="section-head">
         <p class="eyebrow">Featured</p>
         <h2 id="coll-title">Our collections</h2>
@@ -92,44 +104,10 @@
       </div>
       <div class="coll-grid">
         <figure class="coll"><picture><source type="image/webp" srcset="images/collections/love-peace.webp"><img src="images/collections/love-peace.jpg" alt="Love &amp; Peace Collection: royal blue and white truckers with Peace, Love and VW bus patches" loading="lazy" width="816" height="440"></picture></figure>
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/boss-lady.webp"><img src="images/collections/boss-lady.jpg" alt="Boss Lady Collection: distressed caps with Boss Lady OMG, High Maintenance, Limited Edition and Black Queen patches" loading="lazy" width="816" height="440"></picture></figure>
         <figure class="coll coll-soon"><picture><source type="image/webp" srcset="images/collections/the-901.webp"><img src="images/collections/the-901.jpg" alt="The 901 Collection, coming soon: a blue trucker and a black trucker with 901 patches." loading="lazy" width="1632" height="880"></picture><figcaption class="coll-badge">The 901 · Coming soon</figcaption></figure>
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/pretty-spoiled.webp"><img src="images/collections/pretty-spoiled.jpg" alt="Pretty &amp; Spoiled Collection: pink and white truckers with playful pink patches" loading="lazy" width="816" height="440"></picture></figure>
         <figure class="coll"><picture><source type="image/webp" srcset="images/collections/queen-bling.webp"><img src="images/collections/queen-bling.jpg" alt="Queen Bling Collection: black Queen truckers and hot pink Being the Queen Ain't Easy caps" loading="lazy" width="816" height="440"></picture></figure>
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/good-vibes.webp"><img src="images/collections/good-vibes.jpg" alt="Good Vibes Collection: light blue and white truckers with beach and No Bad Vibes patches" loading="lazy" width="816" height="440"></picture></figure>
       </div>
-    </section>
-
-
-    <section id="camo" class="section collections" aria-labelledby="camo-title">
-      <div class="section-head">
-        <p class="eyebrow">Camo</p>
-        <h2 id="camo-title">Camo</h2>
-        <p class="lead">Two camo caps on the form, ready for your design. Order one under Design Your Own Cap · Men's.</p>
-      </div>
-      <div class="coll-grid">
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/camo-woodland.webp"><img src="images/collections/camo-woodland.jpg" alt="Woodland camo cap on a mannequin, front view" loading="lazy" width="1200" height="1200"></picture></figure>
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/camo-gray.webp"><img src="images/collections/camo-gray.jpg" alt="Gray and white camo cap on a mannequin, front view" loading="lazy" width="1200" height="1200"></picture></figure>
-      </div>
-    </section>
-
-    <!-- GALLERY / OUR WORK (photos listed in js/gallery.js) -->
-    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
-      <div class="section-head">
-        <p class="eyebrow">Our work</p>
-        <h2 id="gallery-title">Fresh from the bar</h2>
-        <p class="lead">Real hats designed and pressed at The Cap Bar.</p>
-      </div>
-      <div id="gallery-grid" class="gallery-grid"></div>
-      <div id="gallery-empty" class="gallery-empty" hidden>
-        <div class="ge-frames" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="ge-copy">
-          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9Zm3 4.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-          <h3>Photos coming soon</h3>
-          <p>Photos of our latest custom designs are on the way. Follow along on Facebook to see new hats first.</p>
-          <a class="btn btn-ghost btn-sm" data-facebook href="#" target="_blank" rel="noopener">See us on Facebook</a>
-        </div>
-      </div>
+      <p class="teaser-cta"><a class="btn btn-ghost" href="collections.html">See all collections</a></p>
     </section>
 
     <!-- EXPERIENCE -->
@@ -159,21 +137,34 @@
       <p class="neon neon-inline" aria-hidden="true">Good Vibes · Custom Hats</p>
     </section>
 
-    <!-- OUR STORY: Marlon's own mission statement (verbatim, Oct 8) -->
-    <section id="story" class="section story" aria-labelledby="story-title">
-      <div class="story-card">
-        <figure class="story-photo">
-          <img src="images/products/trucker-royal-blue-photo.webp" alt="Royal blue and white trucker with a colorful Peace patch on a mannequin" loading="lazy" width="1200" height="1200">
-        </figure>
-        <div class="story-body">
-          <p class="eyebrow">Our story</p>
-          <h2 id="story-title">Our <span class="gold">mission</span></h2>
-          <p><strong>The Cap Bar</strong> is a family oriented custom hat experience where creativity, individuality, and community come together under one roof.</p>
-          <p>We design custom hats for both adults and children, giving customers the opportunity to create something on their own. From choosing their personal unique style and colors to selecting personalized details and finishing touches. Every customer gets to bring their creative vision to life on the spot.</p>
-          <p>Our goal is to be more than a retail store. We want <strong>The Cap Bar</strong> to feel like a place where everyone is welcomed and instantly feels like family. Whether customers are shopping for themselves, creating matching family hats, celebrating a special occasion, or simply looking for a fun and creative experience.</p>
-          <p class="story-callout"><strong>THE CAP BAR IS MORE THAN JUST A HAT SHOP — IT'S AN EXPERIENCE!</strong></p>
+    <!-- GALLERY / OUR WORK (photos listed in js/gallery.js) -->
+    <section id="gallery-teaser" class="section gallery" aria-labelledby="gallery-title">
+      <div class="section-head">
+        <p class="eyebrow">Our work</p>
+        <h2 id="gallery-title">Fresh from the bar</h2>
+        <p class="lead">Real hats designed and pressed at The Cap Bar.</p>
+      </div>
+      <div id="gallery-grid" class="gallery-grid gallery-teaser" data-limit="4"></div>
+      <div id="gallery-empty" class="gallery-empty" hidden>
+        <div class="ge-frames" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="ge-copy">
+          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9Zm3 4.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          <h3>Photos coming soon</h3>
+          <p>Photos of our latest custom designs are on the way. Follow along on Facebook to see new hats first.</p>
+          <a class="btn btn-ghost btn-sm" data-facebook href="#" target="_blank" rel="noopener">See us on Facebook</a>
         </div>
       </div>
+      <p class="teaser-cta"><a class="btn btn-ghost" href="gallery.html">See all our work</a></p>
+    </section>
+
+    <!-- SHOP CTA (full shop on shop.html) -->
+    <section class="section shop-cta" aria-labelledby="shop-title">
+      <div class="section-head">
+        <p class="eyebrow">Shop</p>
+        <h2 id="shop-title">Pick your cap</h2>
+        <p class="lead">Snapbacks, truckers, denim, vintage distressed caps and beanies, finished with a Cap Bar design or one made just for you.</p>
+      </div>
+      <p class="teaser-cta"><a class="btn btn-gold" href="shop.html">Shop hats</a></p>
     </section>
 
     <!-- VISIT -->
@@ -197,6 +188,15 @@
   <footer class="site-footer">
     <img src="images/logo.svg" alt="The Cap Bar" width="88" height="88">
     <p class="footer-script">It's not just a hat shop, it's an experience.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="collections.html">Collections</a>
+      <a href="gallery.html">Our work</a>
+      <a href="index.html#experience">The experience</a>
+      <a href="story.html">Our story</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <ul class="footer-links">
       <li><a data-facebook href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3Z"/></svg>Facebook</a></li>
       <li><a href="contact.html"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Z" transform="translate(-1 0)"/></svg>Contact</a></li>
@@ -204,32 +204,6 @@
     </ul>
     <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a> · Payments securely processed by Stripe</p>
   </footer>
-
-  <!-- Checkout dialog (demo mode). In live mode Buy goes straight to Stripe. -->
-  <dialog id="checkout" class="checkout" aria-labelledby="co-title">
-    <div class="co-inner">
-      <button class="co-x" type="button" data-close aria-label="Close">×</button>
-      <p class="eyebrow" id="co-eyebrow">Demo checkout</p>
-      <h2 id="co-title">Almost yours</h2>
-      <div class="co-item">
-        <img id="co-img" src="" alt="" width="104" height="74">
-        <div><p id="co-name" class="co-name"></p><p id="co-variant" class="co-variant"></p></div>
-        <p id="co-price" class="co-price"></p>
-      </div>
-      <div class="co-note co-demo">
-        <strong>Payments will go through your Stripe account once connected.</strong>
-        <p>When the store is live, this button opens Stripe's secure checkout (card, Apple Pay, Google Pay). The Cap Bar's own Stripe account receives the money and handles receipts, refunds and chargebacks.</p>
-      </div>
-      <button class="btn btn-gold btn-block co-demo" type="button" disabled>Pay with Stripe</button>
-      <p class="co-fine co-demo">Checkout button switches on when Stripe is connected.</p>
-      <div class="co-note co-live" hidden>
-        <strong>Online checkout for this one is coming soon.</strong>
-        <p>Send us a quick email and we'll get your order set up.</p>
-      </div>
-      <a class="btn btn-gold btn-block co-live" id="co-mail" href="#" hidden>Email to order</a>
-      <button class="btn btn-ghost btn-block" type="button" data-close>Keep browsing</button>
-    </div>
-  </dialog>
 
   <!-- Gallery lightbox -->
   <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">

@@ -98,6 +98,9 @@
   var canWebp = (function () { try { return document.createElement("canvas").toDataURL("image/webp").indexOf("data:image/webp") === 0; } catch (e) { return false; } })();
   function webpOf(src) { return src.replace(/\.(jpe?g|png)$/i, ".webp"); }
   if (gGrid) {
+    // Home shows a few highlights (data-limit); gallery.html shows them all.
+    var limit = parseInt(gGrid.getAttribute("data-limit"), 10);
+    if (limit > 0) G = G.slice(0, limit).map(function (g) { return Object.assign({}, g, { featured: false }); });
     if (!G.length) { gGrid.hidden = true; gEmpty.hidden = false; }
     G.forEach(function (g, i) {
       var tsrc = g.thumb || g.src;
@@ -166,7 +169,7 @@
     priceBox.appendChild(document.createTextNode(money.format(p.price)));
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
   }
-  dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+  if (dlg) dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
 
   // ---- "notify me" form -> opens an email to the shop (stage 1 has no server)
   var form = document.getElementById("notify");

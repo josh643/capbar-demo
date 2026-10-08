@@ -5,8 +5,12 @@ footer. No server, no database, no monthly platform fee. Payments are handled en
 **The Cap Bar's own Stripe account** through Stripe Payment Links.
 
 ```
-index.html            home: hero, shop, Our work gallery, experience, Our story, coming-soon
-contact.html          contact page: mission statement (draft), testimonials, contact info + form
+index.html            home: hero, Our Story teaser, collections teaser, experience, gallery highlights, shop CTA, coming-soon
+shop.html             the shop: product grid, colors, sale prices, demo checkout (loads from the admin API, falls back to js/products.js)
+collections.html      all collections, Camo, The 901 (coming soon)
+gallery.html          "Our work" gallery + lightbox (js/gallery.js)
+story.html            Our Story: Marlon's mission statement
+contact.html          contact page: short mission, testimonials, contact info + form
 thanks.html           "Thank you for your order" page (Stripe redirects here after payment)
 css/styles.css        all styling (black / gold / white)
 js/products.js        <- EDIT: settings, products, prices, photos, Stripe links
@@ -133,3 +137,9 @@ npx wrangler pages deploy site --project-name capbar-demo
 
 Then add the custom domain in the Cloudflare dashboard → Pages → capbar-demo → Custom domains,
 and update the Stripe "after payment" redirect to the real domain.
+
+## Pages and old links
+
+The site was split into pages on Oct 8. The header and footer are repeated in each .html file;
+edit all six when a link changes. index.html forwards old one-page links (#shop, #collections, #camo,
+#gallery, #story) to the new pages.

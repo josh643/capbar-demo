@@ -375,3 +375,24 @@ p { text-wrap: pretty; }
   .nav { gap: 16px; }
   .nav a { font-size: 13px; letter-spacing: .01em; }
 }
+
+/* ---------- multi-page (Oct 8): page intros, teasers, footer nav, active link ---------- */
+.page-hero .lead { margin-top: 14px; }
+.page-hero + .section { padding-top: 36px; }
+.teaser-cta { text-align: center; margin: 28px 0 0; }
+.story-body .teaser-cta { text-align: left; margin-top: 26px; }
+.page-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0 18px 72px; }
+.story-page { padding-top: 40px; }
+.story-page h1 { font: 400 clamp(36px, 9vw, 60px)/1 var(--block); text-transform: uppercase; margin-bottom: 18px; }
+.shop-cta { padding-top: 24px; padding-bottom: 24px; }
+.shop-cta .section-head { margin-bottom: 0; }
+.nav a[aria-current="page"] { color: var(--gold-hi); }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; margin: 0 auto 20px; max-width: 560px; }
+.footer-nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; padding: 8px 2px; }
+.footer-nav a:hover { color: var(--gold-hi); }
+@media (min-width: 900px) {
+  .nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--gold); padding-bottom: 4px; }
+  .page-hero + .section { padding-top: 48px; }
+  .story-page { padding-top: 56px; }
+  .story-teaser .story-photo { min-height: 360px; }
+}
