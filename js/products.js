@@ -18,8 +18,10 @@ window.CAPBAR_SETTINGS = {
 
 /* --------------------------------------------------------------------------
    PRODUCTS
-   - price:        EXAMPLE PRICES ONLY (placeholders for the demo). Replace with
-                   The Cap Bar's real prices.
+   - price:        what the customer pays (the sale price when a hat is on sale).
+   - compareAt:    optional regular price. When it is higher than price, the shop
+                   shows it crossed out next to the sale price. Leave it off when
+                   the hat is not on sale.
    - image:        the product's main picture (square, hat on a mannequin when we have one).
                    A color can have its own image; colors WITHOUT one show the main picture
                    with a small "Pictured: ..." note (pictureName says which color that is).
@@ -42,7 +44,8 @@ window.CAPBAR_PRODUCTS = [
     name: "Signature Snapback",
     tag: "House cap",
     description: "Black on black with our gold Cap Bar badge. The one we wear.",
-    price: 35, // EXAMPLE PRICE
+    price: 30,
+    compareAt: 35,
     size: "One size · adjustable snap",
     image: "images/products/signature-black.webp", // render
     colors: [
@@ -54,7 +57,8 @@ window.CAPBAR_PRODUCTS = [
     name: "Custom Trucker",
     tag: "Trucker",
     description: "Foam front, breathable mesh back. Pick your color and your patches, pressed in-house.",
-    price: 30, // EXAMPLE PRICE
+    price: 25,
+    compareAt: 30,
     size: "One size · adjustable snap",
     image: "images/products/trucker-pink-photo.webp",
     pictureName: "Pink",
@@ -70,7 +74,8 @@ window.CAPBAR_PRODUCTS = [
     name: "Ladies Denim Hat",
     tag: "Denim",
     description: "A soft washed-denim dad cap, sized for a ladies fit, in a big range of colors. Add your own design in-house.",
-    price: 32, // EXAMPLE PRICE
+    price: 25,
+    compareAt: 30,
     size: "One size · adjustable strap",
     image: "images/products/denim-medium.webp", // render
     pictureName: "Denim blue",
@@ -110,7 +115,8 @@ window.CAPBAR_PRODUCTS = [
     name: "Vintage Distressed Denim",
     tag: "Distressed",
     description: "Frayed, washed vintage dad cap with a broken-in look. Finish it with your patches.",
-    price: 32, // EXAMPLE PRICE
+    price: 25,
+    compareAt: 30,
     size: "One size · adjustable strap",
     colors: [
       { name: "Blue", swatch: "#5e6b90", image: "images/products/distressed-blue-photo.webp", paymentLink: "", soldOut: false },
@@ -125,10 +131,11 @@ window.CAPBAR_PRODUCTS = [
   },
   {
     id: "design-your-own",
-    name: "Design Your Own Cap",
-    tag: "Custom pattern",
-    description: "Tell us your idea and we design a one-of-one look for you, from scripture patches to full patch stacks, pressed in under 10 minutes.",
-    price: 40, // EXAMPLE PRICE
+    name: "Design Your Own Cap · Men's",
+    tag: "Men's",
+    description: "Men's snapbacks. Tell us your idea and we design a one-of-one look for you, pressed in under 10 minutes.",
+    price: 30,
+    compareAt: 35,
     size: "One size · adjustable snap",
     note: "After checkout we'll reach out to finalize your design.",
     image: "images/products/custom-black-snapback-photo.webp",
@@ -136,7 +143,8 @@ window.CAPBAR_PRODUCTS = [
     colors: [
       { name: "Black snapback", swatch: "#1b1c20", image: "images/products/custom-black-snapback-photo.webp", paymentLink: "", soldOut: false },
       { name: "Olive snapback", swatch: "#4f5a2a", image: "images/products/custom-olive-snapback-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Camo", swatch: "linear-gradient(135deg, #e8e8e8 0 30%, #5b5b5b 30% 55%, #1c1c1c 55% 75%, #9a9a9a 75%)", image: "images/products/custom-camo-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Woodland camo", swatch: "linear-gradient(135deg, #3d4a28 0 40%, #8a7a45 40% 70%, #1c2414 70%)", image: "images/products/camo-woodland-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Gray camo", swatch: "linear-gradient(135deg, #6e7270 0 35%, #d9d9d9 35% 60%, #2a2c2b 60%)", image: "images/products/camo-gray-photo.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
@@ -144,7 +152,8 @@ window.CAPBAR_PRODUCTS = [
     name: "Design Your Own Beanie",
     tag: "Beanie",
     description: "A cuffed knit beanie with your own design embroidered or patched on. Warm, one-of-one, made with you.",
-    price: 30, // EXAMPLE PRICE
+    price: 17,
+    compareAt: 20,
     size: "One size · stretch fit",
     note: "After checkout we'll reach out to finalize your design.",
     image: "images/products/beanie-black.webp", // render
@@ -153,7 +162,7 @@ window.CAPBAR_PRODUCTS = [
       { name: "Red", swatch: "#8a1020", paymentLink: "", soldOut: false },
       { name: "Burgundy", swatch: "#5b0a0a", paymentLink: "", soldOut: false },
       { name: "Light pink", swatch: "#edd1d0", paymentLink: "", soldOut: false },
-      { name: "Dusty pink", swatch: "#cd94ab", paymentLink: "", soldOut: false },
+      { name: "Dusty pink", swatch: "#cd94ab", image: "images/products/beanie-dusty-pink-photo.webp", paymentLink: "", soldOut: false },
       { name: "Orange", swatch: "#f99136", paymentLink: "", soldOut: false },
       { name: "Mustard", swatch: "#c79b49", paymentLink: "", soldOut: false },
       { name: "Yellow", swatch: "#fdc50e", paymentLink: "", soldOut: false },

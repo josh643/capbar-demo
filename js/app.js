@@ -19,6 +19,13 @@
 
   // ---- shop
   var grid = document.getElementById("shop-grid");
+  function priceNode(p) {
+    var node = el("p", { class: "price" });
+    if (p.compareAt && p.compareAt > p.price) node.appendChild(el("s", { text: money.format(p.compareAt) }));
+    node.appendChild(document.createTextNode(money.format(p.price)));
+    return node;
+  }
+
   function imgOf(p, c) { return (c && c.image) || p.image || (p.colors[0] && p.colors[0].image) || ""; }
   function renderShop() {
     if (!grid) return;
@@ -71,7 +78,7 @@
     var card = el("article", { class: "card" }, [
       el("div", { class: "card-media" }, [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null, pictured]),
       el("div", { class: "card-body" }, [
-        el("div", { class: "card-head" }, [el("h3", { text: p.name }), el("p", { class: "price", text: money.format(p.price) })]),
+        el("div", { class: "card-head" }, [el("h3", { text: p.name }), priceNode(p)]),
         el("p", { class: "card-desc", text: p.description }),
         optRow,
         el("p", { class: "card-size", text: p.size || "" }),
@@ -153,7 +160,10 @@
     document.getElementById("co-img").alt = p.name + " in " + c.name;
     document.getElementById("co-name").textContent = p.name;
     document.getElementById("co-variant").textContent = c.name + " · One size";
-    document.getElementById("co-price").textContent = money.format(p.price);
+    var priceBox = document.getElementById("co-price");
+    priceBox.textContent = "";
+    if (p.compareAt && p.compareAt > p.price) priceBox.appendChild(el("s", { text: money.format(p.compareAt) }));
+    priceBox.appendChild(document.createTextNode(money.format(p.price)));
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
   }
   dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
