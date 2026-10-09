@@ -586,3 +586,10 @@ html.cart-is-open { overflow: hidden; }
 .story-photo-store { aspect-ratio: 1183 / 1217; }
 .story-photo-store img { object-fit: contain; object-position: 50% 50%; }
 @media (min-width: 900px) { .story-photo-store { aspect-ratio: auto; } .story-photo-store img { object-position: 50% 50%; } }
+
+/* Oct 9 (v13): show the store photo whole (no crop) on every mission/story spot */
+.story-photo:has(img[src*="mission-store-v13"]) { aspect-ratio: 1183 / 1217; background: #0d0b08; }
+.story-photo img[src*="mission-store-v13"] { object-fit: contain; object-position: 50% 50%; }
+@media (min-width: 900px) {
+  .story-photo:has(img[src*="mission-store-v13"]) { aspect-ratio: auto; }
+}
