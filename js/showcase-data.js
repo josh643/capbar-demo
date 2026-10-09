@@ -220,6 +220,62 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Hot pink distressed cap on a mannequin with a Booked Busy Blessed patch"
   },
   {
+   "id": "black-olive-snapbacks",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Black and olive snapbacks",
+   "alt": "Black snapback with a Don't Quit, Never Give Up patch beside an olive snapback with a Positive Mind patch"
+  },
+  {
+   "id": "scripture-camo-caps",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Scripture camo caps",
+   "alt": "Four gray camouflage caps with faith, scripture and positive message patches"
+  },
+  {
+   "id": "queen-bling-pink-cap",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Being the Queen Ain't Easy cap",
+   "alt": "Hot pink distressed cap on a mannequin with a gold Being the Queen Ain't Easy patch and a bee"
+  },
+  {
+   "id": "queen-bling-black-trucker",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Queen trucker",
+   "alt": "Dark trucker on a mannequin with a Queen script patch, roses, a bee and a leopard lightning bolt"
+  },
+  {
+   "id": "pretty-spoiled-pink-trucker-1",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Main Character Energy trucker",
+   "alt": "Pink and white trucker on a mannequin with Main Character Energy, Pink, Limited Edition and Pretty Girls patches"
+  },
+  {
+   "id": "pretty-spoiled-pink-trucker-2",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Very Demure trucker",
+   "alt": "Pink and white trucker on a mannequin with Very Demure, Somebody's Problem and I'm Literally Just a Girl patches"
+  },
+  {
+   "id": "booked-busy-blessed-side",
+   "base": "images/gallery/",
+   "w": 800,
+   "h": 800,
+   "caption": "Certified HustlHER",
+   "alt": "Side view of a hot pink Booked Busy Blessed cap on a mannequin with a Certified HustlHER patch"
+  },
+  {
    "id": "expensive-and-difficult-caps",
    "w": 720,
    "h": 346,

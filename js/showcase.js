@@ -4,6 +4,11 @@
   "use strict";
   var D = window.CAPBAR_SHOWCASE || { collections: [], gallery: [] };
   var BASE = "images/showcase/";
+  function imagePath(p, size, ext) {
+    var base = p.base || BASE;
+    var suffix = size === "small" ? (p.base ? "-thumb" : "-sm") : "";
+    return base + p.id + suffix + "." + ext;
+  }
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
     if (attrs) Object.keys(attrs).forEach(function (k) {
@@ -15,8 +20,8 @@
   }
   function pic(p, eager) {
     return el("picture", null, [
-      el("source", { type: "image/webp", srcset: BASE + p.id + "-sm.webp" }),
-      el("img", { src: BASE + p.id + "-sm.jpg", alt: p.alt, width: p.w, height: p.h, loading: eager ? "eager" : "lazy", decoding: "async" }),
+      el("source", { type: "image/webp", srcset: imagePath(p, "small", "webp") }),
+      el("img", { src: imagePath(p, "small", "jpg"), alt: p.alt, width: p.w, height: p.h, loading: eager ? "eager" : "lazy", decoding: "async" }),
     ]);
   }
 
@@ -26,7 +31,7 @@
   function show(i) {
     at = (i + group.length) % group.length;
     var p = group[at], im = document.getElementById("lb-img");
-    im.src = BASE + p.id + (canWebp ? ".webp" : ".jpg"); im.alt = p.alt;
+    im.src = imagePath(p, "full", canWebp ? "webp" : "jpg"); im.alt = p.alt;
     document.getElementById("lb-cap").textContent = p.caption + (group.length > 1 ? "  ·  " + (at + 1) + " / " + group.length : "");
     if (!lb.open) { if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); }
   }
