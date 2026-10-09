@@ -61,7 +61,15 @@ _px = {}
 def pixels(path):
     if path not in _px:
         im = Image.open(path).convert("RGB"); im.thumbnail((200, 200))
-        _px[path] = srgb_to_lab(np.asarray(im, dtype=np.float64).reshape(-1, 3) / 255)
+        arr = np.asarray(im, dtype=np.float64)
+        rgb = arr.reshape(-1, 3)
+        # cut-out photos sit on pure black: that backdrop (and its soft edge) is not a black hat
+        bg = arr.max(2) <= 12
+        if bg.mean() > 0.08:
+            from PIL import ImageFilter
+            halo = np.asarray(Image.fromarray((bg * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(7))) > 0
+            rgb = rgb[~halo.reshape(-1)]
+        _px[path] = srgb_to_lab(rgb / 255)
     return _px[path]
 
 def score(path, sw):

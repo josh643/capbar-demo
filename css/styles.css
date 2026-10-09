@@ -139,7 +139,7 @@ p { text-wrap: pretty; }
 .card-body .btn { margin-top: auto; }
 .card-note { margin: 0; font-size: 13px; color: var(--gold-hi); }
 /* A color with no picture of its own: neutral (grayed) product picture + that color's swatch chip. */
-.card-media.is-neutral img { filter: grayscale(1) contrast(.3) brightness(1.7) blur(2px); opacity: .32; }
+.card-media.is-neutral img { filter: grayscale(1) contrast(.3) brightness(1.7) blur(7px); opacity: .32; }
 .color-chip { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(10,9,8,.82); border: 1px solid rgba(212,175,90,.5); color: #fff; font: 700 15px/1.2 var(--sans); white-space: nowrap; }
 .color-chip[hidden] { display: none; }
 .color-chip i { grid-row: span 2; width: 38px; height: 38px; border-radius: 50%; background: var(--sw); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.4); }
@@ -470,3 +470,28 @@ html.cart-is-open { overflow: hidden; }
 .cart-foot { gap: 8px; padding-top: 14px; }
 .cart-foot .btn { min-height: 46px; }
 @media (max-height: 700px) { .cart-fine { display: none; } }
+
+/* Oct 8 (v9): owner photo at 348 South Main for the mission, location section, address everywhere */
+.story-photo picture { display: block; width: 100%; height: 100%; }
+.story-photo img[src*="marlon-348"] { object-position: 55% 44%; }
+@media (min-width: 900px) { .story-photo img[src*="marlon-348"] { object-position: 58% 40%; } }
+.visit-loc { display: grid; padding: 0; overflow: hidden; text-align: left; }
+.visit-photo { margin: 0; background: #000; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid rgba(212,175,90,.3); }
+.visit-photo picture, .visit-photo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; } /* photo has a black background: show the whole cap */
+.visit-body { padding: 30px 22px 32px; }
+.visit-body h2 { margin-bottom: 14px; }
+.visit-address { font: 400 clamp(24px, 6.4vw, 34px)/1.15 var(--block); letter-spacing: .02em; color: var(--white); font-style: normal; text-transform: uppercase; margin: 0 0 22px; }
+.visit-actions { margin: 0; }
+.visit-actions .btn svg { margin-right: 8px; vertical-align: -3px; }
+.visit-loc .visit-alt { margin-top: 20px; }
+@media (min-width: 900px) {
+  .visit-loc { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .visit-photo { aspect-ratio: auto; min-height: 440px; border-bottom: 0; border-right: 1px solid rgba(212,175,90,.3); position: relative; }
+  .visit-photo picture { position: absolute; inset: 0; }
+  .visit-body { padding: 52px; align-self: center; }
+}
+.ci-address { font-style: normal; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+.footer-address { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 0 18px; font-size: 15px; }
+.footer-address svg { color: var(--gold); flex: none; }
+.footer-address a { color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(212,175,90,.5); }
+.footer-address a:hover { color: var(--gold-hi); }

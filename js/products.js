@@ -63,11 +63,11 @@ window.CAPBAR_PRODUCTS = [
     price: 25,
     compareAt: 30,
     size: "One size · adjustable snap",
-    image: "images/products/trucker-pink-photo.webp",
-    pictureName: "Pink",
+    image: "images/products/trucker-royal-blue-peace-photo.webp", // owner's pick for this section (Oct 8)
+    pictureName: "Royal blue",
     colors: [
+      { name: "Royal blue", swatch: "#1f5fd0", image: "images/products/trucker-royal-blue-peace-photo.webp", paymentLink: "", soldOut: false },
       { name: "Pink", swatch: "#f2b8cc", image: "images/products/trucker-pink-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Royal blue", swatch: "#1f5fd0", image: "images/products/trucker-royal-blue-photo.webp", paymentLink: "", soldOut: false },
       { name: "Light blue", swatch: "#7fb0e6", image: "images/products/trucker-light-blue-photo.webp", paymentLink: "", soldOut: false },
       { name: "Black", swatch: "#151515", image: "images/products/trucker-black-photo.webp", paymentLink: "", soldOut: false },
     ],
@@ -122,15 +122,17 @@ window.CAPBAR_PRODUCTS = [
     compareAt: 30,
     size: "One size · adjustable strap",
     colors: [
-      { name: "Blue", swatch: "#5e6b90", image: "images/products/distressed-blue-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Khaki", swatch: "#b49a7e", image: "images/products/distressed-khaki-photo.webp", paymentLink: "", soldOut: false },
+      // Blue, Khaki, Black / gray and Navy: their photos had "Black ..." patches, taken off at the owner's
+      // request (Oct 8). They show the swatch chip until new photos come in.
       { name: "Green", swatch: "#1f7a62", image: "images/products/distressed-green-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Black / gray", swatch: "#474749", image: "images/products/distressed-black-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Navy", swatch: "#1d2235", image: "images/products/distressed-navy-photo.webp", paymentLink: "", soldOut: false },
       { name: "Hot pink", swatch: "#d0306f", image: "images/products/distressed-hot-pink-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Blue", swatch: "#5e6b90", paymentLink: "", soldOut: false },
+      { name: "Khaki", swatch: "#b49a7e", paymentLink: "", soldOut: false },
+      { name: "Black / gray", swatch: "#474749", paymentLink: "", soldOut: false },
+      { name: "Navy", swatch: "#1d2235", paymentLink: "", soldOut: false },
     ],
-    image: "images/products/distressed-blue-photo.webp",
-    pictureName: "Blue",
+    image: "images/products/distressed-green-photo.webp",
+    pictureName: "Green",
   },
   {
     id: "design-your-own",
