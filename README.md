@@ -1,6 +1,6 @@
 # The Cap Bar: website (stage 1 demo)
 
-Static, mobile-first site: hero, shop, "The Cap Bar experience", "Location coming soon" + notify form,
+Static, mobile-first site: hero, shop, "The Cap Bar experience", "Location coming soon" card (348 South Main),
 footer. No server, no database, no monthly platform fee. Payments are handled entirely by
 **The Cap Bar's own Stripe account** through Stripe Payment Links.
 
@@ -36,14 +36,14 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | Item | Status |
 |---|---|
 | Prices ($30–$40) | **Example prices only**. Replace in `js/products.js`. |
-| Product pictures | **Real photos** from the owner where we have them: Custom Trucker (all 4; main picture is the owner's Peace trucker, IMG_6799), Vintage Distressed Denim Green + Hot pink, Design Your Own Cap, Dusty pink beanie. Ladies Denim and the other beanie colors use the 3D mockup tinted per color (`tools/tint_colors.py`); Signature Snapback is a render. Vintage Distressed Blue, Khaki, Black / gray and Navy have **no picture** (their photos had "Black ..." patches, off at the owner's request, Oct 8) and show a swatch chip. Check with `python3 tools/check_color_images.py --api https://admin.capbarexperience.com`. |
+| Product pictures | **Real photos** from the owner where we have them: Custom Trucker Royal blue, Light blue, Black, Pink (main picture is the owner's Peace trucker, IMG_6799), Design Your Own Cap, Dusty pink beanie (main beanie picture). Ladies Denim and the other beanie colors use the 3D mockup tinted per color (`tools/tint_colors.py`); Signature Snapback is a render. **No picture yet** (grayed-out picture + swatch chip): all 5 Vintage Distressed Denim colors (old photos had "Black ..." patches or were colors he no longer carries; the green photo is only the grayed-out base) and the 8 new trucker colors (Cranberry, White, Orange, Olive green, Gray, Brown, Khaki, Blue Jean). Check with `python3 tools/check_color_images.py --api https://admin.capbarexperience.com`. |
 | Product names / descriptions | Drafts based on the Facebook page and the client's feedback (signature snapback, truckers, ladies denim, vintage distressed denim, design-your-own cap and beanie). |
 | Logo | Our round badge with the cap cut out of the client's new logo art. If the client has the original high-res/vector file of that cap, re-run `tools/cut_cap.py` + `tools/make_logo.py` or drop in a finished logo. |
 | "Our work" gallery | **17 real photos** from the owner. Off the site: profanity patches (IMG_6924, 6802) and, at the owner's request (Oct 8), every photo whose patch says "Black" (Black Queen, Black Beautiful Blessed, Unapologetically Black, Black yesterday/today/everyday). Baked-in "... Collection" captions were cropped off; captions describe the hat. |
 | Collections section | The owner's 6 collection images with the collection names removed from the pictures (owner's request, Oct 8; `tools/clean_collection_text.py`). The "Black Queen" patch on the Boss Lady image is blurred. |
-| Location | 348 South Main Street, Memphis, TN 38103 (owner, Oct 8): home "Visit us" section, contact page, every footer, LocalBusiness JSON-LD on home + contact. |
-| Colors (denim, beanie, distressed) | Read off supplier screenshots the owner sent as a color reference (supplier images are NOT on the site). Confirm names/stock. |
-| Mission statement | **Owner's own words** (Oct 8): full text in the Our Story section of index.html; short version on the contact page. |
+| Location | 348 South Main Street, Memphis, TN 38103 (owner, Oct 8), coming soon: home "Coming soon / Our new location" card with the owner's photo at the door (IMG_6837), contact page, every footer, LocalBusiness JSON-LD on home + contact. Ships + local pickup (home, shop, contact). |
+| Colors | Custom Trucker (12) and Vintage Distressed Denim (Black, Charcoal, Khaki, Blue, Cranberry) are the **owner's own lists** (Oct 8). Ladies denim + beanie colors were read off supplier screenshots (supplier images are NOT on the site); beanies: owner ordered more colors, "use pink for now" (dusty pink photo is the main picture). |
+| Mission statement | **Owner's own words** (Oct 8): full text in the Our Story section of index.html; short version on the contact page. Mission picture: the Love bus trucker on a mannequin (IMG_6797), per owner. |
 | Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
 | Contact form | Opens the visitor's email app (no server in stage 1). |
 | Checkout | Demo pop-up (`demoMode: true`). Goes live once Payment Links are pasted in. |

@@ -495,3 +495,13 @@ html.cart-is-open { overflow: hidden; }
 .footer-address svg { color: var(--gold); flex: none; }
 .footer-address a { color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(212,175,90,.5); }
 .footer-address a:hover { color: var(--gold-hi); }
+
+/* v10 (Oct 8, owner): mannequin cap photo on Our Mission, owner's photo on the location (coming soon) card */
+.story-photo-cap { background: #000; }
+.story-photo-cap img { object-fit: contain !important; object-position: 50% 50% !important; }
+.visit-photo img[src*="marlon-348"] { object-fit: cover; object-position: 55% 42%; }
+@media (max-width: 899px) { .visit-photo:has(img[src*="marlon-348"]) { aspect-ratio: 4 / 4.2; } }
+.visit-ship { color: var(--muted); margin: 0 0 20px; }
+.visit-ship strong { color: var(--white); }
+.shop-ship { color: var(--muted); font-size: 15px; margin: 10px auto 0; }
+.shop-ship a { color: var(--gold, #d4af5a); }

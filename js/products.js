@@ -66,10 +66,20 @@ window.CAPBAR_PRODUCTS = [
     image: "images/products/trucker-royal-blue-peace-photo.webp", // owner's pick for this section (Oct 8)
     pictureName: "Royal blue",
     colors: [
+      // Owner's color list (Oct 8): light blue, royal blue, black, pink, cranberry, white, orange,
+      // olive green, gray, brown, khaki, Blue Jean. No photos yet for the last 8: swatch chip until they come in.
       { name: "Royal blue", swatch: "#1f5fd0", image: "images/products/trucker-royal-blue-peace-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Pink", swatch: "#f2b8cc", image: "images/products/trucker-pink-photo.webp", paymentLink: "", soldOut: false },
       { name: "Light blue", swatch: "#7fb0e6", image: "images/products/trucker-light-blue-photo.webp", paymentLink: "", soldOut: false },
       { name: "Black", swatch: "#151515", image: "images/products/trucker-black-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Pink", swatch: "#f2b8cc", image: "images/products/trucker-pink-photo.webp", paymentLink: "", soldOut: false },
+      { name: "Cranberry", swatch: "#8c1c3a", paymentLink: "", soldOut: false },
+      { name: "White", swatch: "#f4f3ee", paymentLink: "", soldOut: false },
+      { name: "Orange", swatch: "#f07a22", paymentLink: "", soldOut: false },
+      { name: "Olive green", swatch: "#5f6b3a", paymentLink: "", soldOut: false },
+      { name: "Gray", swatch: "#8a8d91", paymentLink: "", soldOut: false },
+      { name: "Brown", swatch: "#6b4a32", paymentLink: "", soldOut: false },
+      { name: "Khaki", swatch: "#c3b091", paymentLink: "", soldOut: false },
+      { name: "Blue Jean", swatch: "#5a7aa6", paymentLink: "", soldOut: false },
     ],
   },
   {
@@ -122,17 +132,17 @@ window.CAPBAR_PRODUCTS = [
     compareAt: 30,
     size: "One size · adjustable strap",
     colors: [
-      // Blue, Khaki, Black / gray and Navy: their photos had "Black ..." patches, taken off at the owner's
-      // request (Oct 8). They show the swatch chip until new photos come in.
-      { name: "Green", swatch: "#1f7a62", image: "images/products/distressed-green-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Hot pink", swatch: "#d0306f", image: "images/products/distressed-hot-pink-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Blue", swatch: "#5e6b90", paymentLink: "", soldOut: false },
+      // Owner's color list (Oct 8): Black, Charcoal, Khaki, Blue, Cranberry. No photos of these yet
+      // (the old photos had "Black ..." patches or were colors he no longer carries), so every color
+      // shows the grayed-out picture with its swatch chip until new photos come in.
+      { name: "Black", swatch: "#2b2b2e", paymentLink: "", soldOut: false },
+      { name: "Charcoal", swatch: "#4a4c50", paymentLink: "", soldOut: false },
       { name: "Khaki", swatch: "#b49a7e", paymentLink: "", soldOut: false },
-      { name: "Black / gray", swatch: "#474749", paymentLink: "", soldOut: false },
-      { name: "Navy", swatch: "#1d2235", paymentLink: "", soldOut: false },
+      { name: "Blue", swatch: "#5e6b90", paymentLink: "", soldOut: false },
+      { name: "Cranberry", swatch: "#7e2236", paymentLink: "", soldOut: false },
     ],
-    image: "images/products/distressed-green-photo.webp",
-    pictureName: "Green",
+    image: "images/products/distressed-green-photo.webp", // used ONLY as the grayed-out neutral base (Green is not offered)
+    pictureName: "(none: placeholder base only)",
   },
   {
     id: "design-your-own",
@@ -161,13 +171,13 @@ window.CAPBAR_PRODUCTS = [
     compareAt: 20,
     size: "One size · stretch fit",
     note: "After checkout we'll reach out to finalize your design.",
-    image: "images/products/tint-beanie-black.webp", // 3D mockup tinted per color
-    pictureName: "Black",
+    image: "images/products/beanie-dusty-pink-photo.webp", // owner (Oct 8): "use pink for now"
+    pictureName: "Dusty pink",
     colors: [
+      { name: "Dusty pink", swatch: "#cd94ab", image: "images/products/beanie-dusty-pink-photo.webp", paymentLink: "", soldOut: false },
       { name: "Red", swatch: "#8a1020", image: "images/products/tint-beanie-red.webp", paymentLink: "", soldOut: false },
       { name: "Burgundy", swatch: "#5b0a0a", image: "images/products/tint-beanie-burgundy.webp", paymentLink: "", soldOut: false },
       { name: "Light pink", swatch: "#edd1d0", image: "images/products/tint-beanie-light-pink.webp", paymentLink: "", soldOut: false },
-      { name: "Dusty pink", swatch: "#cd94ab", image: "images/products/beanie-dusty-pink-photo.webp", paymentLink: "", soldOut: false },
       { name: "Orange", swatch: "#f99136", image: "images/products/tint-beanie-orange.webp", paymentLink: "", soldOut: false },
       { name: "Mustard", swatch: "#c79b49", image: "images/products/tint-beanie-mustard.webp", paymentLink: "", soldOut: false },
       { name: "Yellow", swatch: "#fdc50e", image: "images/products/tint-beanie-yellow.webp", paymentLink: "", soldOut: false },

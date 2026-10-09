@@ -86,6 +86,15 @@ def score(path, sw):
         per.append(float(np.percentile(d, 4)))
     return float(np.mean(per)) if per else 1e9
 
+# Two-tone hats: (product, color) -> other color names that are ALSO really on that hat, so they don't
+# count as "looks more like". The own color must still be found (dE limit).
+TWO_TONE = {
+    # Peace trucker (owner photo IMG_6799): white front panel, royal blue bill + mesh. The white panel (and the
+    # mannequin head) reads white / warm cream / shaded gray in the shop light, so the light-neutral trucker colors
+    # added Oct 8 (White, Khaki, Gray) all find a patch in it. Royal blue must still be found (dE limit).
+    ("custom-trucker", "Royal blue"): {"White", "Khaki", "Gray"},
+}
+
 def main():
     api = sys.argv[sys.argv.index("--api") + 1] if "--api" in sys.argv else None
     products = load_products()
@@ -114,7 +123,8 @@ def main():
                         status, note = "FAIL", "same picture as " + used[own]
                     used.setdefault(own, c["name"])
                     s_own = score(f, c["swatch"])
-                    others = sorted((score(f, o["swatch"]), o["name"]) for o in p["colors"] if o["name"] != c["name"] and hexes(o["swatch"]))
+                    others = sorted((score(f, o["swatch"]), o["name"]) for o in p["colors"] if o["name"] != c["name"] and hexes(o["swatch"])
+                                    and o["name"] not in TWO_TONE.get((p["id"], c["name"]), ()))
                     note = note or "dE %.1f" % s_own
                     limit = 15 if "/tint-" in own else 30  # tints are calibrated to the swatch; real photos vary with light
                     if s_own > limit:
