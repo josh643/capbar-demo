@@ -68,6 +68,17 @@ PHOTOS = {
     "faith-over-fear-camo":     ("gallery/trinity-camo-caps.jpg", None),
     "grizz-901-blue-trucker":   ("collections/the-901.jpg", (0.012, 0.07, 0.488, 0.93)),   # owner's 901 Grizz picture, two hats side by side
     "grizz-901-dark-trucker":   ("collections/the-901.jpg", (0.515, 0.075, 0.99, 0.93)),
+    # Oct 9 (owner): "You can add those 7 pics" + new Black Girls Magic Collection
+    "black-girl-magic-cap":     ("IMG_6965.jpeg", (0, 0.18, 1, 0.8)),
+    "black-girl-magic-side":    ("IMG_6966.jpeg", (0, 0.1, 1, 0.75)),
+    "black-girl-magic-camo":    ("IMG_7109.jpeg", (0, 0.08, 1, 0.8)),
+    "unapologetically-pink-cap": ("IMG_6954.jpeg", (0, 0.1, 1, 0.8)),
+    "black-queen-cap":          ("IMG_6937.jpeg", (0, 0.1, 1, 0.8)),
+    "black-queen-side":         ("IMG_6939.jpeg", (0, 0.1, 1, 0.8)),
+    "black-beautiful-blessed-trucker": ("IMG_7092.jpeg", (0.1, 0.25, 0.9, 0.82)),
+    "black-beautiful-blessed-cap": ("IMG_7106.jpeg", None),
+    "black-and-dope-caps":      ("IMG_6895.jpeg", (0, 0.18, 1, 0.78)),
+    "black-everyday-caps":      ("IMG_6896.jpeg", (0, 0.3, 1, 0.82)),
 }
 
 def load(src):

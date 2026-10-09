@@ -581,3 +581,8 @@ html.cart-is-open { overflow: hidden; }
 .lightbox figcaption { white-space: pre-wrap; }
 .collage-coll.collage-few { column-count: 2; max-width: 820px; }
 .lightbox::backdrop { background: rgba(0,0,0,.94); }
+
+/* Oct 9 (owner): store picture on Our Mission. Show the whole picture (sign + rug), no cropping */
+.story-photo-store { aspect-ratio: 1183 / 1217; }
+.story-photo-store img { object-fit: contain; object-position: 50% 50%; }
+@media (min-width: 900px) { .story-photo-store { aspect-ratio: auto; } .story-photo-store img { object-position: 50% 50%; } }

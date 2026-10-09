@@ -2,8 +2,8 @@
    SHOWCASE PHOTOS (Oct 8, 2026): collections + gallery collage.
    Each photo "id" is a file set in images/showcase/: <id>.jpg/.webp (full size, for the viewer)
    and <id>-sm.jpg/.webp (720px wide, for the grids). Build them with tools/build_showcase_images.py.
-   Collections and names are the owner's own (in his order). Photos with patch wording the owner
-   asked us to leave off, or with cuss words, are not on the site.
+   Collections and names are the owner's own (in his order). Photos with cuss words are not on the site.
+   Oct 9: owner OK'd the "Black" patch photos; added Black Girls Magic and The Trinity collections.
    ========================================================================== */
 window.CAPBAR_SHOWCASE = {
  "collections": [
@@ -190,6 +190,132 @@ window.CAPBAR_SHOWCASE = {
    ]
   },
   {
+   "id": "black-girls-magic",
+   "name": "Black Girls Magic Collection",
+   "blurb": "Black Girl Magic, Black Queen and Black Beautiful Blessed patches.",
+   "photos": [
+    {
+     "id": "black-girl-magic-cap",
+     "w": 720,
+     "h": 558,
+     "caption": "Black Girl Magic",
+     "alt": "Burgundy distressed cap on a mannequin with a Black Girl Magic patch, lips and an afro girl patch"
+    },
+    {
+     "id": "black-girl-magic-camo",
+     "w": 720,
+     "h": 691,
+     "caption": "Black Girl Magic camo",
+     "alt": "Gray camo trucker on a mannequin with a Black Girl Magic queen patch and a High Maintenance side patch"
+    },
+    {
+     "id": "unapologetically-pink-cap",
+     "w": 720,
+     "h": 672,
+     "caption": "Unapologetically Pretty",
+     "alt": "Hot pink distressed cap on a mannequin with Unapologetically Pretty, Black and Educated and Black Girl Magic patches"
+    },
+    {
+     "id": "black-queen-cap",
+     "w": 720,
+     "h": 672,
+     "caption": "Black Queen Nutrition Facts",
+     "alt": "Navy distressed cap on a mannequin with a red and white Black Queen Nutrition Facts patch"
+    },
+    {
+     "id": "black-beautiful-blessed-trucker",
+     "w": 720,
+     "h": 684,
+     "caption": "Black Beautiful Blessed trucker",
+     "alt": "Burgundy trucker on a mannequin with a Black Beautiful Blessed patch"
+    },
+    {
+     "id": "black-beautiful-blessed-cap",
+     "w": 720,
+     "h": 700,
+     "caption": "Black Beautiful Blessed",
+     "alt": "Charcoal distressed cap with a Black Beautiful Blessed patch and a Magic afro girl side patch"
+    },
+    {
+     "id": "black-and-dope-caps",
+     "w": 720,
+     "h": 576,
+     "caption": "Black and Dope",
+     "alt": "Olive distressed cap with a Black and Dope patch next to a charcoal Black Beautiful Blessed cap"
+    },
+    {
+     "id": "black-everyday-caps",
+     "w": 720,
+     "h": 499,
+     "caption": "Black yesterday, today, everyday",
+     "alt": "Khaki distressed cap with a Black yesterday, today, everyday patch next to an olive Black and Dope cap"
+    },
+    {
+     "id": "black-queen-side",
+     "w": 720,
+     "h": 672,
+     "caption": "Black Queen, side view",
+     "alt": "Navy distressed cap from the side with a Black Queen Nutrition Facts patch and red lips patch"
+    },
+    {
+     "id": "black-girl-magic-side",
+     "w": 720,
+     "h": 609,
+     "caption": "Black Girl Magic, side view",
+     "alt": "Burgundy distressed cap from the side with a Black Girl Magic patch and a lips patch"
+    }
+   ]
+  },
+  {
+   "id": "trinity",
+   "name": "The Trinity Collection",
+   "blurb": "Faith-based camo caps: Faith, Chosen, Child of God, I Will Trust and more.",
+   "photos": [
+    {
+     "id": "faith-camo-caps",
+     "w": 720,
+     "h": 768,
+     "caption": "Faith camo caps",
+     "alt": "Four gray camo caps on mannequins with Faith, Chosen, Child of God, Stay Positive and Love Never Fails patches"
+    },
+    {
+     "id": "chosen-camo-caps",
+     "w": 720,
+     "h": 643,
+     "caption": "Faith and Chosen camo caps",
+     "alt": "Two gray camo caps from the side with Faith, Chosen and Jesus patches"
+    },
+    {
+     "id": "stay-positive-camo-caps",
+     "w": 720,
+     "h": 576,
+     "caption": "Stay Positive and Love Never Fails",
+     "alt": "Two gray camo caps with Stay Positive Work Hard Make It Happen, Love Never Fails and Loved patches"
+    },
+    {
+     "id": "loved-camo-caps",
+     "w": 720,
+     "h": 605,
+     "caption": "Loved and Believe camo caps",
+     "alt": "Two gray camo caps from the side with Loved and Believe patches"
+    },
+    {
+     "id": "i-will-trust-camo",
+     "w": 720,
+     "h": 720,
+     "caption": "I Will Trust camo cap",
+     "alt": "Gray camo cap with I Will Trust and Redeemed patches"
+    },
+    {
+     "id": "faith-over-fear-camo",
+     "w": 720,
+     "h": 960,
+     "caption": "Faith Over Fear camo caps",
+     "alt": "Gray camo caps with I Will Trust and Faith Over Fear patches"
+    }
+   ]
+  },
+  {
    "id": "grizz-901",
    "name": "901 Grizz",
    "blurb": "Memphis pride: 901 Grizz truckers.",
@@ -234,6 +360,13 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Hot pink distressed cap from the side with Booked Busy Blessed and Certified HustlHER patches"
   },
   {
+   "id": "black-girl-magic-cap",
+   "w": 720,
+   "h": 558,
+   "caption": "Black Girl Magic",
+   "alt": "Burgundy distressed cap on a mannequin with a Black Girl Magic patch, lips and an afro girl patch"
+  },
+  {
    "id": "just-the-tip-trucker",
    "w": 720,
    "h": 768,
@@ -253,6 +386,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 890,
    "caption": "Queen trucker",
    "alt": "Dark trucker on a mannequin with a white Queen script patch, a crown, roses, a gold bee and a leopard lightning bolt"
+  },
+  {
+   "id": "black-girl-magic-camo",
+   "w": 720,
+   "h": 691,
+   "caption": "Black Girl Magic camo",
+   "alt": "Gray camo trucker on a mannequin with a Black Girl Magic queen patch and a High Maintenance side patch"
   },
   {
    "id": "love-bus-trucker",
@@ -276,6 +416,13 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Pink and white trucker with Main Character, Pink, Limited Edition and All the Pretty Girls Walk Like This patches"
   },
   {
+   "id": "unapologetically-pink-cap",
+   "w": 720,
+   "h": 672,
+   "caption": "Unapologetically Pretty",
+   "alt": "Hot pink distressed cap on a mannequin with Unapologetically Pretty, Black and Educated and Black Girl Magic patches"
+  },
+  {
    "id": "queen-aint-easy-cap",
    "w": 720,
    "h": 990,
@@ -295,6 +442,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 889,
    "caption": "Peace trucker",
    "alt": "Royal blue and white trucker on a mannequin with a colorful Peace patch"
+  },
+  {
+   "id": "black-queen-cap",
+   "w": 720,
+   "h": 672,
+   "caption": "Black Queen Nutrition Facts",
+   "alt": "Navy distressed cap on a mannequin with a red and white Black Queen Nutrition Facts patch"
   },
   {
    "id": "very-demure-trucker",
@@ -318,6 +472,13 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Green distressed cap on a mannequin with a Boss Lady OMG patch"
   },
   {
+   "id": "black-beautiful-blessed-trucker",
+   "w": 720,
+   "h": 684,
+   "caption": "Black Beautiful Blessed trucker",
+   "alt": "Burgundy trucker on a mannequin with a Black Beautiful Blessed patch"
+  },
+  {
    "id": "sun-moon-peace-trucker",
    "w": 720,
    "h": 930,
@@ -337,6 +498,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 960,
    "caption": "Beach patch truckers",
    "alt": "Light blue and white truckers with beach and summer patches"
+  },
+  {
+   "id": "black-beautiful-blessed-cap",
+   "w": 720,
+   "h": 700,
+   "caption": "Black Beautiful Blessed",
+   "alt": "Charcoal distressed cap with a Black Beautiful Blessed patch and a Magic afro girl side patch"
   },
   {
    "id": "certified-good-girl-beanie",
@@ -360,6 +528,13 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Royal blue and white trucker on a mannequin with a flowered Love patch and a paisley heart"
   },
   {
+   "id": "black-and-dope-caps",
+   "w": 720,
+   "h": 576,
+   "caption": "Black and Dope",
+   "alt": "Olive distressed cap with a Black and Dope patch next to a charcoal Black Beautiful Blessed cap"
+  },
+  {
    "id": "excuse-me-trucker",
    "w": 720,
    "h": 960,
@@ -381,6 +556,13 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Dark trucker with a blue and gold 901 Grizz patch"
   },
   {
+   "id": "black-everyday-caps",
+   "w": 720,
+   "h": 499,
+   "caption": "Black yesterday, today, everyday",
+   "alt": "Khaki distressed cap with a Black yesterday, today, everyday patch next to an olive Black and Dope cap"
+  },
+  {
    "id": "no-bad-vibes-truckers",
    "w": 720,
    "h": 960,
@@ -400,6 +582,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 771,
    "caption": "Spoiled by My Blue Collar Man",
    "alt": "Light blue and white trucker with a pink Spoiled by My Blue Collar Man patch"
+  },
+  {
+   "id": "black-queen-side",
+   "w": 720,
+   "h": 672,
+   "caption": "Black Queen, side view",
+   "alt": "Navy distressed cap from the side with a Black Queen Nutrition Facts patch and red lips patch"
   },
   {
    "id": "peace-love-truckers",
