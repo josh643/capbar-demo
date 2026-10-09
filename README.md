@@ -1,4 +1,23 @@
-# The Cap Bar: website (stage 1 demo)
+# The Cap Bar: website (showcase for the store)
+
+**Oct 8, 2026: showcase version.** At the owner's request the site is a showcase for the store, with no
+online sales for now. "Location coming soon" (348 South Main Street, Memphis) is the theme of the home
+page. The site has his five collections plus 901 Grizz, a collage gallery, Our Story and Contact.
+
+- **Bring the online store back:** everything is saved in git tag `store-v1` (cart, prices, admin API,
+  Stripe Payment Links). `js/products.js`, `js/cart.js`, `js/app.js` and the admin are still here, just not
+  loaded by the public pages. `shop.html` / `thanks.html` now forward to the collections / home page
+  (plus `_redirects`).
+- **Photos:** `images/showcase/` is built from the owner's originals by `tools/build_showcase_images.py`
+  (EXIF rotation, crops, collection labels cut off, no camera/location data, 1600px + 720px .jpg/.webp).
+- **Which photo goes where:** `js/showcase-data.js` (collections in the owner's order, names exactly as he
+  wrote them; gallery order). Pages render it with `js/showcase.js` (collage + photo viewer).
+- Settings (email, Facebook): `js/settings.js`.
+
+---
+
+## Store version notes (store-v1, kept for the upgrade)
+
 
 Static, mobile-first site: hero, shop, "The Cap Bar experience", "Location coming soon" card (348 South Main),
 footer. No server, no database, no monthly platform fee. Payments are handled entirely by

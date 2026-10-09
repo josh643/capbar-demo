@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Our work | The Cap Bar</title>
-  <meta name="description" content="Real custom hats designed and pressed at The Cap Bar.">
+  <title>Gallery | The Cap Bar</title>
+  <meta name="description" content="A collage of custom hats designed and pressed at The Cap Bar in Memphis. Location coming soon to 348 South Main Street.">
   <meta name="theme-color" content="#0a0a0a">
-  <meta property="og:title" content="Our work | The Cap Bar">
-  <meta property="og:description" content="It's not just a custom hat shop, it's an experience. Shop custom truckers and snapbacks online.">
+  <meta property="og:title" content="Gallery | The Cap Bar">
+  <meta property="og:description" content="A collage of custom hats designed and pressed at The Cap Bar in Memphis. Location coming soon to 348 South Main Street.">
   <meta property="og:image" content="https://capbarexperience.com/images/og.jpg">
   <link rel="canonical" href="https://capbarexperience.com/gallery">
   <meta property="og:url" content="https://capbarexperience.com/gallery">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="page-gallery">
-  <div class="demo-ribbon" role="note">Preview · online checkout coming soon</div>
+  <a class="top-ribbon" href="index.html#location"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span><strong>Location coming soon</strong> · 348 South Main Street, Memphis</span></a>
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="The Cap Bar home">
@@ -30,18 +30,13 @@
     </a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
       <a href="collections.html">Collections</a>
-      <a href="gallery.html" aria-current="page">Our work</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
       <a href="story.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="cart-btn" href="shop.html#cart" data-cart-open aria-label="Cart, 0 items">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .92l1 13A1 1 0 0 1 20.2 22H3.8a1 1 0 0 1-1-1.08l1-13A1 1 0 0 1 4.8 7H7Zm2 0h6V6a3 3 0 0 0-6 0v1Zm-2 2H5.73l-.85 11h14.24l-.85-11H17v2a1 1 0 1 1-2 0V9H9v2a1 1 0 1 1-2 0V9Z"/></svg>
-        <span class="cart-count" hidden>0</span>
-      </a>
-      <a class="btn btn-gold btn-sm" href="shop.html">Shop hats</a>
+      <a class="btn btn-gold btn-sm" href="collections.html">Collections</a>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -50,27 +45,17 @@
 
   <main id="top">
     <section class="page-hero">
-      <p class="eyebrow">Our work</p>
-      <h1 id="gallery-title">Fresh from the bar</h1>
-      <p class="lead">Real hats designed and pressed at The Cap Bar.</p>
+      <p class="eyebrow">Gallery</p>
+      <h1 id="gallery-title">Our work</h1>
+      <p class="lead">Real hats designed and pressed at The Cap Bar. Tap any photo to see it up close.</p>
     </section>
 
-    <!-- GALLERY / OUR WORK (photos listed in js/gallery.js) -->
-    <section id="gallery" class="section gallery gallery-page" aria-labelledby="gallery-title">
-      <div id="gallery-grid" class="gallery-grid"></div>
-      <div id="gallery-empty" class="gallery-empty" hidden>
-        <div class="ge-frames" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="ge-copy">
-          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9Zm3 4.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-          <h3>Photos coming soon</h3>
-          <p>Photos of our latest custom designs are on the way. Follow along on Facebook to see new hats first.</p>
-          <a class="btn btn-ghost btn-sm" data-facebook href="#" target="_blank" rel="noopener">See us on Facebook</a>
-        </div>
-      </div>
+    <!-- COLLAGE (photos listed in js/showcase-data.js) -->
+    <section class="section gallery gallery-page" aria-labelledby="gallery-title">
+      <div id="collage" class="collage"></div>
     </section>
 
-    <div class="page-cta"><a class="btn btn-gold" href="shop.html">Shop hats</a></div>
-
+    <div class="page-cta"><a class="btn btn-gold" href="collections.html">See our collections</a> <a class="btn btn-ghost" href="index.html#location">Location coming soon</a></div>
   </main>
 
   <footer class="site-footer">
@@ -78,10 +63,8 @@
     <p class="footer-script">It's not just a hat shop, it's an experience.</p>
     <nav class="footer-nav" aria-label="Footer">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
       <a href="collections.html">Collections</a>
-      <a href="gallery.html">Our work</a>
-      <a href="index.html#experience">The experience</a>
+      <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -90,22 +73,20 @@
       <li><a href="contact.html"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Z" transform="translate(-1 0)"/></svg>Contact</a></li>
       <li><a data-email href="#"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.4 7H4v.3l8 5.5 8-5.5V7h-.4L12 12.2Z"/></svg>Email us</a></li>
     </ul>
-    <p class="footer-address"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener">348 South Main Street, Memphis, TN 38103</a></p>
-    <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a> · Payments securely processed by Stripe</p>
+    <p class="footer-address"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener">Coming soon · 348 South Main Street, Memphis, TN 38103</a></p>
+    <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a></p>
   </footer>
 
-  <!-- Gallery lightbox -->
+  <!-- Photo viewer -->
   <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
     <button class="lb-btn lb-x" type="button" data-close aria-label="Close">×</button>
     <button class="lb-btn lb-prev" type="button" data-prev aria-label="Previous photo">‹</button>
     <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
     <button class="lb-btn lb-next" type="button" data-next aria-label="Next photo">›</button>
   </dialog>
-
-  <script src="js/products.js"></script>
-  <script src="js/gallery.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/showcase-data.js"></script>
   <script src="js/site.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/showcase.js"></script>
 </body>
 </html>

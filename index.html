@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>The Cap Bar | Custom hats made in 10 minutes</title>
-  <meta name="description" content="Custom trucker and snapback hats made in 10 minutes. It's not just a custom hat shop, it's an experience. Shop online or visit us at 348 South Main Street, Memphis, TN.">
+  <title>The Cap Bar | Custom hats in Memphis · Location coming soon</title>
+  <meta name="description" content="The Cap Bar: custom hats made in 10 minutes. Our location is coming soon to 348 South Main Street, Memphis, TN. See our collections and our work.">
   <meta name="theme-color" content="#0a0a0a">
-  <meta property="og:title" content="The Cap Bar | Custom hats made in 10 minutes">
-  <meta property="og:description" content="It's not just a custom hat shop, it's an experience. Shop custom truckers and snapbacks online.">
+  <meta property="og:title" content="The Cap Bar | Custom hats in Memphis · Location coming soon">
+  <meta property="og:description" content="It's not just a hat shop, it's an experience. Location coming soon: 348 South Main Street, Memphis.">
   <meta property="og:image" content="https://capbarexperience.com/images/og.jpg">
   <link rel="canonical" href="https://capbarexperience.com/">
   <meta property="og:url" content="https://capbarexperience.com/">
@@ -25,7 +25,7 @@
     "@type": "LocalBusiness",
     "@id": "https://capbarexperience.com/#business",
     "name": "The Cap Bar",
-    "description": "A family oriented custom hat experience: custom truckers, snapbacks and beanies designed and pressed in-house.",
+    "description": "A family oriented custom hat experience, coming soon to 348 South Main Street, Memphis: custom truckers, snapbacks and beanies designed and pressed in-house.",
     "url": "https://capbarexperience.com/",
     "image": "https://capbarexperience.com/images/visit/marlon-348-main.jpg",
     "logo": "https://capbarexperience.com/images/icon-180.png",
@@ -43,9 +43,9 @@
   }
   </script>
   <script>
-    /* Old one-page links (capbarexperience.com/#shop etc.) now live on their own pages. */
+    /* Old links (capbarexperience.com/#shop etc.): the online shop is paused, so #shop goes to the collections. */
     (function () {
-      var m = { "#shop": "shop.html", "#collections": "collections.html", "#camo": "collections.html#camo",
+      var m = { "#shop": "collections.html", "#collections": "collections.html", "#camo": "gallery.html",
                 "#gallery": "gallery.html", "#story": "story.html", "#mission": "story.html", "#contact": "contact.html" };
       var t = m[location.hash.toLowerCase()];
       if (t) location.replace(t);
@@ -53,7 +53,7 @@
   </script>
 </head>
 <body class="page-home">
-  <div class="demo-ribbon" role="note">Preview · online checkout coming soon</div>
+  <a class="top-ribbon" href="index.html#location"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span><strong>Location coming soon</strong> · 348 South Main Street, Memphis</span></a>
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="The Cap Bar home">
@@ -62,18 +62,13 @@
     </a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="index.html" aria-current="page">Home</a>
-      <a href="shop.html">Shop</a>
       <a href="collections.html">Collections</a>
-      <a href="gallery.html">Our work</a>
+      <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="cart-btn" href="shop.html#cart" data-cart-open aria-label="Cart, 0 items">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .92l1 13A1 1 0 0 1 20.2 22H3.8a1 1 0 0 1-1-1.08l1-13A1 1 0 0 1 4.8 7H7Zm2 0h6V6a3 3 0 0 0-6 0v1Zm-2 2H5.73l-.85 11h14.24l-.85-11H17v2a1 1 0 1 1-2 0V9H9v2a1 1 0 1 1-2 0V9Z"/></svg>
-        <span class="cart-count" hidden>0</span>
-      </a>
-      <a class="btn btn-gold btn-sm" href="shop.html">Shop hats</a>
+      <a class="btn btn-gold btn-sm" href="collections.html">Collections</a>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -81,32 +76,27 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-room" aria-hidden="true">
-        <span class="lamp l1"></span><span class="lamp l3"></span>
-        <span class="neon neon-left">Style<br>Fit<br>You</span>
-        <span class="neon neon-right">Good Vibes<br>Custom Hats</span>
+    <!-- LOCATION COMING SOON: the theme of the site (owner, Oct 8) -->
+    <section id="location" class="loc-hero" aria-labelledby="loc-title">
+      <div class="loc-photo">
+        <picture><source type="image/webp" srcset="images/visit/marlon-348-main.webp"><img src="images/visit/marlon-348-main.jpg" alt="Marlon Thomas, owner of The Cap Bar, pointing to the door at 348 South Main Street in Memphis" width="1080" height="1200" fetchpriority="high"></picture>
       </div>
-      <div class="hero-inner">
-        <img class="hero-logo" src="images/logo.svg" alt="The Cap Bar logo" width="400" height="400">
-        <h1 id="hero-title">Custom hats<br><span class="gold">made in 10&nbsp;minutes.</span></h1>
-        <p class="hero-script">It's not just a custom hat shop, <span class="nw">it's an experience!</span></p>
-        <div class="hero-ctas">
-          <a class="btn btn-gold" href="shop.html">Shop hats</a>
-          <a class="btn btn-ghost" href="#experience">Get yours customized in 10 minutes</a>
+      <div class="loc-body">
+        <img class="loc-logo" src="images/logo.svg" alt="The Cap Bar logo" width="120" height="120">
+        <p class="loc-soon"><span>Location</span> coming soon</p>
+        <h1 id="loc-title"><span class="sr-only">The Cap Bar, coming soon to </span>348 South Main Street</h1>
+        <p class="loc-city">Memphis, Tennessee 38103</p>
+        <p class="hero-script">It's not just a hat shop, <span class="nw">it's an experience!</span></p>
+        <p class="loc-lead">Custom hats designed and pressed while you wait, in about 10 minutes. Hundreds of patches, one-of-a-kind hats. Come see us on South Main.</p>
+        <div class="loc-ctas">
+          <a class="btn btn-gold" href="collections.html">See our collections</a>
+          <a class="btn btn-ghost" href="gallery.html">View the gallery</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Get directions</a>
         </div>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Truckers</span><i>✦</i><span>Snapbacks</span><i>✦</i><span>Denim</span><i>✦</i><span>Beanies</span><i>✦</i><span>Custom logo patterns</span><i>✦</i><span>Made in 10 mins</span><i>✦</i>
-        <span>Truckers</span><i>✦</i><span>Snapbacks</span><i>✦</i><span>Denim</span><i>✦</i><span>Beanies</span><i>✦</i><span>Custom logo patterns</span><i>✦</i><span>Made in 10 mins</span><i>✦</i>
-      </div>
-    </div>
-
-    <!-- OUR STORY teaser (full text on story.html) -->
+    <!-- OUR MISSION (owner's own words; full text on story.html) -->
     <section id="story-teaser" class="section story story-teaser" aria-labelledby="story-title">
       <div class="story-card">
         <figure class="story-photo story-photo-cap">
@@ -122,97 +112,39 @@
       </div>
     </section>
 
-    <!-- FEATURED COLLECTIONS (owner's collection images, Oct 8; QR codes/branding cropped off) -->
-    <section id="collections-teaser" class="section collections" aria-labelledby="coll-title">
+    <!-- COLLECTIONS (tiles built from js/showcase-data.js) -->
+    <section id="collections" class="section collections" aria-labelledby="coll-title">
       <div class="section-head">
-        <p class="eyebrow">Featured</p>
+        <p class="eyebrow">Collections</p>
         <h2 id="coll-title">Our collections</h2>
-        <p class="lead">Six signature collections, ready to wear or remix with your own patches.</p>
+        <p class="lead">A few favorites from the hundreds of patches in the store.</p>
       </div>
-      <div class="coll-grid">
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/love-peace.webp"><img src="images/collections/love-peace.jpg" alt="Love &amp; Peace Collection: royal blue and white truckers with Peace, Love and VW bus patches" loading="lazy" width="816" height="440"></picture></figure>
-        <figure class="coll coll-soon"><picture><source type="image/webp" srcset="images/collections/the-901.webp"><img src="images/collections/the-901.jpg" alt="The 901 Collection, coming soon: a blue trucker and a black trucker with 901 patches." loading="lazy" width="1632" height="880"></picture><figcaption class="coll-badge">Coming soon</figcaption></figure>
-        <figure class="coll"><picture><source type="image/webp" srcset="images/collections/queen-bling.webp"><img src="images/collections/queen-bling.jpg" alt="Queen Bling Collection: Queen truckers and hot pink Being the Queen Ain't Easy caps" loading="lazy" width="816" height="440"></picture></figure>
-      </div>
-      <p class="teaser-cta"><a class="btn btn-ghost" href="collections.html">See all collections</a></p>
+      <div id="coll-tiles" class="coll-tiles"></div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- HOW IT WORKS (in the store) -->
     <section id="experience" class="section experience" aria-labelledby="exp-title">
       <div class="section-head">
         <p class="eyebrow">How it works</p>
         <h2 id="exp-title">The Cap Bar experience</h2>
-        <p class="lead">Every logo pattern is designed by hand ahead of time, so when you walk in, your hat is pressed and ready in under 10 minutes.</p>
+        <p class="lead">Every logo pattern is designed by hand ahead of time, so when you walk in, your hat is pressed and ready in about 10 minutes.</p>
       </div>
       <ol class="steps">
-        <li>
-          <span class="step-num">1</span>
-          <h3>Pick your cap</h3>
-          <p>Trucker or snapback, in pink, blue or black. Try a few on, the fit matters.</p>
-        </li>
-        <li>
-          <span class="step-num">2</span>
-          <h3>Choose your design</h3>
-          <p>Pick one of our signature logo patterns or bring your own idea and we'll design it with you.</p>
-        </li>
-        <li>
-          <span class="step-num">3</span>
-          <h3>Ready in 10 minutes</h3>
-          <p>We press it at the customization station while you wait. You walk out wearing it.</p>
-        </li>
+        <li><span class="step-num">1</span><h3>Pick your cap</h3><p>Trucker, snapback, distressed cap or beanie. Try a few on, the fit matters.</p></li>
+        <li><span class="step-num">2</span><h3>Choose your design</h3><p>Pick from hundreds of patches and signature designs, or bring your own idea and we'll design it with you.</p></li>
+        <li><span class="step-num">3</span><h3>Ready in 10 minutes</h3><p>We press it at the customization station while you wait. You walk out wearing it.</p></li>
       </ol>
-      <p class="neon neon-inline" aria-hidden="true">Good Vibes · Custom Hats</p>
     </section>
 
-    <!-- GALLERY / OUR WORK (photos listed in js/gallery.js) -->
-    <section id="gallery-teaser" class="section gallery" aria-labelledby="gallery-title">
+    <!-- GALLERY TEASER (collage, js/showcase-data.js) -->
+    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
       <div class="section-head">
-        <p class="eyebrow">Our work</p>
-        <h2 id="gallery-title">Fresh from the bar</h2>
+        <p class="eyebrow">Gallery</p>
+        <h2 id="gallery-title">Our work</h2>
         <p class="lead">Real hats designed and pressed at The Cap Bar.</p>
       </div>
-      <div id="gallery-grid" class="gallery-grid gallery-teaser" data-limit="4"></div>
-      <div id="gallery-empty" class="gallery-empty" hidden>
-        <div class="ge-frames" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="ge-copy">
-          <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9Zm3 4.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-          <h3>Photos coming soon</h3>
-          <p>Photos of our latest custom designs are on the way. Follow along on Facebook to see new hats first.</p>
-          <a class="btn btn-ghost btn-sm" data-facebook href="#" target="_blank" rel="noopener">See us on Facebook</a>
-        </div>
-      </div>
-      <p class="teaser-cta"><a class="btn btn-ghost" href="gallery.html">See all our work</a></p>
-    </section>
-
-    <!-- SHOP CTA (full shop on shop.html) -->
-    <section class="section shop-cta" aria-labelledby="shop-title">
-      <div class="section-head">
-        <p class="eyebrow">Shop</p>
-        <h2 id="shop-title">Pick your cap</h2>
-        <p class="lead">Snapbacks, truckers, denim, vintage distressed caps and beanies, finished with a Cap Bar design or one made just for you.</p>
-      </div>
-      <p class="teaser-cta"><a class="btn btn-gold" href="shop.html">Shop hats</a></p>
-    </section>
-
-    <!-- LOCATION (coming soon): owner's photo at 348 South Main (owner, Oct 8) -->
-    <section id="visit" class="section visit" aria-labelledby="visit-title">
-      <div class="visit-card visit-loc">
-        <figure class="visit-photo">
-          <picture><source type="image/webp" srcset="images/visit/marlon-348-main.webp"><img src="images/visit/marlon-348-main.jpg" alt="Marlon Thomas pointing to the door of The Cap Bar at 348 South Main Street in Memphis" loading="lazy" width="1080" height="1200"></picture>
-        </figure>
-        <div class="visit-body">
-          <p class="eyebrow">Coming soon</p>
-          <h2 id="visit-title">Our new <span class="gold">location</span></h2>
-          <address class="visit-address">
-            348 South Main Street<br>
-            Memphis, Tennessee 38103
-          </address>
-          <p class="visit-ship"><strong>We ship</strong>, or pick up your order locally at 348 South Main Street.</p>
-          <p class="visit-actions"><a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg> Get directions</a></p>
-          <p class="visit-alt">Questions or group orders? <a href="contact.html">Contact us</a> or email <a data-email href="#"></a><br>
-            and follow us on <a data-facebook href="#" target="_blank" rel="noopener">Facebook</a>.</p>
-        </div>
-      </div>
+      <div id="collage" class="collage" data-limit="8"></div>
+      <p class="teaser-cta"><a class="btn btn-gold" href="gallery.html">See the full gallery</a></p>
     </section>
   </main>
 
@@ -221,10 +153,8 @@
     <p class="footer-script">It's not just a hat shop, it's an experience.</p>
     <nav class="footer-nav" aria-label="Footer">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
       <a href="collections.html">Collections</a>
-      <a href="gallery.html">Our work</a>
-      <a href="index.html#experience">The experience</a>
+      <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -233,22 +163,20 @@
       <li><a href="contact.html"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Z" transform="translate(-1 0)"/></svg>Contact</a></li>
       <li><a data-email href="#"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.4 7H4v.3l8 5.5 8-5.5V7h-.4L12 12.2Z"/></svg>Email us</a></li>
     </ul>
-    <p class="footer-address"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener">348 South Main Street, Memphis, TN 38103</a></p>
-    <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a> · Payments securely processed by Stripe</p>
+    <p class="footer-address"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=348+South+Main+Street%2C+Memphis%2C+TN+38103" target="_blank" rel="noopener">Coming soon · 348 South Main Street, Memphis, TN 38103</a></p>
+    <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a></p>
   </footer>
 
-  <!-- Gallery lightbox -->
+  <!-- Photo viewer -->
   <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
     <button class="lb-btn lb-x" type="button" data-close aria-label="Close">×</button>
     <button class="lb-btn lb-prev" type="button" data-prev aria-label="Previous photo">‹</button>
     <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
     <button class="lb-btn lb-next" type="button" data-next aria-label="Next photo">›</button>
   </dialog>
-
-  <script src="js/products.js"></script>
-  <script src="js/gallery.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/showcase-data.js"></script>
   <script src="js/site.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/showcase.js"></script>
 </body>
 </html>
