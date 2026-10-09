@@ -16,6 +16,7 @@ css/styles.css        all styling (black / gold / white)
 js/products.js        <- EDIT: settings, products, prices, photos, Stripe links
 js/gallery.js         <- EDIT: list of real photos for the "Our work" gallery
 js/testimonials.js    <- EDIT: real customer reviews for the contact page
+js/cart.js            cart (saved in the browser), header cart button, cart drawer, checkout
 js/site.js, app.js, contact.js   page behaviour (no need to touch)
 images/logo.svg       badge logo: round black/gold badge + the client's cap art + The / CAP BAR / tagline
 images/cap-mark.png   the cap cut out of the client's new logo art (transparent PNG)
@@ -143,3 +144,16 @@ and update the Stripe "after payment" redirect to the real domain.
 The site was split into pages on Oct 8. The header and footer are repeated in each .html file;
 edit all six when a link changes. index.html forwards old one-page links (#shop, #collections, #camo,
 #gallery, #story) to the new pages.
+
+## Cart
+
+Every page has a cart button with a count in the header. "Add to cart" on the shop (and on the
+Camo section) adds a hat in the chosen color; the cart is saved in the shopper's browser
+(localStorage key `capbar_cart_v1`) so it follows them across pages. The cart drawer changes
+quantities (1 to 10 per color, limited by stock), removes lines, and shows the subtotal at sale
+prices with the regular prices struck through.
+
+Check out sends only product, color and quantity to `https://admin.capbarexperience.com/api/public/checkout`.
+The admin prices every line from its own database and opens one Stripe Checkout for the whole cart.
+Until Stripe is connected it answers in demo mode and the drawer shows the demo checkout note.
+After a paid checkout, thanks.html empties the cart.

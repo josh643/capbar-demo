@@ -46,7 +46,8 @@
       pictured.textContent = (!own && p.pictureName && c.name !== p.pictureName) ? "Pictured: " + p.pictureName : "";
       pictured.hidden = !pictured.textContent;
       buy.disabled = !!c.soldOut;
-      buy.textContent = c.soldOut ? "Sold out" : "Buy now · " + money.format(p.price);
+      buy.textContent = c.soldOut ? "Sold out" : "Add to cart · " + money.format(p.price);
+      buy.setAttribute("aria-label", c.soldOut ? p.name + ", " + c.name + ": sold out" : "Add " + p.name + ", " + c.name + " to cart, " + money.format(p.price));
     }
     var swatches = el("div", { class: "swatches" + (many ? " swatches-many" : ""), role: "radiogroup", "aria-label": p.name + " color" });
     p.colors.forEach(function (c, i) {
@@ -64,7 +65,9 @@
       });
       swatches.appendChild(b);
     });
-    buy.addEventListener("click", function () { checkout(p, p.colors[state.color]); });
+    buy.addEventListener("click", function () {
+      if (window.CapBarCart) window.CapBarCart.add(p, p.colors[state.color], 1);
+    });
     refresh();
     var optRow = many
       ? el("div", { class: "card-opts card-opts-many" }, [
@@ -134,42 +137,7 @@
     });
   }
 
-  // ---- checkout
-  var dlg = document.getElementById("checkout");
-  function checkout(p, c) {
-    if (c && c.id) {
-      fetch(API + "/api/public/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ variantId: c.id, quantity: 1 }),
-      }).then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (body) { return { ok: r.ok, body: body }; });
-      }).then(function (res) {
-        if (res.ok && res.body && res.body.url) { window.location.href = res.body.url; return; }
-        openDemo(p, c);
-      }).catch(function () { openDemo(p, c); });
-      return;
-    }
-    if (!S.demoMode && c.paymentLink) { window.location.href = c.paymentLink; return; }
-    openDemo(p, c);
-  }
-  function openDemo(p, c) {
-    var live = !S.demoMode;
-    dlg.querySelectorAll(".co-demo").forEach(function (n) { n.hidden = live; });
-    dlg.querySelectorAll(".co-live").forEach(function (n) { n.hidden = !live; });
-    document.getElementById("co-eyebrow").textContent = live ? "Order" : "Demo checkout";
-    document.getElementById("co-mail").href = "mailto:" + S.email + "?subject=" + encodeURIComponent("Order: " + p.name + " (" + c.name + ")");
-    document.getElementById("co-img").src = imgOf(p, c);
-    document.getElementById("co-img").alt = p.name + " in " + c.name;
-    document.getElementById("co-name").textContent = p.name;
-    document.getElementById("co-variant").textContent = c.name + " · One size";
-    var priceBox = document.getElementById("co-price");
-    priceBox.textContent = "";
-    if (p.compareAt && p.compareAt > p.price) priceBox.appendChild(el("s", { text: money.format(p.compareAt) }));
-    priceBox.appendChild(document.createTextNode(money.format(p.price)));
-    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
-  }
-  if (dlg) dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+  // ---- checkout: see js/cart.js (multi-item cart, demo checkout, Stripe)
 
   // ---- "notify me" form -> opens an email to the shop (stage 1 has no server)
   var form = document.getElementById("notify");

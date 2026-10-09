@@ -37,6 +37,10 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
+      <a class="cart-btn" href="shop.html#cart" data-cart-open aria-label="Cart, 0 items">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .92l1 13A1 1 0 0 1 20.2 22H3.8a1 1 0 0 1-1-1.08l1-13A1 1 0 0 1 4.8 7H7Zm2 0h6V6a3 3 0 0 0-6 0v1Zm-2 2H5.73l-.85 11h14.24l-.85-11H17v2a1 1 0 1 1-2 0V9H9v2a1 1 0 1 1-2 0V9Z"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </a>
       <a class="btn btn-gold btn-sm" href="shop.html">Shop hats</a>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -80,34 +84,9 @@
     <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a> · Payments securely processed by Stripe</p>
   </footer>
 
-  <!-- Checkout dialog (demo mode). In live mode Buy goes straight to Stripe. -->
-  <dialog id="checkout" class="checkout" aria-labelledby="co-title">
-    <div class="co-inner">
-      <button class="co-x" type="button" data-close aria-label="Close">×</button>
-      <p class="eyebrow" id="co-eyebrow">Demo checkout</p>
-      <h2 id="co-title">Almost yours</h2>
-      <div class="co-item">
-        <img id="co-img" src="" alt="" width="104" height="74">
-        <div><p id="co-name" class="co-name"></p><p id="co-variant" class="co-variant"></p></div>
-        <p id="co-price" class="co-price"></p>
-      </div>
-      <div class="co-note co-demo">
-        <strong>Payments will go through your Stripe account once connected.</strong>
-        <p>When the store is live, this button opens Stripe's secure checkout (card, Apple Pay, Google Pay). The Cap Bar's own Stripe account receives the money and handles receipts, refunds and chargebacks.</p>
-      </div>
-      <button class="btn btn-gold btn-block co-demo" type="button" disabled>Pay with Stripe</button>
-      <p class="co-fine co-demo">Checkout button switches on when Stripe is connected.</p>
-      <div class="co-note co-live" hidden>
-        <strong>Online checkout for this one is coming soon.</strong>
-        <p>Send us a quick email and we'll get your order set up.</p>
-      </div>
-      <a class="btn btn-gold btn-block co-live" id="co-mail" href="#" hidden>Email to order</a>
-      <button class="btn btn-ghost btn-block" type="button" data-close>Keep browsing</button>
-    </div>
-  </dialog>
-
   <script src="js/products.js"></script>
   <script src="js/site.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
