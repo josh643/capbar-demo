@@ -138,7 +138,12 @@ p { text-wrap: pretty; }
 .card-size { margin: 0 0 4px; font-size: 13px; color: var(--muted); }
 .card-body .btn { margin-top: auto; }
 .card-note { margin: 0; font-size: 13px; color: var(--gold-hi); }
-.card-pictured { position: absolute; right: 10px; bottom: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(0,0,0,.66); color: #fff; font: 600 11px/1.2 var(--sans); letter-spacing: .02em; }
+/* A color with no picture of its own: neutral (grayed) product picture + that color's swatch chip. */
+.card-media.is-neutral img { filter: grayscale(1) contrast(.3) brightness(1.7) blur(2px); opacity: .32; }
+.color-chip { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; grid-template-columns: auto auto; column-gap: 10px; align-items: center; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(10,9,8,.82); border: 1px solid rgba(212,175,90,.5); color: #fff; font: 700 15px/1.2 var(--sans); white-space: nowrap; }
+.color-chip[hidden] { display: none; }
+.color-chip i { grid-row: span 2; width: 38px; height: 38px; border-radius: 50%; background: var(--sw); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.4); }
+.color-chip small { color: var(--muted); font-weight: 500; font-size: 11px; }
 .card-opts-many { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 10px; flex: none; }
 .opt-count { color: var(--muted); font-size: 13px; }
 .swatches-many { align-content: start; display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 7px; justify-items: center; }
@@ -427,7 +432,9 @@ html.cart-is-open { overflow: hidden; }
 .cart-lines { list-style: none; margin: 0; padding: 0; }
 .cart-line { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .cart-line:last-child { border-bottom: 0; }
-.cl-img { width: 76px; height: 76px; border-radius: 12px; overflow: hidden; background: #1b1916; border: 1px solid var(--line); }
+.cl-img { position: relative; width: 76px; height: 76px; border-radius: 12px; overflow: hidden; background: #1b1916; border: 1px solid var(--line); }
+.cl-img.is-neutral img { filter: grayscale(1) contrast(.3) brightness(1.7) blur(1px); opacity: .32; }
+.cl-chip { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; background: var(--sw); border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.5), 0 2px 6px rgba(0,0,0,.5); }
 .cl-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cl-info { min-width: 0; }
 .cl-name { margin: 0; font-weight: 700; line-height: 1.25; }

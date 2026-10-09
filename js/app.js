@@ -26,7 +26,12 @@
     return node;
   }
 
+  // A color always shows its OWN picture (real photo or the mockup tinted to that color).
+  // If a color has no picture yet, show a grayed-out neutral product picture with a clear
+  // swatch chip on top, never a picture of a different color.
   function imgOf(p, c) { return (c && c.image) || p.image || (p.colors[0] && p.colors[0].image) || ""; }
+  // A one-color product's main picture IS that color.
+  function ownImage(p, c) { return !!(c && (c.image || (p.colors.length === 1 && p.image))); }
   function renderShop() {
     if (!grid) return;
     grid.textContent = "";
@@ -35,16 +40,20 @@
     var many = p.colors.length > 5;
     var img = el("img", { src: imgOf(p, p.colors[0]), alt: p.name, loading: "lazy", width: "520", height: "370" });
     var colorLabel = el("span", { class: "color-name", text: p.colors[0].name });
-    var pictured = el("span", { class: "card-pictured" });
+    var chipSw = el("i", { "aria-hidden": "true" }), chipName = el("span");
+    var chip = el("span", { class: "color-chip", hidden: "" }, [chipSw, chipName, el("small", { text: "photo coming soon" })]);
+    var media = el("div", { class: "card-media" });
     var buy = el("button", { class: "btn btn-gold btn-block", type: "button" });
     function refresh() {
       var c = p.colors[state.color];
-      var src = imgOf(p, c), own = !!c.image;
+      var src = imgOf(p, c), own = ownImage(p, c);
       if (img.getAttribute("src") !== src) img.src = src;
-      img.alt = own || !p.pictureName ? p.name + " in " + c.name : p.name + " (pictured in " + p.pictureName + ")";
+      img.alt = own ? p.name + " in " + c.name : p.name + " (color " + c.name + " shown as a swatch)";
       colorLabel.textContent = c.name;
-      pictured.textContent = (!own && p.pictureName && c.name !== p.pictureName) ? "Pictured: " + p.pictureName : "";
-      pictured.hidden = !pictured.textContent;
+      media.classList.toggle("is-neutral", !own);
+      chip.hidden = own;
+      chipSw.style.setProperty("--sw", c.swatch || "#777");
+      chipName.textContent = c.name;
       buy.disabled = !!c.soldOut;
       buy.textContent = c.soldOut ? "Sold out" : "Add to cart · " + money.format(p.price);
       buy.setAttribute("aria-label", c.soldOut ? p.name + ", " + c.name + ": sold out" : "Add " + p.name + ", " + c.name + " to cart, " + money.format(p.price));
@@ -68,6 +77,7 @@
     buy.addEventListener("click", function () {
       if (window.CapBarCart) window.CapBarCart.add(p, p.colors[state.color], 1);
     });
+    [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null, chip].forEach(function (n) { if (n) media.appendChild(n); });
     refresh();
     var optRow = many
       ? el("div", { class: "card-opts card-opts-many" }, [
@@ -79,7 +89,7 @@
           el("div", { class: "opt" }, [el("span", { class: "sr-only", text: "Color: " }), colorLabel]),
         ]);
     var card = el("article", { class: "card" }, [
-      el("div", { class: "card-media" }, [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null, pictured]),
+      media,
       el("div", { class: "card-body" }, [
         el("div", { class: "card-head" }, [el("h3", { text: p.name }), priceNode(p)]),
         el("p", { class: "card-desc", text: p.description }),

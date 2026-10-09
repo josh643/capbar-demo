@@ -23,11 +23,14 @@ window.CAPBAR_SETTINGS = {
                    shows it crossed out next to the sale price. Leave it off when
                    the hat is not on sale.
    - image:        the product's main picture (square, hat on a mannequin when we have one).
-                   A color can have its own image; colors WITHOUT one show the main picture
-                   with a small "Pictured: ..." note (pictureName says which color that is).
+                   Every color should have its OWN image of that exact color. The site never
+                   shows a picture of a different color: a color without an image shows a
+                   grayed-out product picture with that color's swatch chip on top.
                    Files ending in "-photo.webp" are The Cap Bar's REAL mannequin photos (Oct 8, 2026).
-                   signature-black, denim-*, beanie-* are still STAND-IN 3D RENDERS
-                   (no mannequin photo of those blanks yet).
+                   "tint-denim-*" / "tint-beanie-*" are the 3D mockup tinted to each swatch
+                   (tools/tint_colors.py), STAND-INS until real photos of those blanks exist.
+                   signature-black is a stand-in 3D render.
+   - pictureName:  which color the main picture shows (for your reference).
    - colors:       beanie / denim / distressed color names were read off the supplier
                    screenshots the owner sent (Oct 8) as a color reference. Supplier
                    images are NOT used on the site. Confirm names/stock with the owner.
@@ -49,7 +52,7 @@ window.CAPBAR_PRODUCTS = [
     size: "One size · adjustable snap",
     image: "images/products/signature-black.webp", // render
     colors: [
-      { name: "Black / Gold", swatch: "#111111", paymentLink: "", soldOut: false },
+      { name: "Black / Gold", swatch: "#111111", image: "images/products/signature-black.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
@@ -77,37 +80,37 @@ window.CAPBAR_PRODUCTS = [
     price: 25,
     compareAt: 30,
     size: "One size · adjustable strap",
-    image: "images/products/denim-medium.webp", // render
+    image: "images/products/tint-denim-denim-blue.webp", // 3D mockup tinted per color
     pictureName: "Denim blue",
     colors: [
-      { name: "Denim blue", swatch: "#5087b6", image: "images/products/denim-medium.webp", paymentLink: "", soldOut: false },
-      { name: "Sky blue", swatch: "#7cb0e0", image: "images/products/denim-light.webp", paymentLink: "", soldOut: false },
-      { name: "Light gray", swatch: "#cfccd6", paymentLink: "", soldOut: false },
-      { name: "Gray", swatch: "#81848f", paymentLink: "", soldOut: false },
-      { name: "Slate", swatch: "#716f7a", paymentLink: "", soldOut: false },
-      { name: "Black", swatch: "#333333", paymentLink: "", soldOut: false },
-      { name: "Navy", swatch: "#515669", paymentLink: "", soldOut: false },
-      { name: "Steel blue", swatch: "#5c6e90", paymentLink: "", soldOut: false },
-      { name: "Medium blue", swatch: "#566c9b", paymentLink: "", soldOut: false },
-      { name: "Royal blue", swatch: "#1b6195", paymentLink: "", soldOut: false },
-      { name: "Turquoise", swatch: "#06a9d7", paymentLink: "", soldOut: false },
-      { name: "Light pink", swatch: "#e2a2bd", paymentLink: "", soldOut: false },
-      { name: "Bubblegum pink", swatch: "#dd6898", paymentLink: "", soldOut: false },
-      { name: "Hot pink", swatch: "#d04083", paymentLink: "", soldOut: false },
-      { name: "Magenta", swatch: "#ce3b80", paymentLink: "", soldOut: false },
-      { name: "Coral", swatch: "#d54059", paymentLink: "", soldOut: false },
-      { name: "Red", swatch: "#9e1d23", paymentLink: "", soldOut: false },
-      { name: "Wine", swatch: "#853c47", paymentLink: "", soldOut: false },
-      { name: "Rust", swatch: "#b96056", paymentLink: "", soldOut: false },
-      { name: "Brick", swatch: "#bc6359", paymentLink: "", soldOut: false },
-      { name: "Mustard", swatch: "#b78246", paymentLink: "", soldOut: false },
-      { name: "Khaki", swatch: "#937f67", paymentLink: "", soldOut: false },
-      { name: "Olive khaki", swatch: "#9c9770", paymentLink: "", soldOut: false },
-      { name: "Sage", swatch: "#bbd2af", paymentLink: "", soldOut: false },
-      { name: "Dark green", swatch: "#3e433d", paymentLink: "", soldOut: false },
-      { name: "Coffee", swatch: "#645540", paymentLink: "", soldOut: false },
-      { name: "Chocolate", swatch: "#584444", paymentLink: "", soldOut: false },
-      { name: "Purple", swatch: "#604b79", paymentLink: "", soldOut: false },
+      { name: "Denim blue", swatch: "#5087b6", image: "images/products/tint-denim-denim-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Sky blue", swatch: "#7cb0e0", image: "images/products/tint-denim-sky-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Light gray", swatch: "#cfccd6", image: "images/products/tint-denim-light-gray.webp", paymentLink: "", soldOut: false },
+      { name: "Gray", swatch: "#81848f", image: "images/products/tint-denim-gray.webp", paymentLink: "", soldOut: false },
+      { name: "Slate", swatch: "#716f7a", image: "images/products/tint-denim-slate.webp", paymentLink: "", soldOut: false },
+      { name: "Black", swatch: "#333333", image: "images/products/tint-denim-black.webp", paymentLink: "", soldOut: false },
+      { name: "Navy", swatch: "#515669", image: "images/products/tint-denim-navy.webp", paymentLink: "", soldOut: false },
+      { name: "Steel blue", swatch: "#5c6e90", image: "images/products/tint-denim-steel-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Medium blue", swatch: "#566c9b", image: "images/products/tint-denim-medium-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Royal blue", swatch: "#1b6195", image: "images/products/tint-denim-royal-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Turquoise", swatch: "#06a9d7", image: "images/products/tint-denim-turquoise.webp", paymentLink: "", soldOut: false },
+      { name: "Light pink", swatch: "#e2a2bd", image: "images/products/tint-denim-light-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Bubblegum pink", swatch: "#dd6898", image: "images/products/tint-denim-bubblegum-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Hot pink", swatch: "#d04083", image: "images/products/tint-denim-hot-pink.webp", paymentLink: "", soldOut: false },
+      { name: "Magenta", swatch: "#ce3b80", image: "images/products/tint-denim-magenta.webp", paymentLink: "", soldOut: false },
+      { name: "Coral", swatch: "#d54059", image: "images/products/tint-denim-coral.webp", paymentLink: "", soldOut: false },
+      { name: "Red", swatch: "#9e1d23", image: "images/products/tint-denim-red.webp", paymentLink: "", soldOut: false },
+      { name: "Wine", swatch: "#853c47", image: "images/products/tint-denim-wine.webp", paymentLink: "", soldOut: false },
+      { name: "Rust", swatch: "#b96056", image: "images/products/tint-denim-rust.webp", paymentLink: "", soldOut: false },
+      { name: "Brick", swatch: "#bc6359", image: "images/products/tint-denim-brick.webp", paymentLink: "", soldOut: false },
+      { name: "Mustard", swatch: "#b78246", image: "images/products/tint-denim-mustard.webp", paymentLink: "", soldOut: false },
+      { name: "Khaki", swatch: "#937f67", image: "images/products/tint-denim-khaki.webp", paymentLink: "", soldOut: false },
+      { name: "Olive khaki", swatch: "#9c9770", image: "images/products/tint-denim-olive-khaki.webp", paymentLink: "", soldOut: false },
+      { name: "Sage", swatch: "#bbd2af", image: "images/products/tint-denim-sage.webp", paymentLink: "", soldOut: false },
+      { name: "Dark green", swatch: "#3e433d", image: "images/products/tint-denim-dark-green.webp", paymentLink: "", soldOut: false },
+      { name: "Coffee", swatch: "#645540", image: "images/products/tint-denim-coffee.webp", paymentLink: "", soldOut: false },
+      { name: "Chocolate", swatch: "#584444", image: "images/products/tint-denim-chocolate.webp", paymentLink: "", soldOut: false },
+      { name: "Purple", swatch: "#604b79", image: "images/products/tint-denim-purple.webp", paymentLink: "", soldOut: false },
     ],
   },
   {
@@ -156,33 +159,33 @@ window.CAPBAR_PRODUCTS = [
     compareAt: 20,
     size: "One size · stretch fit",
     note: "After checkout we'll reach out to finalize your design.",
-    image: "images/products/beanie-black.webp", // render
+    image: "images/products/tint-beanie-black.webp", // 3D mockup tinted per color
     pictureName: "Black",
     colors: [
-      { name: "Red", swatch: "#8a1020", paymentLink: "", soldOut: false },
-      { name: "Burgundy", swatch: "#5b0a0a", paymentLink: "", soldOut: false },
-      { name: "Light pink", swatch: "#edd1d0", paymentLink: "", soldOut: false },
+      { name: "Red", swatch: "#8a1020", image: "images/products/tint-beanie-red.webp", paymentLink: "", soldOut: false },
+      { name: "Burgundy", swatch: "#5b0a0a", image: "images/products/tint-beanie-burgundy.webp", paymentLink: "", soldOut: false },
+      { name: "Light pink", swatch: "#edd1d0", image: "images/products/tint-beanie-light-pink.webp", paymentLink: "", soldOut: false },
       { name: "Dusty pink", swatch: "#cd94ab", image: "images/products/beanie-dusty-pink-photo.webp", paymentLink: "", soldOut: false },
-      { name: "Orange", swatch: "#f99136", paymentLink: "", soldOut: false },
-      { name: "Mustard", swatch: "#c79b49", paymentLink: "", soldOut: false },
-      { name: "Yellow", swatch: "#fdc50e", paymentLink: "", soldOut: false },
-      { name: "Fuchsia", swatch: "#ba2f7c", image: "images/products/beanie-pink.webp", paymentLink: "", soldOut: false },
-      { name: "Ice blue", swatch: "#bccdd5", paymentLink: "", soldOut: false },
-      { name: "Sky blue", swatch: "#6bb5d2", paymentLink: "", soldOut: false },
-      { name: "Lavender", swatch: "#a799d1", paymentLink: "", soldOut: false },
-      { name: "Mint green", swatch: "#38e490", paymentLink: "", soldOut: false },
-      { name: "Taupe", swatch: "#7a6d5e", paymentLink: "", soldOut: false },
-      { name: "Light gray", swatch: "#babbb3", paymentLink: "", soldOut: false },
-      { name: "Blue gray", swatch: "#8d99a9", paymentLink: "", soldOut: false },
-      { name: "Cornflower blue", swatch: "#5377d1", paymentLink: "", soldOut: false },
-      { name: "Black", swatch: "#151515", image: "images/products/beanie-black.webp", paymentLink: "", soldOut: false },
-      { name: "Navy", swatch: "#131627", paymentLink: "", soldOut: false },
-      { name: "Indigo", swatch: "#282665", paymentLink: "", soldOut: false },
-      { name: "Royal blue", swatch: "#0911ae", image: "images/products/beanie-blue.webp", paymentLink: "", soldOut: false },
-      { name: "Forest green", swatch: "#144734", paymentLink: "", soldOut: false },
-      { name: "Olive", swatch: "#374135", paymentLink: "", soldOut: false },
-      { name: "Chocolate", swatch: "#3a2f33", paymentLink: "", soldOut: false },
-      { name: "Charcoal", swatch: "#4a4d56", paymentLink: "", soldOut: false },
+      { name: "Orange", swatch: "#f99136", image: "images/products/tint-beanie-orange.webp", paymentLink: "", soldOut: false },
+      { name: "Mustard", swatch: "#c79b49", image: "images/products/tint-beanie-mustard.webp", paymentLink: "", soldOut: false },
+      { name: "Yellow", swatch: "#fdc50e", image: "images/products/tint-beanie-yellow.webp", paymentLink: "", soldOut: false },
+      { name: "Fuchsia", swatch: "#ba2f7c", image: "images/products/tint-beanie-fuchsia.webp", paymentLink: "", soldOut: false },
+      { name: "Ice blue", swatch: "#bccdd5", image: "images/products/tint-beanie-ice-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Sky blue", swatch: "#6bb5d2", image: "images/products/tint-beanie-sky-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Lavender", swatch: "#a799d1", image: "images/products/tint-beanie-lavender.webp", paymentLink: "", soldOut: false },
+      { name: "Mint green", swatch: "#38e490", image: "images/products/tint-beanie-mint-green.webp", paymentLink: "", soldOut: false },
+      { name: "Taupe", swatch: "#7a6d5e", image: "images/products/tint-beanie-taupe.webp", paymentLink: "", soldOut: false },
+      { name: "Light gray", swatch: "#babbb3", image: "images/products/tint-beanie-light-gray.webp", paymentLink: "", soldOut: false },
+      { name: "Blue gray", swatch: "#8d99a9", image: "images/products/tint-beanie-blue-gray.webp", paymentLink: "", soldOut: false },
+      { name: "Cornflower blue", swatch: "#5377d1", image: "images/products/tint-beanie-cornflower-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Black", swatch: "#151515", image: "images/products/tint-beanie-black.webp", paymentLink: "", soldOut: false },
+      { name: "Navy", swatch: "#131627", image: "images/products/tint-beanie-navy.webp", paymentLink: "", soldOut: false },
+      { name: "Indigo", swatch: "#282665", image: "images/products/tint-beanie-indigo.webp", paymentLink: "", soldOut: false },
+      { name: "Royal blue", swatch: "#0911ae", image: "images/products/tint-beanie-royal-blue.webp", paymentLink: "", soldOut: false },
+      { name: "Forest green", swatch: "#144734", image: "images/products/tint-beanie-forest-green.webp", paymentLink: "", soldOut: false },
+      { name: "Olive", swatch: "#374135", image: "images/products/tint-beanie-olive.webp", paymentLink: "", soldOut: false },
+      { name: "Chocolate", swatch: "#3a2f33", image: "images/products/tint-beanie-chocolate.webp", paymentLink: "", soldOut: false },
+      { name: "Charcoal", swatch: "#4a4d56", image: "images/products/tint-beanie-charcoal.webp", paymentLink: "", soldOut: false },
     ],
   },
 ];

@@ -16,7 +16,9 @@
   }
   // Same color id the admin uses (product id + "--" + color slug), for the js/products.js fallback.
   function colorId(p, c) { return c.id || (p.id + "--" + (slug(c.name) || "color")).slice(0, 70); }
-  function imgOf(p, c) { return (c && c.image) || p.image || ""; }
+  // Thumbnail rule: only the chosen color's OWN picture (photo or tinted mockup). A color with no
+  // picture gets the neutral product picture, grayed out, with that color's swatch chip on top.
+  var IMG_V = 2;
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
     Object.keys(attrs || {}).forEach(function (k) {
@@ -35,7 +37,11 @@
       if (!Array.isArray(raw)) return [];
       return raw.filter(function (l) {
         return l && typeof l.productId === "string" && typeof l.variantId === "string" && Number.isInteger(l.qty) && l.qty > 0;
-      }).map(function (l) { l.qty = Math.min(MAX_QTY, l.qty); return l; });
+      }).map(function (l) {
+        l.qty = Math.min(MAX_QTY, l.qty);
+        if (l.imgv !== IMG_V) { l.image = ""; l.imgv = IMG_V; } // older saves could hold another color's picture
+        return l;
+      });
     } catch (e) { return []; }
   }
   var lines = read();
@@ -84,7 +90,7 @@
     return {
       productId: p.id, variantId: colorId(p, c), name: p.name, color: c.name,
       price: Number(p.price), compareAt: p.compareAt && p.compareAt > p.price ? Number(p.compareAt) : null,
-      image: imgOf(p, c), swatch: c.swatch || "", stock: c.stock == null ? null : Number(c.stock),
+      image: (c && (c.image || (p.colors && p.colors.length === 1 && p.image))) || "", base: p.image || "", imgv: IMG_V, swatch: c.swatch || "", stock: c.stock == null ? null : Number(c.stock),
     };
   }
   // Refresh saved lines from the current catalog (price changes, sold out, photo changes).
@@ -94,7 +100,7 @@
         var hit = locate(products, l.productId, l.variantId);
         if (!hit || !hit.c) { l.problem = "No longer available."; return; }
         var s = snapshot(hit.p, hit.c);
-        l.name = s.name; l.color = s.color; l.price = s.price; l.compareAt = s.compareAt; l.image = s.image; l.swatch = s.swatch; l.stock = s.stock;
+        l.name = s.name; l.color = s.color; l.price = s.price; l.compareAt = s.compareAt; l.image = s.image; l.base = s.base; l.imgv = s.imgv; l.swatch = s.swatch; l.stock = s.stock;
         if (hit.c.soldOut) l.problem = "Sold out.";
         else if (l.stock != null && l.qty > l.stock) l.problem = "Only " + l.stock + " left.";
         else delete l.problem;
@@ -212,10 +218,14 @@
       var rest = listEl.querySelectorAll(".cl-remove");
       if (rest.length) rest[Math.min(idx, rest.length - 1)].focus(); else dlg.querySelector(".cart-x").focus();
     });
-    var img = el("img", { src: l.image || "images/cap-mark.png", alt: "", width: "84", height: "84", loading: "lazy" });
+    var own = !!l.image;
+    var img = el("img", { src: l.image || l.base || "images/cap-mark.png", alt: "", width: "84", height: "84", loading: "lazy" });
+    var thumb = el("div", { class: "cl-img" + (own ? "" : " is-neutral") }, [
+      img, own ? null : el("span", { class: "cl-chip", style: "--sw:" + (l.swatch || "#777"), title: l.color + " (photo coming soon)", "aria-hidden": "true" }),
+    ]);
     var each = el("p", { class: "cl-each" }, [priceNode(l, 1), " each"]);
     var li = el("li", { class: "cart-line" + (l.problem ? " has-problem" : ""), "data-variant": l.variantId }, [
-      el("div", { class: "cl-img" }, [img]),
+      thumb,
       el("div", { class: "cl-info" }, [
         el("p", { class: "cl-name", text: l.name }),
         el("p", { class: "cl-color" }, [el("span", { class: "cl-sw", style: "--sw:" + (l.swatch || "#555"), "aria-hidden": "true" }), l.color]),

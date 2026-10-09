@@ -561,6 +561,20 @@ HATS = {
     "beanie-blue": dict(type="beanie", color="#3466c4"),
 }
 
+# Per-color renders (Oct 8): --extra-json FILE adds {name: spec} entries (e.g. one per shop color)
+# and renders only those unless --only is given.
+_extra = arg("--extra-json", "")
+if _extra:
+    import json
+    with open(_extra) as fh:
+        _more = json.load(fh)
+    for _k, _v in _more.items():
+        if "patch" in _v and isinstance(_v["patch"], dict):
+            for _t in ("center", "size", "tile"):
+                if _t in _v["patch"]: _v["patch"][_t] = tuple(_v["patch"][_t])
+    HATS = dict(HATS, **_more)
+    if not ONLY: ONLY = list(_more.keys())
+
 def render(name, spec):
     sc = reset()
     if spec["type"] == "cap":
