@@ -370,6 +370,41 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Pink knit beanie on a mannequin with a heart patch reading I Am My Sister's Keeper"
     }
    ]
+  },
+  {
+   "id": "kids",
+   "name": "Kids Collection",
+   "blurb": "Colorful caps with positive messages for kids.",
+   "photos": [
+    {
+     "id": "kids-radiate-positivity",
+     "w": 720,
+     "h": 960,
+     "caption": "Radiate Positivity cap",
+     "alt": "Red distressed cap on a mannequin with a round rainbow Radiate Positivity patch"
+    },
+    {
+     "id": "kids-girl-power",
+     "w": 720,
+     "h": 960,
+     "caption": "Girl Power cap",
+     "alt": "Magenta cap on a mannequin with Girl Power and Wonderful rainbow patches"
+    },
+    {
+     "id": "kids-dream-it-do-it",
+     "w": 720,
+     "h": 960,
+     "caption": "Dream It & Do It cap",
+     "alt": "Dark charcoal distressed cap on a mannequin with a rainbow cloud patch reading Dream It & Do It"
+    },
+    {
+     "id": "kids-girls-never-give-up",
+     "w": 720,
+     "h": 960,
+     "caption": "Girls Never Give Up cap",
+     "alt": "Light pink cap on a mannequin with a Girls Never Give Up patch"
+    }
+   ]
   }
  ],
  "gallery": [
