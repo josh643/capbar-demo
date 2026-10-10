@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks
+Disallow: /shop
+
+Sitemap: https://capbarexperience.com/sitemap.xml
