@@ -65,7 +65,7 @@ Preview locally: `cd site && python3 -m http.server 8000`, then open http://loca
 | Location | 348 South Main Street, Memphis, TN 38103 (owner, Oct 8), coming soon: home "Coming soon / Our new location" card with the owner's photo at the door (IMG_6837), contact page, every footer, LocalBusiness JSON-LD on home + contact. Ships + local pickup (home, shop, contact). |
 | Colors | Custom Trucker (12) and Vintage Distressed Denim (Black, Charcoal, Khaki, Blue, Cranberry) are the **owner's own lists** (Oct 8). Ladies denim + beanie colors were read off supplier screenshots (supplier images are NOT on the site); beanies: owner ordered more colors, "use pink for now" (dusty pink photo is the main picture). |
 | Mission statement | **Owner's own words** (Oct 8): full text in the Our Story section of index.html; short version on the contact page. Mission picture: the Love bus trucker on a mannequin (IMG_6797), per owner. |
-| Testimonials | **None yet**. Placeholder layout + "Share your experience" email button. Only add real reviews. |
+| Testimonials | **7 real reviews** sent by the owner Oct 10, word for word, in `js/testimonials.js` (contact page). No review schema markup. |
 | Contact form | Opens the visitor's email app (no server in stage 1). |
 | Checkout | Demo pop-up (`demoMode: true`). Goes live once Payment Links are pasted in. |
 | "Notify me" form | Opens the visitor's email app addressed to thomasmarlonr@gmail.com (no server in stage 1). |
