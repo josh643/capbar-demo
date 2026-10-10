@@ -335,6 +335,34 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Dark trucker with a blue and gold 901 Grizz patch"
     }
    ]
+  },
+  {
+   "id": "greek-inspired",
+   "name": "Greek Inspired Collection",
+   "blurb": "A few Greek inspired cap designs.",
+   "photos": [
+    {
+     "id": "greek-inspired-pink-cap",
+     "w": 720,
+     "h": 960,
+     "caption": "Pink Greek inspired cap",
+     "alt": "Pink distressed cap on a mannequin with a pink and green jeweled bow and letter patch"
+    },
+    {
+     "id": "greek-inspired-brown-cap",
+     "w": 720,
+     "h": 960,
+     "caption": "Brown Greek inspired cap",
+     "alt": "Brown distressed cap on a mannequin with a star patch and They Not Like Us lettering"
+    },
+    {
+     "id": "greek-inspired-caps",
+     "w": 720,
+     "h": 960,
+     "caption": "Greek inspired caps",
+     "alt": "Pink and brown distressed caps displayed side by side on mannequins"
+    }
+   ]
   }
  ],
  "gallery": [
