@@ -373,7 +373,7 @@ window.CAPBAR_SHOWCASE = {
   },
   {
    "id": "kids",
-   "name": "Kids Collection",
+   "name": "The Kids Collection Inspired By Bella",
    "blurb": "Colorful caps with positive messages for kids.",
    "photos": [
     {
@@ -403,6 +403,20 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "Girls Never Give Up cap",
      "alt": "Light pink cap on a mannequin with a Girls Never Give Up patch"
+    },
+    {
+     "id": "kids-concept-cash",
+     "w": 720,
+     "h": 960,
+     "caption": "Concept Cash cap",
+     "alt": "Dark charcoal distressed cap on a white mannequin with a tan piggy bank patch reading Concept Cash"
+    },
+    {
+     "id": "kids-dear-future",
+     "w": 720,
+     "h": 960,
+     "caption": "Dear Future, I'm Ready cap",
+     "alt": "Dark charcoal distressed cap on a white mannequin with a black patch reading Dear Future, I'm Ready"
     }
    ]
   }
