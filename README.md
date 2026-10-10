@@ -179,3 +179,5 @@ Check out sends only product, color and quantity to `https://admin.capbarexperie
 The admin prices every line from its own database and opens one Stripe Checkout for the whole cart.
 Until Stripe is connected it answers in demo mode and the drawer shows the demo checkout note.
 After a paid checkout, thanks.html empties the cart.
+
+- v15 (Oct 10): dedicated Testimonials page at /testimonials (testimonials.html) with Marlon's 7 reviews from js/testimonials.js; "Reviews" link added to header + footer nav on all pages. Reviews also still show on the Contact page.
