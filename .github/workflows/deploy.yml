@@ -1,0 +1,20 @@
+name: Deploy to Cloudflare Pages
+# staging branch -> preview https://staging.capbar.pages.dev
+# main branch    -> production https://capbarexperience.com (merge staging into main only)
+on:
+  push:
+    branches: [staging, main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 21779b260eff4cd8fdd71c920eaec8ab
+        run: |
+          mkdir -p /tmp/out && rsync -a --exclude .git --exclude .github --exclude tools --exclude README.md ./ /tmp/out/
+          npx -y wrangler@3 pages deploy /tmp/out --project-name capbar --branch "${GITHUB_REF_NAME}" --commit-dirty=true
