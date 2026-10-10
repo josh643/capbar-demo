@@ -144,7 +144,7 @@ Note: Stripe doesn't track stock counts the way a full store does. Use "Limit th
 ## Hosting and domain
 
 **Live:** https://capbarexperience.com/ (Cloudflare Pages project `capbar`, account 21779b…; www.capbarexperience.com too).
-Redeploy: `cd ../cf && CLOUDFLARE_ACCOUNT_ID=21779b260eff4cd8fdd71c920eaec8ab npx wrangler@3 pages deploy ../site --project-name capbar --branch main`.
+Deploy: push to `staging` -> https://staging.capbar.pages.dev (preview); merge staging into `main` -> capbarexperience.com (GitHub Actions). No direct wrangler deploys.
 GitHub Pages copy: https://josh643.github.io/capbar-demo/ (push to main).
 
 
