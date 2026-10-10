@@ -6,7 +6,7 @@
   // ---- testimonials
   var grid = document.getElementById("reviews-grid");
   var empty = document.getElementById("reviews-empty");
-  if (!T.length) { grid.hidden = true; empty.hidden = false; }
+  if (grid && !T.length) { grid.hidden = true; empty.hidden = false; }
   T.forEach(function (t) {
     var fig = document.createElement("figure"); fig.className = "review";
     var q = document.createElement("blockquote"); q.textContent = t.quote;
@@ -22,7 +22,7 @@
 
   // ---- contact form -> email (no server in stage 1)
   var f = document.getElementById("contact-form");
-  f.addEventListener("submit", function (e) {
+  if (f) f.addEventListener("submit", function (e) {
     e.preventDefault();
     var name = f.name.value.trim(), email = f.email.value.trim(), topic = f.topic.value, msg = f.message.value.trim();
     var out = f.querySelector(".form-msg");

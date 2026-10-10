@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gallery | The Cap Bar</title>
-  <meta name="description" content="A collage of custom hats designed and pressed at The Cap Bar in Memphis. Location coming soon to 348 South Main Street.">
+  <title>Testimonials | The Cap Bar</title>
+  <meta name="description" content="What customers say about The Cap Bar: custom snapbacks, truckers and beanies made in Memphis. Real reviews from Cap Bar customers.">
   <meta name="theme-color" content="#0a0a0a">
-  <meta property="og:title" content="Gallery | The Cap Bar">
-  <meta property="og:description" content="A collage of custom hats designed and pressed at The Cap Bar in Memphis. Location coming soon to 348 South Main Street.">
+  <meta property="og:title" content="The Cap Bar Testimonials">
+  <meta property="og:description" content="Real reviews from Cap Bar customers.">
   <meta property="og:image" content="https://capbarexperience.com/images/og.jpg">
-  <link rel="canonical" href="https://capbarexperience.com/gallery">
-  <meta property="og:url" content="https://capbarexperience.com/gallery">
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://capbarexperience.com/testimonials">
+  <meta property="og:url" content="https://capbarexperience.com/testimonials">
   <link rel="icon" href="images/favicon.png" type="image/png" sizes="64x64">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/icon-180.png">
@@ -19,8 +18,31 @@
   <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/greatvibes.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css?v=13">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://capbarexperience.com/#business",
+    "name": "The Cap Bar",
+    "description": "A family oriented custom hat experience: custom truckers, snapbacks and beanies designed and pressed in-house.",
+    "url": "https://capbarexperience.com/",
+    "image": "https://capbarexperience.com/images/visit/marlon-348-main.jpg",
+    "logo": "https://capbarexperience.com/images/icon-180.png",
+    "email": "thomasmarlonr@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "348 South Main Street",
+      "addressLocality": "Memphis",
+      "addressRegion": "TN",
+      "postalCode": "38103",
+      "addressCountry": "US"
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=348+South+Main+Street%2C+Memphis%2C+TN+38103",
+    "sameAs": ["https://www.facebook.com/people/The-Cap-Bar/61595176251150/"]
+  }
+  </script>
 </head>
-<body class="page-gallery">
+<body class="page-contact page-testimonials">
   <a class="top-ribbon" href="index.html#location"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span><strong>Location coming soon</strong> · 348 South Main Street, Memphis</span></a>
 
   <header class="site-header">
@@ -31,9 +53,9 @@
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="collections.html">Collections</a>
-      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
-      <a href="testimonials.html">Reviews</a>
+      <a href="testimonials.html" aria-current="page">Reviews</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
@@ -46,17 +68,37 @@
 
   <main id="top">
     <section class="page-hero">
-      <p class="eyebrow">Gallery</p>
-      <h1 id="gallery-title">Our work</h1>
-      <p class="lead">Real hats designed and pressed at The Cap Bar. Tap any photo to see it up close.</p>
+      <p class="eyebrow">Testimonials</p>
+      <h1>What customers say</h1>
+      <p class="hero-script">It's not just a hat shop, <span class="nw">it's an experience.</span></p>
     </section>
 
-    <!-- COLLAGE (photos listed in js/showcase-data.js) -->
-    <section class="section gallery gallery-page" aria-labelledby="gallery-title">
-      <div id="collage" class="collage"></div>
+    <!-- TESTIMONIALS: real reviews from the owner (Oct 10) live in js/testimonials.js -->
+    <section class="section reviews" aria-labelledby="reviews-title">
+      <div class="section-head">
+        <h2 id="reviews-title" class="sr-only">Customer reviews</h2>
+      </div>
+      <div id="reviews-grid" class="reviews-grid"></div>
+      <div id="reviews-empty" class="reviews-empty" hidden>
+        <div class="ghost-cards" aria-hidden="true">
+          <div class="ghost"><i>“</i><b></b><b></b><b class="short"></b><em></em></div>
+          <div class="ghost"><i>“</i><b></b><b></b><b class="short"></b><em></em></div>
+          <div class="ghost"><i>“</i><b></b><b></b><b class="short"></b><em></em></div>
+        </div>
+        <div class="reviews-cta">
+          <p class="badge-label">Placeholder</p>
+          <h3>Customer reviews coming soon. Be the first!</h3>
+          <p>Got a hat from The Cap Bar? We'd love to hear how it went.</p>
+          <a id="share-exp" class="btn btn-gold" href="#">Share your experience</a>
+        </div>
+      </div>
     </section>
 
-    <div class="page-cta"><a class="btn btn-gold" href="collections.html">See our collections</a> <a class="btn btn-ghost" href="index.html#location">Location coming soon</a></div>
+        <section class="section" aria-label="Get in touch">
+      <div class="section-head">
+        <p class="lead">Want a cap of your own? <a href="collections.html">See the collections</a> or <a href="contact.html">send us a message</a>.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -79,16 +121,9 @@
     <p class="fine">© <span data-year>2026</span> The Cap Bar · <a href="https://capbarexperience.com/">capbarexperience.com</a></p>
   </footer>
 
-  <!-- Photo viewer -->
-  <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
-    <button class="lb-btn lb-x" type="button" data-close aria-label="Close">×</button>
-    <button class="lb-btn lb-prev" type="button" data-prev aria-label="Previous photo">‹</button>
-    <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
-    <button class="lb-btn lb-next" type="button" data-next aria-label="Next photo">›</button>
-  </dialog>
   <script src="js/settings.js"></script>
-  <script src="js/showcase-data.js"></script>
+  <script src="js/testimonials.js?v=14"></script>
   <script src="js/site.js"></script>
-  <script src="js/showcase.js"></script>
+  <script src="js/contact.js?v=15"></script>
 </body>
 </html>
