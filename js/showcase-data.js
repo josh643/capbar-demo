@@ -339,21 +339,21 @@ window.CAPBAR_SHOWCASE = {
   {
    "id": "greek-inspired",
    "name": "Greek Inspired Collection",
-   "blurb": "A few Greek inspired cap designs.",
+   "blurb": "Greek inspired caps and beanies.",
    "photos": [
     {
      "id": "greek-inspired-pink-cap",
      "w": 720,
      "h": 960,
      "caption": "Pink Greek inspired cap",
-     "alt": "Pink distressed cap on a mannequin with a pink and green jeweled bow and letter patch"
+     "alt": "Pink distressed cap on a mannequin with a sparkling pink and green bow, 1908 and ivy leaf patch"
     },
     {
      "id": "greek-inspired-brown-cap",
      "w": 720,
      "h": 960,
      "caption": "Brown Greek inspired cap",
-     "alt": "Brown distressed cap on a mannequin with a star patch and They Not Like Us lettering"
+     "alt": "Brown distressed cap on a mannequin with a raised hand, fist, pearls, ivy and They Not Like Us patch"
     },
     {
      "id": "greek-inspired-caps",
@@ -361,6 +361,13 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "Greek inspired caps",
      "alt": "Pink and brown distressed caps displayed side by side on mannequins"
+    },
+    {
+     "id": "sisters-keeper-pink-beanie",
+     "w": 720,
+     "h": 960,
+     "caption": "I Am My Sister's Keeper beanie",
+     "alt": "Pink knit beanie on a mannequin with a heart patch reading I Am My Sister's Keeper"
     }
    ]
   }
