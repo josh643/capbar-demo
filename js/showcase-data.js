@@ -318,6 +318,7 @@ window.CAPBAR_SHOWCASE = {
   {
    "id": "grizz-901",
    "name": "901 Grizz",
+   "comingSoon": true,
    "blurb": "Memphis pride: 901 Grizz truckers.",
    "photos": [
     {
