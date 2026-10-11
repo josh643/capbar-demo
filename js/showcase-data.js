@@ -426,6 +426,27 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Magenta cap on a mannequin with Girl Power and Wonderful rainbow patches"
     }
    ]
+  },
+  {
+   "id": "ms-sarcastic",
+   "name": "The Ms. Sarcastic Collection",
+   "blurb": "Black caps with humorous patches.",
+   "photos": [
+    {
+     "id": "ms-sarcastic-la-la-la",
+     "w": 720,
+     "h": 960,
+     "caption": "La La La, I'm Not Listening",
+     "alt": "Black cap with La La La, I'm Not Listening, But Did You Die?, Sarcasm and Cool patches"
+    },
+    {
+     "id": "ms-sarcastic-amazing",
+     "w": 720,
+     "h": 960,
+     "caption": "Amazing",
+     "alt": "Black cap with My Mom Thinks I'm Special, Don't Mistake My Kindness for Weakness and Amazing patches"
+    }
+   ]
   }
  ],
  "gallery": [
