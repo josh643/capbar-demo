@@ -408,8 +408,8 @@ window.CAPBAR_SHOWCASE = {
      "id": "kids-concept-cash",
      "w": 720,
      "h": 960,
-     "caption": "Concept Cash cap",
-     "alt": "Dark charcoal distressed cap on a white mannequin with a tan piggy bank patch reading Concept Cash"
+     "caption": "Concert Cash cap",
+     "alt": "Dark charcoal distressed cap on a white mannequin with a tan piggy bank patch"
     },
     {
      "id": "kids-dear-future",
@@ -694,6 +694,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 960,
    "caption": "Faith Over Fear camo caps",
    "alt": "Gray camo caps with I Will Trust and Faith Over Fear patches"
+  },
+  {
+   "id": "bad-hair-day-cap",
+   "w": 720,
+   "h": 960,
+   "caption": "Bad Hair Day cap",
+   "alt": "Dark navy distressed cap on a mannequin with a red and white Bad Hair Day patch"
   }
  ]
 };
