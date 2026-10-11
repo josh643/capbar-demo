@@ -73,7 +73,7 @@
       el("span", { class: "coll-tile-img" }, [pic(p)]),
       el("span", { class: "coll-tile-body" }, [
         el("strong", { text: c.name }),
-        el("small", { text: c.photos.length + (c.photos.length === 1 ? " photo" : " photos") }),
+        el("small", { text: c.comingSoon ? "Coming soon" : c.photos.length + (c.photos.length === 1 ? " photo" : " photos") }),
       ]),
     ]));
   });
@@ -83,13 +83,14 @@
   if (cl) {
     var nav = document.getElementById("coll-jump");
     D.collections.forEach(function (c, ci) {
-      if (nav) nav.appendChild(el("a", { href: "#" + c.id, text: c.name }));
+      if (nav) nav.appendChild(el("a", { href: "#" + c.id, text: c.name + (c.comingSoon ? " (Coming soon)" : "") }));
       var grid = el("div", { class: "collage collage-coll" + (c.photos.length < 3 ? " collage-few" : "") });
       collage(grid, c.photos, ci === 0 ? 2 : 0);
       cl.appendChild(el("section", { id: c.id, class: "coll-section", "aria-labelledby": c.id + "-t" }, [
         el("div", { class: "section-head" }, [
           el("p", { class: "eyebrow", text: "Collection" }),
           el("h2", { id: c.id + "-t", text: c.name }),
+          c.comingSoon ? el("p", { class: "collection-status", text: "Coming soon" }) : null,
           el("p", { class: "lead", text: c.blurb }),
         ]),
         grid,
