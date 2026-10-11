@@ -377,18 +377,25 @@ window.CAPBAR_SHOWCASE = {
    "blurb": "Colorful caps with positive messages for kids.",
    "photos": [
     {
-     "id": "kids-radiate-positivity",
+     "id": "kids-girls-never-give-up",
      "w": 720,
      "h": 960,
-     "caption": "Radiate Positivity cap",
-     "alt": "Red distressed cap on a mannequin with a round rainbow Radiate Positivity patch"
+     "caption": "Girls Never Give Up cap",
+     "alt": "Light pink cap on a mannequin with a Girls Never Give Up patch"
     },
     {
-     "id": "kids-girl-power",
+     "id": "kids-dear-future",
      "w": 720,
      "h": 960,
-     "caption": "Girl Power cap",
-     "alt": "Magenta cap on a mannequin with Girl Power and Wonderful rainbow patches"
+     "caption": "Dear Future, I'm Ready cap",
+     "alt": "Dark charcoal distressed cap on a white mannequin with a black patch reading Dear Future, I'm Ready"
+    },
+    {
+     "id": "bad-hair-day-cap",
+     "w": 720,
+     "h": 960,
+     "caption": "Bad Hair Day cap",
+     "alt": "Dark navy distressed cap on a mannequin with a red and white Bad Hair Day patch"
     },
     {
      "id": "kids-dream-it-do-it",
@@ -398,11 +405,11 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Dark charcoal distressed cap on a mannequin with a rainbow cloud patch reading Dream It & Do It"
     },
     {
-     "id": "kids-girls-never-give-up",
+     "id": "kids-radiate-positivity",
      "w": 720,
      "h": 960,
-     "caption": "Girls Never Give Up cap",
-     "alt": "Light pink cap on a mannequin with a Girls Never Give Up patch"
+     "caption": "Radiate Positivity cap",
+     "alt": "Red distressed cap on a mannequin with a round rainbow Radiate Positivity patch"
     },
     {
      "id": "kids-concept-cash",
@@ -412,11 +419,11 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Dark charcoal distressed cap on a white mannequin with a tan piggy bank patch"
     },
     {
-     "id": "kids-dear-future",
+     "id": "kids-girl-power",
      "w": 720,
      "h": 960,
-     "caption": "Dear Future, I'm Ready cap",
-     "alt": "Dark charcoal distressed cap on a white mannequin with a black patch reading Dear Future, I'm Ready"
+     "caption": "Girl Power cap",
+     "alt": "Magenta cap on a mannequin with Girl Power and Wonderful rainbow patches"
     }
    ]
   }
