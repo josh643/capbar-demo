@@ -186,6 +186,20 @@ window.CAPBAR_SHOWCASE = {
      "h": 528,
      "caption": "Positive Vibes snapbacks",
      "alt": "Two snapbacks on mannequins: Don't Quit, Never Give Up and an olive Positive Mind, Positive Vibes, Positive Life"
+    },
+    {
+     "id": "good-vibes-hawaii-cap",
+     "w": 720,
+     "h": 750,
+     "caption": "Good Vibes Hawaii cap",
+     "alt": "White and light blue cap with Hawaii, Beach Bum and Chill patches"
+    },
+    {
+     "id": "good-vibes-limited-edition-cap",
+     "w": 720,
+     "h": 831,
+     "caption": "Limited Edition Good Vibes cap",
+     "alt": "White and light blue cap with Limited Edition and Good Vibes patches"
     }
    ]
   },
