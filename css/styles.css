@@ -528,6 +528,9 @@ html.cart-is-open { overflow: hidden; }
 .loc-hero h1 { font: 400 clamp(38px, 11vw, 78px)/.98 var(--block); text-transform: uppercase; letter-spacing: .01em; margin: 0; }
 .loc-city { font: 400 clamp(20px, 5.4vw, 30px)/1.1 var(--block); color: var(--gold); text-transform: uppercase; letter-spacing: .06em; margin: 8px 0 0; }
 .loc-hero .hero-script { margin: 18px 0 10px; }
+.flyer-section { padding-top: 52px; padding-bottom: 52px; }
+.flyer-section figure { margin: 0 auto; }
+.flyer-section img { width: min(100%, 620px); height: auto; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; }
 .loc-lead { color: var(--muted); max-width: 520px; margin: 0 auto 24px; }
 .loc-ctas { display: grid; gap: 12px; max-width: 360px; margin: 0 auto; }
 .loc-ctas .btn svg { width: 18px; height: 18px; }
