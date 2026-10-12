@@ -79,6 +79,9 @@ PHOTOS = {
     "black-beautiful-blessed-cap": ("IMG_7106.jpeg", None),
     "black-and-dope-caps":      ("IMG_6895.jpeg", (0, 0.18, 1, 0.78)),
     "black-everyday-caps":      ("IMG_6896.jpeg", (0, 0.3, 1, 0.82)),
+    # Oct 12 (owner): "The Official Cap Bar Cap", exclusive Cap Bar merchandise (studio photos, white background, no crop)
+    "official-cap-bar-cap-black-gold":  ("IMG_7196.jpeg", None),
+    "official-cap-bar-cap-caramel-trucker": ("IMG_7193.jpeg", None),
 }
 
 def load(src):
