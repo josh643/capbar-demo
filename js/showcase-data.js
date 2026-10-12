@@ -11,6 +11,7 @@ window.CAPBAR_SHOWCASE = {
   {
    "id": "official-cap-bar",
    "name": "The Official Cap Bar Cap",
+   "comingSoon": true,
    "blurb": "Exclusive Cap Bar merchandise: our own embroidered The Cap Bar patch, only at The Cap Bar.",
    "photos": [
     {
