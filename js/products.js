@@ -6,7 +6,7 @@
 
 window.CAPBAR_SETTINGS = {
   businessName: "The Cap Bar",
-  email: "thomasmarlonr@gmail.com",
+  email: "capbarexperience@outlook.com",
   facebook: "https://www.facebook.com/people/The-Cap-Bar/61595176251150/",
 
   // true  = show the "demo preview" ribbon and the demo checkout pop-up.
