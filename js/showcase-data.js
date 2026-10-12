@@ -3,10 +3,32 @@
    Each photo "id" is a file set in images/showcase/: <id>.jpg/.webp (full size, for the viewer)
    and <id>-sm.jpg/.webp (720px wide, for the grids). Build them with tools/build_showcase_images.py.
    Collections and names are the owner's own (in his order). Photos with cuss words are not on the site.
+   Oct 12: owner added The Official Cap Bar Cap (exclusive Cap Bar merchandise), shown first.
    Oct 9: owner OK'd the "Black" patch photos; added Black Girls Magic and The Trinity collections.
    ========================================================================== */
 window.CAPBAR_SHOWCASE = {
  "collections": [
+  {
+   "id": "official-cap-bar",
+   "name": "The Official Cap Bar Cap",
+   "blurb": "Exclusive Cap Bar merchandise: our own embroidered The Cap Bar patch, only at The Cap Bar.",
+   "photos": [
+    {
+     "id": "official-cap-bar-cap-black-gold",
+     "w": 720,
+     "h": 722,
+     "caption": "The Official Cap Bar Cap, black and gold",
+     "alt": "Black and gold two-tone cap with a round gold embroidered The Cap Bar patch and gold stitching on the brim"
+    },
+    {
+     "id": "official-cap-bar-cap-caramel-trucker",
+     "w": 720,
+     "h": 614,
+     "caption": "The Official Cap Bar Cap, caramel trucker",
+     "alt": "Caramel brown trucker cap with black mesh back and a round black and gold embroidered The Cap Bar patch"
+    }
+   ]
+  },
   {
    "id": "queen-bling",
    "name": "Queen Bling Collection 💎",
