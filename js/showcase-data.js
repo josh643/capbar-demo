@@ -3,6 +3,7 @@
    Each photo "id" is a file set in images/showcase/: <id>.jpg/.webp (full size, for the viewer)
    and <id>-sm.jpg/.webp (720px wide, for the grids). Build them with tools/build_showcase_images.py.
    Collections and names are the owner's own (in his order). Photos with cuss words are not on the site.
+   Oct 15: owner added The Psycho Babe Collection (after Greek Inspired).
    Oct 12: owner added The Official Cap Bar Cap (exclusive Cap Bar merchandise), shown first.
    Oct 9: owner OK'd the "Black" patch photos; added Black Girls Magic and The Trinity collections.
    ========================================================================== */
@@ -406,6 +407,34 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "I Am My Sister's Keeper beanie",
      "alt": "Pink knit beanie on a mannequin with a heart patch reading I Am My Sister's Keeper"
+    }
+   ]
+  },
+  {
+   "id": "psycho-babe",
+   "name": "The Psycho Babe Collection",
+   "blurb": "Pink and blue truckers with Sweet but Psycho and I Put the Hot in Psychotic patches.",
+   "photos": [
+    {
+     "id": "psycho-babe-hot-in-psychotic-trucker",
+     "w": 720,
+     "h": 960,
+     "caption": "I Put the Hot in Psychotic trucker",
+     "alt": "Pink and white trucker on a mannequin with a pink I Put the Hot in Psychotic patch, a pink star and a small side patch"
+    },
+    {
+     "id": "psycho-babe-sweet-but-psycho-trucker",
+     "w": 720,
+     "h": 960,
+     "caption": "Sweet but Psycho trucker",
+     "alt": "Light blue and white trucker on a mannequin with a checkered Sweet but Psycho patch and a pink Main Character patch"
+    },
+    {
+     "id": "psycho-babe-truckers",
+     "w": 720,
+     "h": 960,
+     "caption": "Psycho Babe truckers",
+     "alt": "Blue Sweet but Psycho trucker and pink I Put the Hot in Psychotic trucker displayed side by side on mannequins"
     }
    ]
   },
