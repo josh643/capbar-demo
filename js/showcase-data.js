@@ -406,6 +406,34 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "I Am My Sister's Keeper beanie",
      "alt": "Pink knit beanie on a mannequin with a heart patch reading I Am My Sister's Keeper"
+    },
+    {
+     "id": "greek-inspired-red-lady-cap",
+     "w": 720,
+     "h": 845,
+     "caption": "Black cap with red lady patch",
+     "alt": "Black cap on a mannequin with a red and white patch of a lady in a wide-brim hat"
+    },
+    {
+     "id": "greek-inspired-red-lady-cap-back",
+     "w": 720,
+     "h": 845,
+     "caption": "Back of the red lady cap",
+     "alt": "Back view of a black cap with a red embroidered patch above the strap"
+    },
+    {
+     "id": "greek-inspired-1913-cap",
+     "w": 720,
+     "h": 845,
+     "caption": "Black 1913 cap",
+     "alt": "Black cap on a mannequin with red patches: a lady in a red cap with 1913, and a letter E"
+    },
+    {
+     "id": "greek-inspired-black-caps",
+     "w": 720,
+     "h": 845,
+     "caption": "Black Greek inspired caps",
+     "alt": "Two black caps with red patches displayed side by side on mannequins"
     }
    ]
   },
