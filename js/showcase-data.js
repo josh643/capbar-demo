@@ -542,6 +542,20 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Black cap with My Mom Thinks I'm Special, Don't Mistake My Kindness for Weakness and Amazing patches"
     }
    ]
+  },
+  {
+   "id": "coffee",
+   "name": "Coffee Collection",
+   "blurb": "A premium adjustable coffee-colored cap with a coffee-themed patch.",
+   "photos": [
+    {
+     "id": "coffee-cap",
+     "w": 720,
+     "h": 1131,
+     "caption": "Coffee cap",
+     "alt": "Coffee-colored adjustable cap on a mannequin with a coffee-themed patch"
+    }
+   ]
   }
  ],
  "gallery": [
@@ -824,6 +838,13 @@ window.CAPBAR_SHOWCASE = {
    "h": 960,
    "caption": "Bad Hair Day cap",
    "alt": "Dark navy distressed cap on a mannequin with a red and white Bad Hair Day patch"
+  },
+  {
+   "id": "coffee-cap",
+   "w": 720,
+   "h": 1131,
+   "caption": "Coffee cap",
+   "alt": "Coffee-colored adjustable cap on a mannequin with a coffee-themed patch"
   }
  ]
 };
