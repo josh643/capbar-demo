@@ -523,9 +523,16 @@ window.CAPBAR_SHOWCASE = {
     {
      "id": "coffee-cap",
      "w": 720,
-     "h": 1131,
-     "caption": "Coffee cap",
-     "alt": "Coffee-colored adjustable cap on a mannequin with a coffee-themed patch"
+     "h": 876,
+     "caption": "This Man Runs on Coffee and Jesus cap",
+     "alt": "Coffee-colored adjustable cap on a display head with a patch reading This Man Runs on Coffee and Jesus"
+    },
+    {
+     "id": "coffee-cap-display",
+     "w": 720,
+     "h": 644,
+     "caption": "Coffee cap display",
+     "alt": "Coffee-colored cap on a display head in front of a black and gold cap display poster"
     }
    ]
   }
