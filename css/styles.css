@@ -230,7 +230,7 @@ p { text-wrap: pretty; }
 .footer-links svg { color: var(--gold); }
 .fine { color: #8a8378; font-size: 12px; margin: 0; }
 .fine a { color: var(--gold); }
-.footer-credit { color: #8a8378; font-size: 20px; margin: 8px 0 0; }
+.footer-credit { color: #8a8378; font-size: 12px; margin: 8px 0 0; }
 
 /* checkout dialog */
 .checkout { padding: 0; border: 1px solid rgba(212,175,90,.5); border-radius: 22px; background: #121110; color: var(--white); width: min(92vw, 440px); max-height: 92vh; }
