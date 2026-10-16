@@ -230,6 +230,7 @@ p { text-wrap: pretty; }
 .footer-links svg { color: var(--gold); }
 .fine { color: #8a8378; font-size: 12px; margin: 0; }
 .fine a { color: var(--gold); }
+.footer-credit { color: #8a8378; font-size: 12px; margin: 8px 0 0; }
 
 /* checkout dialog */
 .checkout { padding: 0; border: 1px solid rgba(212,175,90,.5); border-radius: 22px; background: #121110; color: var(--white); width: min(92vw, 440px); max-height: 92vh; }
@@ -638,4 +639,8 @@ html.cart-is-open { overflow: hidden; }
 .follow-card svg { color: var(--gold); flex: none; }
 .follow-net { display: block; font: 700 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
 .follow-handle { display: block; font: 700 18px/1.2 var(--sans); }
+.staff-section { padding-top: 24px; }
+.staff-card { max-width: 520px; margin: 0 auto; padding: 24px; text-align: center; border: 1px solid rgba(212,175,90,.35); border-radius: 18px; background: var(--bg-2); }
+.staff-card h3 { margin: 0 0 6px; font: 400 26px/1.1 var(--block); text-transform: uppercase; }
+.staff-card p { margin: 0; color: var(--gold-hi); }
 @media (max-width: 600px) { .follow-card { width: 100%; min-width: 0; } }
