@@ -480,6 +480,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "kids",
    "name": "The Kids Collection Inspired By Bella",
    "blurb": "Colorful caps with positive messages for kids.",
+   "artwork": { "path": "images/showcase/collection-art-kids.jpg", "w": 1155, "h": 1162, "caption": "The Kids Collection Inspired by Bella artwork", "alt": "Colorful Kids Collection lettering with a crown, stars, caps and Inspired by Bella script on a black background" },
    "photos": [
     {
      "id": "kids-girls-never-give-up",
