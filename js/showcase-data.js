@@ -100,6 +100,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "pretty-spoiled",
    "name": "Pretty & Spoiled Collection",
    "blurb": "Pink, playful and a little bit extra.",
+   "artwork": { "path": "images/showcase/collection-art-pretty-spoiled.jpg", "w": 691, "h": 720, "caption": "Pretty & Spoiled Collection artwork", "alt": "Pink and teal Pretty & Spoiled Collection lettering with a jeweled crown, hearts and a bow on a black background" },
    "photos": [
     {
      "id": "main-character-trucker",
@@ -192,6 +193,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "cool-vibes",
    "name": "Cool Vibes Collection",
    "blurb": "Beach days, good energy and no bad vibes.",
+   "artwork": { "path": "images/showcase/collection-art-cool-vibes.jpg", "w": 720, "h": 710, "caption": "Cool Vibes Collection artwork", "alt": "Colorful Cool Vibes Collection lettering with a gold crown and paint splashes on a black background" },
    "photos": [
     {
      "id": "beach-patch-truckers",
@@ -385,6 +387,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "greek-inspired",
    "name": "Greek Inspired Collection",
    "blurb": "Greek inspired caps and beanies.",
+   "artwork": { "path": "images/showcase/collection-art-greek-inspired.jpg", "w": 698, "h": 720, "caption": "Greek Inspired Collection artwork", "alt": "Multicolor Greek lettering with gold Inspired Collection text, a column and laurel leaves on a black background" },
    "photos": [
     {
      "id": "greek-inspired-pink-cap",
@@ -533,6 +536,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "ms-sarcastic",
    "name": "The Ms. Sarcastic Collection",
    "blurb": "Black caps with humorous patches.",
+   "artwork": { "path": "images/showcase/collection-art-ms-sarcastic.jpg", "w": 720, "h": 715, "caption": "The Ms. Sarcastic Collection artwork", "alt": "Red and silver Ms Sarcastic Collection lettering with a crown, red lips and hearts on a black background" },
    "photos": [
     {
      "id": "ms-sarcastic-la-la-la",
