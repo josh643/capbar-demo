@@ -35,6 +35,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "queen-bling",
    "name": "Queen Bling Collection 💎",
    "blurb": "Rhinestones, gold glitter and a whole lot of Queen.",
+   "artwork": { "path": "images/showcase/collection-art-queen-bling.jpg", "w": 720, "h": 699, "caption": "Queen Bling Collection artwork", "alt": "Gold Queen Bling Collection lettering with a crown and jewels on a black background" },
    "photos": [
     {
      "id": "queen-aint-easy-cap",
@@ -56,6 +57,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "love-peace",
    "name": "Love & Peace Collection",
    "blurb": "Bright peace signs, flowers and the love bus.",
+   "artwork": { "path": "images/showcase/collection-art-love-peace.jpg", "w": 718, "h": 720, "caption": "Love & Peace Collection artwork", "alt": "Colorful Love & Peace Collection lettering with peace signs and hearts on a black background" },
    "photos": [
     {
      "id": "love-bus-trucker",
@@ -154,6 +156,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "boss-lady",
    "name": "Boss Lady Collection",
    "blurb": "For the women who run it: booked, busy and blessed.",
+   "artwork": { "path": "images/showcase/collection-art-boss-lady.jpg", "w": 720, "h": 709, "caption": "Boss Lady Collection artwork", "alt": "Red and gold Boss Lady Collection lettering with a crown and hearts on a black background" },
    "photos": [
     {
      "id": "boss-lady-omg-cap",
@@ -231,6 +234,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "black-girls-magic",
    "name": "Black Girls Magic Collection",
    "blurb": "Black Girl Magic, Black Queen and Black Beautiful Blessed patches.",
+   "artwork": { "path": "images/showcase/collection-art-black-girls-magic.jpg", "w": 711, "h": 720, "caption": "Black Girls Magic Collection artwork", "alt": "Purple and gold Black Girl Magic Collection lettering with hearts on a black background" },
    "photos": [
     {
      "id": "black-girl-magic-cap",
@@ -308,6 +312,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "trinity",
    "name": "The Trinity Collection",
    "blurb": "Faith-based camo caps: Faith, Chosen, Child of God, I Will Trust and more.",
+   "artwork": { "path": "images/showcase/collection-art-trinity.jpg", "w": 719, "h": 720, "caption": "The Trinity Collection artwork", "alt": "Gold The Trinity Collection lettering and crown on a black background" },
    "photos": [
     {
      "id": "faith-camo-caps",
@@ -358,6 +363,7 @@ window.CAPBAR_SHOWCASE = {
    "name": "901 Grizz",
    "comingSoon": true,
    "blurb": "Memphis pride: 901 Grizz truckers.",
+   "artwork": { "path": "images/showcase/collection-art-901-grizz.jpg", "w": 694, "h": 720, "caption": "901 Grizz Collection artwork", "alt": "Camouflage 901 Grizz Collection lettering with a bear on a black background" },
    "photos": [
     {
      "id": "grizz-901-blue-trucker",
@@ -414,6 +420,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "psycho-babe",
    "name": "The Psycho Babe Collection",
    "blurb": "Pink and blue truckers with Sweet but Psycho and I Put the Hot in Psychotic patches.",
+   "artwork": { "path": "images/showcase/collection-art-psycho-babe.jpg", "w": 701, "h": 720, "caption": "The Psycho Babe Collection artwork", "alt": "Pink and blue Psycho Babe Collection lettering with hearts on a black background" },
    "photos": [
     {
      "id": "psycho-babe-hot-in-psychotic-trucker",
@@ -519,6 +526,7 @@ window.CAPBAR_SHOWCASE = {
    "id": "coffee",
    "name": "Coffee Collection",
    "blurb": "A premium adjustable coffee-colored cap with a coffee-themed patch.",
+   "artwork": { "path": "images/showcase/collection-art-coffee.jpg", "w": 701, "h": 720, "caption": "Coffee Collection artwork", "alt": "Cream Coffee Collection lettering with coffee beans on a black background" },
    "photos": [
     {
      "id": "coffee-cap",

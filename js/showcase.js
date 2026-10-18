@@ -14,6 +14,7 @@
     return n;
   }
   function pic(p, eager) {
+    if (p.path) return el("img", { src: p.path, alt: p.alt, width: p.w, height: p.h, loading: eager ? "eager" : "lazy", decoding: "async" });
     return el("picture", null, [
       el("source", { type: "image/webp", srcset: BASE + p.id + "-sm.webp" }),
       el("img", { src: BASE + p.id + "-sm.jpg", alt: p.alt, width: p.w, height: p.h, loading: eager ? "eager" : "lazy", decoding: "async" }),
@@ -26,7 +27,7 @@
   function show(i) {
     at = (i + group.length) % group.length;
     var p = group[at], im = document.getElementById("lb-img");
-    im.src = BASE + p.id + (canWebp ? ".webp" : ".jpg"); im.alt = p.alt;
+    im.src = p.path || (BASE + p.id + (canWebp ? ".webp" : ".jpg")); im.alt = p.alt;
     document.getElementById("lb-cap").textContent = p.caption + (group.length > 1 ? "  ·  " + (at + 1) + " / " + group.length : "");
     if (!lb.open) { if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); }
   }
@@ -68,7 +69,7 @@
   // ---- home: one tile per collection
   var tiles = document.getElementById("coll-tiles");
   if (tiles) D.collections.forEach(function (c) {
-    var p = c.photos[0];
+    var p = c.artwork || c.photos[0];
     tiles.appendChild(el("a", { class: "coll-tile", href: "collections.html#" + c.id }, [
       el("span", { class: "coll-tile-img" }, [pic(p)]),
       el("span", { class: "coll-tile-body" }, [
@@ -84,8 +85,9 @@
     var nav = document.getElementById("coll-jump");
     D.collections.forEach(function (c, ci) {
       if (nav) nav.appendChild(el("a", { href: "#" + c.id, text: c.name + (c.comingSoon ? " (Coming soon)" : "") }));
-      var grid = el("div", { class: "collage collage-coll" + (c.photos.length < 3 ? " collage-few" : "") });
-      collage(grid, c.photos, ci === 0 ? 2 : 0);
+      var collectionPhotos = c.artwork ? [c.artwork].concat(c.photos) : c.photos;
+      var grid = el("div", { class: "collage collage-coll" + (collectionPhotos.length < 3 ? " collage-few" : "") });
+      collage(grid, collectionPhotos, ci === 0 ? 2 : 0);
       cl.appendChild(el("section", { id: c.id, class: "coll-section", "aria-labelledby": c.id + "-t" }, [
         el("div", { class: "section-head" }, [
           el("p", { class: "eyebrow", text: "Collection" }),
