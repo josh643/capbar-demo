@@ -1,14 +1,44 @@
 # Cap Bar: short browser cache so Marlon sees publishes without waiting hours.
-# Zone Browser Cache TTL must be "Respect Existing Headers" (0) for these to apply on capbarexperience.com.
+# Zone Browser Cache TTL must stay "Respect Existing Headers" (0) on capbarexperience.com.
+# Avoid a blanket /* Cache-Control rule: Pages concatenates matches, which duplicated
+# max-age on /images/*. List paths explicitly instead.
 
-# Default: HTML, JS, CSS, JSON, and pretty routes always revalidate
-/*
+# Root + pretty HTML routes
+/
   Cache-Control: public, max-age=0, must-revalidate
 
-# Images reuse fixed filenames when content changes — keep a short browser cache only
+/collections
+  Cache-Control: public, max-age=0, must-revalidate
+
+/gallery
+  Cache-Control: public, max-age=0, must-revalidate
+
+/story
+  Cache-Control: public, max-age=0, must-revalidate
+
+/contact
+  Cache-Control: public, max-age=0, must-revalidate
+
+/testimonials
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# App data
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Images reuse fixed filenames when content changes
 /images/*
   Cache-Control: public, max-age=300, must-revalidate
 
-# Fonts are stable; long cache is fine
+# Fonts are stable
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
