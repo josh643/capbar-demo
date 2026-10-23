@@ -28,7 +28,7 @@ footer. No server, no database, no monthly platform fee. Payments are handled en
 ```
 index.html            home: hero, Our Story teaser, collections teaser, experience, gallery highlights, shop CTA, coming-soon
 shop.html             the shop: product grid, colors, sale prices, demo checkout (loads from the admin API, falls back to js/products.js)
-collections.html      all collections, Camo, The 901 (coming soon)
+collections.html      all collections, Camo, The 901
 gallery.html          "Our work" gallery + lightbox (js/gallery.js)
 story.html            Our Story: Marlon's mission statement
 contact.html          contact page: short mission, testimonials, contact info + form
