@@ -363,7 +363,6 @@ window.CAPBAR_SHOWCASE = {
   {
    "id": "grizz-901",
    "name": "901 Grizz",
-   "comingSoon": true,
    "blurb": "Memphis pride: camouflage 901 Grizz caps.",
    "artwork": { "path": "images/showcase/collection-art-901-grizz.jpg", "w": 694, "h": 720, "caption": "901 Grizz Collection artwork", "alt": "Camouflage 901 Grizz Collection lettering with a bear on a black background" },
    "photos": [
