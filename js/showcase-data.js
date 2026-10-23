@@ -364,22 +364,50 @@ window.CAPBAR_SHOWCASE = {
    "id": "grizz-901",
    "name": "901 Grizz",
    "comingSoon": true,
-   "blurb": "Memphis pride: 901 Grizz truckers.",
+   "blurb": "Memphis pride: camouflage 901 Grizz caps.",
    "artwork": { "path": "images/showcase/collection-art-901-grizz.jpg", "w": 694, "h": 720, "caption": "901 Grizz Collection artwork", "alt": "Camouflage 901 Grizz Collection lettering with a bear on a black background" },
    "photos": [
     {
-     "id": "grizz-901-blue-trucker",
+     "id": "grizz-901-camo-bear-front",
      "w": 720,
-     "h": 701,
-     "caption": "901 Grizz trucker, royal blue",
-     "alt": "Royal blue and white trucker with a blue and gold 901 Grizz patch"
+     "h": 960,
+     "caption": "901 Grizz gray camo cap, front",
+     "alt": "Gray camouflage cap with an embroidered bear patch, displayed on a mannequin"
     },
     {
-     "id": "grizz-901-dark-trucker",
+     "id": "grizz-901-camo-bear-side-26",
      "w": 720,
-     "h": 699,
-     "caption": "901 Grizz trucker, dark",
-     "alt": "Dark trucker with a blue and gold 901 Grizz patch"
+     "h": 960,
+     "caption": "901 Grizz gray camo cap, 26 side detail",
+     "alt": "Gray camouflage cap with an embroidered bear patch and gold 26 side detail"
+    },
+    {
+     "id": "grizz-901-camo-bear-side-20",
+     "w": 720,
+     "h": 960,
+     "caption": "901 Grizz gray camo cap, 20 side detail",
+     "alt": "Gray camouflage cap with an embroidered bear patch and gold 20 side detail"
+    },
+    {
+     "id": "grizz-901-camo-green-side-20",
+     "w": 720,
+     "h": 960,
+     "caption": "901 Grizz green camo cap, 20 side detail",
+     "alt": "Green camouflage cap with a gold 20 side detail and an embroidered side patch"
+    },
+    {
+     "id": "grizz-901-camo-green-back",
+     "w": 720,
+     "h": 960,
+     "caption": "901 Grizz green camo cap, rear side view",
+     "alt": "Green camouflage cap displayed from the rear side with an embroidered side patch"
+    },
+    {
+     "id": "grizz-901-camo-green-front",
+     "w": 720,
+     "h": 960,
+     "caption": "901 Grizz green camo cap, front",
+     "alt": "Green camouflage cap with an embroidered bear patch, displayed on a mannequin"
     }
    ]
   },
@@ -783,18 +811,46 @@ window.CAPBAR_SHOWCASE = {
    "alt": "Pink and white trucker with an Excuse Me, You Look Like You Love Me patch"
   },
   {
-   "id": "grizz-901-blue-trucker",
+   "id": "grizz-901-camo-bear-front",
    "w": 720,
-   "h": 701,
-   "caption": "901 Grizz trucker, royal blue",
-   "alt": "Royal blue and white trucker with a blue and gold 901 Grizz patch"
+   "h": 960,
+   "caption": "901 Grizz gray camo cap, front",
+   "alt": "Gray camouflage cap with an embroidered bear patch, displayed on a mannequin"
   },
   {
-   "id": "grizz-901-dark-trucker",
+   "id": "grizz-901-camo-bear-side-26",
    "w": 720,
-   "h": 699,
-   "caption": "901 Grizz trucker, dark",
-   "alt": "Dark trucker with a blue and gold 901 Grizz patch"
+   "h": 960,
+   "caption": "901 Grizz gray camo cap, 26 side detail",
+   "alt": "Gray camouflage cap with an embroidered bear patch and gold 26 side detail"
+  },
+  {
+   "id": "grizz-901-camo-bear-side-20",
+   "w": 720,
+   "h": 960,
+   "caption": "901 Grizz gray camo cap, 20 side detail",
+   "alt": "Gray camouflage cap with an embroidered bear patch and gold 20 side detail"
+  },
+  {
+   "id": "grizz-901-camo-green-side-20",
+   "w": 720,
+   "h": 960,
+   "caption": "901 Grizz green camo cap, 20 side detail",
+   "alt": "Green camouflage cap with a gold 20 side detail and an embroidered side patch"
+  },
+  {
+   "id": "grizz-901-camo-green-back",
+   "w": 720,
+   "h": 960,
+   "caption": "901 Grizz green camo cap, rear side view",
+   "alt": "Green camouflage cap displayed from the rear side with an embroidered side patch"
+  },
+  {
+   "id": "grizz-901-camo-green-front",
+   "w": 720,
+   "h": 960,
+   "caption": "901 Grizz green camo cap, front",
+   "alt": "Green camouflage cap with an embroidered bear patch, displayed on a mannequin"
   },
   {
    "id": "black-everyday-caps",
