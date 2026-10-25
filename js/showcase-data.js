@@ -407,6 +407,13 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "901 Grizz green camo cap, front",
      "alt": "Green camouflage cap with an embroidered bear patch, displayed on a mannequin"
+    },
+    {
+     "id": "dog-daddy-beanie",
+     "w": 720,
+     "h": 581,
+     "caption": "Dog Daddy beanie",
+     "alt": "Light blue knit beanie with a brown Dog Daddy patch"
     }
    ]
   },
@@ -601,6 +608,28 @@ window.CAPBAR_SHOWCASE = {
      "h": 644,
      "caption": "Coffee cap display",
      "alt": "Coffee-colored cap on a display head in front of a black and gold cap display poster"
+    }
+   ]
+  },
+  {
+   "id": "dog-father",
+   "name": "Dog Father Collection",
+   "blurb": "Dog Father designs on caps and beanies.",
+   "artwork": { "path": "images/showcase/collection-art-dog-father.jpg", "w": 720, "h": 726, "caption": "Dog Father Collection artwork", "alt": "Blue and gold Dog Father Collection lettering with a dog wearing sunglasses on a black background" },
+   "photos": [
+    {
+     "id": "dog-daddy-beanie",
+     "w": 720,
+     "h": 581,
+     "caption": "Dog Daddy beanie",
+     "alt": "Light blue knit beanie with a brown Dog Daddy patch"
+    },
+    {
+     "id": "dog-better-life-cap",
+     "w": 720,
+     "h": 640,
+     "caption": "Dog can have a better life cap",
+     "alt": "Burgundy cap with a patch reading I work hard so my dog can have a better life"
     }
    ]
   }
