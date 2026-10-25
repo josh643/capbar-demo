@@ -407,13 +407,6 @@ window.CAPBAR_SHOWCASE = {
      "h": 960,
      "caption": "901 Grizz green camo cap, front",
      "alt": "Green camouflage cap with an embroidered bear patch, displayed on a mannequin"
-    },
-    {
-     "id": "dog-daddy-beanie",
-     "w": 720,
-     "h": 581,
-     "caption": "Dog Daddy beanie",
-     "alt": "Light blue knit beanie with a brown Dog Daddy patch"
     }
    ]
   },
