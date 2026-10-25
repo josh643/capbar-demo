@@ -632,6 +632,21 @@ window.CAPBAR_SHOWCASE = {
      "alt": "Burgundy cap with a patch reading I work hard so my dog can have a better life"
     }
    ]
+  },
+  {
+   "id": "doggy-mom",
+   "name": "Doggy Mom Collection",
+   "blurb": "Dog Mom cap designs.",
+   "artwork": { "id": "collection-art-doggy-mom", "w": 720, "h": 721, "caption": "Doggy Mom Collection artwork", "alt": "Pink and gold Doggy Mom Collection artwork with a poodle wearing jeweled heart-shaped sunglasses" },
+   "photos": [
+    {
+     "id": "doggy-mom-cap",
+     "w": 720,
+     "h": 980,
+     "caption": "Dog Mom cap",
+     "alt": "Pink cap with a Dog Mom patch on a mannequin"
+    }
+   ]
   }
  ],
  "gallery": [
