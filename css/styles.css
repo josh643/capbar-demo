@@ -492,10 +492,10 @@ html.cart-is-open { overflow: hidden; }
   .visit-body { padding: 52px; align-self: center; }
 }
 .ci-address { font-style: normal; color: var(--white); font-weight: 600; margin-bottom: 4px; }
-.footer-address { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 0 18px; font-size: 15px; }
-.footer-address svg { color: var(--gold); flex: none; }
-.footer-address a { color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(212,175,90,.5); }
-.footer-address a:hover { color: var(--gold-hi); }
+.footer-address, .footer-phone { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 0 18px; font-size: 15px; }
+.footer-address svg, .footer-phone svg { color: var(--gold); flex: none; }
+.footer-address a, .footer-phone a { color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(212,175,90,.5); }
+.footer-address a:hover, .footer-phone a:hover { color: var(--gold-hi); }
 
 /* v10 (Oct 8, owner): mannequin cap photo on Our Mission, owner's photo on the location (coming soon) card */
 .story-photo-cap { background: #000; }
