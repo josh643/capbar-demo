@@ -1,3 +1,7 @@
+# STORE STAGING: never index
+/*
+  X-Robots-Tag: noindex, nofollow
+
 # Cap Bar: short browser cache so Marlon sees publishes without waiting hours.
 # Zone Browser Cache TTL must stay "Respect Existing Headers" (0) on capbarexperience.com.
 # Avoid a blanket /* Cache-Control rule: Pages concatenates matches, which duplicated

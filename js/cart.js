@@ -6,7 +6,7 @@
 (function () {
   "use strict";
   var KEY = "capbar_cart_v1";
-  var API = "https://admin.capbarexperience.com";
+  var API = ""; // store-staging: same-origin Pages Function (Stripe test mode)
   var MAX_QTY = 10;
   var S = window.CAPBAR_SETTINGS || {};
   var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2, minimumFractionDigits: 0 });
@@ -300,6 +300,7 @@
         busy = false;
         var b = res.body || {};
         if (res.ok && b.url) { window.location.href = b.url; return; }
+        if (res.ok && b.clientSecret) { try { sessionStorage.setItem("capbar_pi", JSON.stringify(b)); } catch (e) {} window.location.href = "checkout.html"; return; }
         if (res.ok && b.demo) {
           // Server-checked prices and quantities.
           (b.lines || []).forEach(function (sl) {

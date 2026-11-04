@@ -11,7 +11,7 @@ window.CAPBAR_SETTINGS = {
 
   // true  = show the "demo preview" ribbon and the demo checkout pop-up.
   // false = go live: Buy buttons open each product's Stripe Payment Link.
-  demoMode: true,
+  demoMode: false,
 
   currency: "USD",
 };

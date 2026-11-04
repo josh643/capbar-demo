@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Pages
 # main branch    -> production https://capbarexperience.com (merge staging into main only)
 on:
   push:
-    branches: [staging, main]
+    branches: [staging, main, store-staging]
 jobs:
   deploy:
     runs-on: ubuntu-latest
