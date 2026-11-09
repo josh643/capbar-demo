@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Collections | The Cap Bar</title>
-  <meta name="description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Grizz (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
+  <meta name="description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Collection (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:title" content="Collections | The Cap Bar">
-  <meta property="og:description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Grizz (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
+  <meta property="og:description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Collection (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
   <meta property="og:image" content="https://capbarexperience.com/images/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Collections | The Cap Bar">
-  <meta name="twitter:description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Grizz (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
+  <meta name="twitter:description" content="The Cap Bar collections: The Official Cap Bar Cap (coming soon), Queen Bling, Love &amp; Peace, Pretty &amp; Spoiled, Boss Lady, Cool Vibes, Black Girls Magic, The Trinity, 901 Collection (coming soon), Greek Inspired, Kids, The Ms. Sarcastic Collection and Coffee Collection. Location coming soon to 348 South Main Street, Memphis.">
   <meta name="twitter:image" content="https://capbarexperience.com/images/og.jpg">
   <link rel="canonical" href="https://capbarexperience.com/collections">
   <meta property="og:url" content="https://capbarexperience.com/collections">
@@ -23,6 +23,15 @@
   <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/greatvibes.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css?v=13">
+  <script>
+    // Old collection hash #grizz-901 -> #the-901 (Marlon renamed to 901 Collection)
+    (function () {
+      var h = location.hash;
+      if (h === "#grizz-901" || h === "#901-grizz") {
+        location.replace(location.pathname + location.search + "#the-901");
+      }
+    })();
+  </script>
 </head>
 <body class="page-collections">
   <a class="top-ribbon" href="index.html#location"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span><strong>Location coming soon</strong> · 348 South Main Street, Memphis</span></a>

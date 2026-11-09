@@ -361,25 +361,25 @@ window.CAPBAR_SHOWCASE = {
    ]
   },
   {
-   "id": "grizz-901",
-   "name": "901 Grizz",
+   "id": "the-901",
+   "name": "901 Collection",
    "comingSoon": true,
-   "blurb": "Memphis pride: 901 Grizz truckers.",
-   "artwork": { "path": "images/showcase/collection-art-901-grizz.jpg", "w": 694, "h": 720, "caption": "901 Grizz Collection artwork", "alt": "Camouflage 901 Grizz Collection lettering with a bear on a black background" },
+   "blurb": "Memphis pride: 901 Collection truckers.",
+   "artwork": { "path": "images/showcase/collection-art-901.jpg", "w": 1196, "h": 1200, "caption": "901 Collection artwork", "alt": "The 901 Collection lettering over the Memphis skyline at night" },
    "photos": [
     {
      "id": "grizz-901-blue-trucker",
      "w": 720,
      "h": 701,
-     "caption": "901 Grizz trucker, royal blue",
-     "alt": "Royal blue and white trucker with a blue and gold 901 Grizz patch"
+     "caption": "901 Collection trucker, royal blue",
+     "alt": "Royal blue and white trucker with a blue and gold 901 patch"
     },
     {
      "id": "grizz-901-dark-trucker",
      "w": 720,
      "h": 699,
-     "caption": "901 Grizz trucker, dark",
-     "alt": "Dark trucker with a blue and gold 901 Grizz patch"
+     "caption": "901 Collection trucker, dark",
+     "alt": "Dark trucker with a blue and gold 901 patch"
     }
    ]
   },
@@ -786,15 +786,15 @@ window.CAPBAR_SHOWCASE = {
    "id": "grizz-901-blue-trucker",
    "w": 720,
    "h": 701,
-   "caption": "901 Grizz trucker, royal blue",
-   "alt": "Royal blue and white trucker with a blue and gold 901 Grizz patch"
+   "caption": "901 Collection trucker, royal blue",
+   "alt": "Royal blue and white trucker with a blue and gold 901 patch"
   },
   {
    "id": "grizz-901-dark-trucker",
    "w": 720,
    "h": 699,
-   "caption": "901 Grizz trucker, dark",
-   "alt": "Dark trucker with a blue and gold 901 Grizz patch"
+   "caption": "901 Collection trucker, dark",
+   "alt": "Dark trucker with a blue and gold 901 patch"
   },
   {
    "id": "black-everyday-caps",

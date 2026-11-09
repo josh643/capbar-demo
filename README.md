@@ -2,7 +2,7 @@
 
 **Oct 8, 2026: showcase version.** At the owner's request the site is a showcase for the store, with no
 online sales for now. "Location coming soon" (348 South Main Street, Memphis) is the theme of the home
-page. The site has his five collections, Black Girls Magic, The Trinity (faith camo caps) and 901 Grizz,
+page. The site has his five collections, Black Girls Magic, The Trinity (faith camo caps) and 901 Collection,
 a collage gallery, Our Story and Contact. **Oct 9:** owner OK'd the "Black" patch photos (back on the site, in
 Black Girls Magic + gallery); Our Mission picture is his store image (IMG_6770); "Just the Tip" stays.
 

@@ -66,7 +66,7 @@ PHOTOS = {
     "husbands-tab-front":       ("gallery/husbands-tab-front.jpg", None),
     "i-will-trust-camo":        ("gallery/i-will-trust-camo.jpg", None),
     "faith-over-fear-camo":     ("gallery/trinity-camo-caps.jpg", None),
-    "grizz-901-blue-trucker":   ("collections/the-901.jpg", (0.012, 0.07, 0.488, 0.93)),   # owner's 901 Grizz picture, two hats side by side
+    "grizz-901-blue-trucker":   ("collections/the-901.jpg", (0.012, 0.07, 0.488, 0.93)),   # owner's 901 Collection picture, two hats side by side
     "grizz-901-dark-trucker":   ("collections/the-901.jpg", (0.515, 0.075, 0.99, 0.93)),
     # Oct 9 (owner): "You can add those 7 pics" + new Black Girls Magic Collection
     "black-girl-magic-cap":     ("IMG_6965.jpeg", (0, 0.18, 1, 0.8)),
