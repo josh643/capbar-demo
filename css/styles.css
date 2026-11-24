@@ -474,8 +474,6 @@ html.cart-is-open { overflow: hidden; }
 
 /* Oct 8 (v9): owner photo at 348 South Main for the mission, location section, address everywhere */
 .story-photo picture { display: block; width: 100%; height: 100%; }
-.story-photo img[src*="marlon-348"] { object-position: 55% 44%; }
-@media (min-width: 900px) { .story-photo img[src*="marlon-348"] { object-position: 58% 40%; } }
 .visit-loc { display: grid; padding: 0; overflow: hidden; text-align: left; }
 .visit-photo { margin: 0; background: #000; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid rgba(212,175,90,.3); }
 .visit-photo picture, .visit-photo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; } /* photo has a black background: show the whole cap */
@@ -500,8 +498,6 @@ html.cart-is-open { overflow: hidden; }
 /* v10 (Oct 8, owner): mannequin cap photo on Our Mission, owner's photo on the location (coming soon) card */
 .story-photo-cap { background: #000; }
 .story-photo-cap img { object-fit: contain !important; object-position: 50% 50% !important; }
-.visit-photo img[src*="marlon-348"] { object-fit: cover; object-position: 55% 42%; }
-@media (max-width: 899px) { .visit-photo:has(img[src*="marlon-348"]) { aspect-ratio: 4 / 4.2; } }
 .visit-ship { color: var(--muted); margin: 0 0 20px; }
 .visit-ship strong { color: var(--white); }
 .shop-ship { color: var(--muted); font-size: 15px; margin: 10px auto 0; }
@@ -636,8 +632,4 @@ html.cart-is-open { overflow: hidden; }
 .follow-card svg { color: var(--gold); flex: none; }
 .follow-net { display: block; font: 700 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
 .follow-handle { display: block; font: 700 18px/1.2 var(--sans); }
-.staff-section { padding-top: 24px; }
-.staff-card { max-width: 520px; margin: 0 auto; padding: 24px; text-align: center; border: 1px solid rgba(212,175,90,.35); border-radius: 18px; background: var(--bg-2); }
-.staff-card h3 { margin: 0 0 6px; font: 400 26px/1.1 var(--block); text-transform: uppercase; }
-.staff-card p { margin: 0; color: var(--gold-hi); }
 @media (max-width: 600px) { .follow-card { width: 100%; min-width: 0; } }
