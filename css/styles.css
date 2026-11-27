@@ -636,6 +636,35 @@ html.cart-is-open { overflow: hidden; }
 
 /* 2026-11-27: 901 Collection varsity jacket teaser (merch coming mid-December), right below the 901 feature */
 .merch-teaser { padding-top: 8px; }
-.merch-teaser-card { max-width: 980px; margin: 0 auto; text-align: center; }
+.merch-teaser-card { max-width: 1080px; margin: 0 auto; text-align: center; }
 .merch-teaser-card h2 { margin: 4px 0 18px; }
-.merch-teaser-card img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(212,175,90,.45); background: #fff; }
+.merch-pair { display: flex; flex-direction: column; gap: 18px; }
+.merch-shot { margin: 0; min-width: 0; }
+.merch-shot img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(212,175,90,.45); background: #fff; }
+.merch-shot figcaption {
+  margin: 10px 0 0;
+  font: 700 12px/1 var(--sans);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.merch-points {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+}
+.merch-points li {
+  padding: 8px 14px;
+  border: 1px solid rgba(212,175,90,.4);
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  color: var(--muted);
+  font: 600 13px/1.3 var(--sans);
+}
+@media (min-width: 760px) {
+  .merch-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+}
