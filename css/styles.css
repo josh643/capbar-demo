@@ -633,3 +633,9 @@ html.cart-is-open { overflow: hidden; }
 .follow-net { display: block; font: 700 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
 .follow-handle { display: block; font: 700 18px/1.2 var(--sans); }
 @media (max-width: 600px) { .follow-card { width: 100%; min-width: 0; } }
+
+/* 2026-11-27: 901 Collection varsity jacket teaser (merch coming mid-December), right below the 901 feature */
+.merch-teaser { padding-top: 8px; }
+.merch-teaser-card { max-width: 980px; margin: 0 auto; text-align: center; }
+.merch-teaser-card h2 { margin: 4px 0 18px; }
+.merch-teaser-card img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(212,175,90,.45); background: #fff; }
