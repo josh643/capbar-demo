@@ -181,3 +181,12 @@ Until Stripe is connected it answers in demo mode and the drawer shows the demo 
 After a paid checkout, thanks.html empties the cart.
 
 - v15 (Oct 10): dedicated Testimonials page at /testimonials (testimonials.html) with Marlon's 7 reviews from js/testimonials.js; "Reviews" link added to header + footer nav on all pages. Reviews also still show on the Contact page.
+
+## Site assistant (staging only until approved)
+
+A floating chat bubble (`js/assistant.js`, `css/assistant.css`) on the six public pages. There is no assistant page.
+- It stays invisible unless `/api/assistant/status` reports it is enabled and its answering seat is online. Production has no
+  `ASSISTANT_ENABLED`, no D1 binding and no secret, so on capbarexperience.com the functions return 503 and the bubble never appears.
+- `functions/api/assistant/*` is a small relay (questions in, answers out) backed by a D1 queue. Messages are deleted after one hour.
+- Knowledge is `assistant-index.json`, rebuilt from the pages and `js/showcase-data.js` by `tools/build_assistant_index.py` on every deploy.
+  Change the site, and the assistant follows. It never states prices, stock or policies; it points to the shop or contact instead.

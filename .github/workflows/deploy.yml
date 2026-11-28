@@ -11,10 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
+      - name: Refresh assistant knowledge from the site content (never blocks a deploy)
+        continue-on-error: true
+        run: python3 tools/build_assistant_index.py
       - name: Deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 21779b260eff4cd8fdd71c920eaec8ab
         run: |
-          mkdir -p /tmp/out && rsync -a --exclude .git --exclude .github --exclude tools --exclude README.md ./ /tmp/out/
+          mkdir -p /tmp/out && rsync -a --exclude .git --exclude .github --exclude tools --exclude README.md --exclude functions --exclude migrations ./ /tmp/out/
           npx -y wrangler@3 pages deploy /tmp/out --project-name capbar --branch "${GITHUB_REF_NAME}" --commit-dirty=true
