@@ -36,7 +36,7 @@
     var chips = h("div", "cba-chips");
     CHIPS.forEach(function (c) { var k = h("button", "cba-chip", c); k.type = "button"; k.addEventListener("click", function () { ask(c); }); chips.appendChild(k); });
     var form = h("form", "cba-form"); form.noValidate = true;
-    var inp = h("textarea", "cba-in"); inp.rows = 1; inp.maxLength = MAX_Q; inp.placeholder = "Ask about hours, collections, custom caps\u2026"; inp.setAttribute("aria-label", "Your question");
+    var inp = h("textarea", "cba-in"); inp.rows = 1; inp.maxLength = MAX_Q; inp.placeholder = "Type your question\u2026"; inp.setAttribute("aria-label", "Your question");
     inp.setAttribute("enterkeyhint", "send"); inp.setAttribute("autocomplete", "off");
     var send = h("button", "cba-send"); send.type = "submit"; send.setAttribute("aria-label", "Send"); send.innerHTML = ICON_SEND;
     form.appendChild(inp); form.appendChild(send);
