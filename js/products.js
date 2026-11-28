@@ -9,9 +9,9 @@ window.CAPBAR_SETTINGS = {
   email: "capbarexperience@outlook.com",
   facebook: "https://www.facebook.com/people/The-Cap-Bar/61595176251150/",
 
-  // true  = show the "demo preview" ribbon and the demo checkout pop-up.
-  // false = go live: Buy buttons open each product's Stripe Payment Link.
-  demoMode: true,
+  // Old demo-checkout ribbon. Leave false on shop-ready; the launch switch is
+  // window.CAPBAR_SHOP.checkoutEnabled in js/shop-config.js (off by default).
+  demoMode: false,
 
   currency: "USD",
 };

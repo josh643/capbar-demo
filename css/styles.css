@@ -668,3 +668,9 @@ html.cart-is-open { overflow: hidden; }
 @media (min-width: 760px) {
   .merch-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
 }
+
+/* shop-ready preview + checkout-off */
+.preview-ribbon { display: block; background: #6b1a1a; color: #fff; text-align: center; font: 600 12px/1.4 var(--sans); letter-spacing: .03em; padding: 8px 12px; }
+.checkout-off .cart-btn { display: none; }
+.shop-soon { margin: 12px 0 0; color: var(--gold); font-weight: 600; }
+.shop-soon[hidden] { display: none; }

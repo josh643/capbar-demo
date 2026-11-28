@@ -1,3 +1,15 @@
+# The Cap Bar — shop-ready preview
+
+This is the **`shop-ready` branch**: current showcase content plus the saved
+online shop, with checkout **off**. Preview only; do not merge to `main` or
+`staging` without a launch approval.
+
+- Preview: https://shop-ready.capbar.pages.dev
+- How to turn sales on: see [SHOP-LAUNCH.md](SHOP-LAUNCH.md)
+- Original saved shop: git tag `store-v1`. Later shop work: branch `store-staging`.
+
+The notes below are the historical store/showcase README from `main`.
+
 # The Cap Bar: website (showcase for the store)
 
 **Oct 8, 2026: showcase version.** At the owner's request the site is a showcase for the store, with no

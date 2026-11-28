@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Checkout | The Cap Bar</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css?v=16">
+  <script src="js/shop-config.js"></script>
+  <style>
+    .co-wrap{max-width:520px;margin:2rem auto;padding:1.5rem;background:#111;border:1px solid #c9a227;border-radius:12px;color:#fff}
+    .co-test{background:#b00020;color:#fff;text-align:center;padding:.5rem;font-weight:700}
+    .co-soon{background:#1b1916;color:#f3e6c5;text-align:center;padding:.75rem 1rem;font-weight:600}
+    #pay{margin-top:1rem;width:100%} #msg{margin-top:.75rem;color:#ffb4b4}
+    .co-line{display:flex;justify-content:space-between;border-bottom:1px solid #333;padding:.35rem 0}
+  </style>
+</head>
+<body>
+  <div id="co-banner" class="co-soon" role="note">Online ordering coming soon</div>
+  <main class="co-wrap">
+    <a href="shop.html">&larr; Back to shop</a>
+    <h1>Checkout</h1>
+    <div id="closed">
+      <p>Online ordering is not open yet. Visit The Cap Bar at 348 South Main Street, Memphis, or check back here when sales go live.</p>
+      <p><a class="btn btn-gold" href="shop.html">Back to the shop</a> <a class="btn btn-ghost" href="contact.html">Contact us</a></p>
+    </div>
+    <div id="open" hidden>
+      <div id="lines"></div>
+      <p><strong>Total: <span id="total"></span></strong></p>
+      <form id="form">
+        <div id="payment-element"></div>
+        <button id="pay" class="btn btn-gold btn-block" type="submit" disabled>Pay</button>
+        <p id="msg" role="alert" hidden></p>
+      </form>
+    </div>
+  </main>
+  <script>
+  (function () {
+    var on = !!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled);
+    var banner = document.getElementById("co-banner");
+    if (!on) return;
+    document.getElementById("closed").hidden = true;
+    document.getElementById("open").hidden = false;
+    var s = document.createElement("script");
+    s.src = "https://js.stripe.com/v3/";
+    s.onload = start;
+    document.head.appendChild(s);
+    function start() {
+      var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+      var d; try { d = JSON.parse(sessionStorage.getItem("capbar_pi") || "null"); } catch (e) {}
+      var msg = document.getElementById("msg");
+      function say(t) { msg.textContent = t; msg.hidden = false; }
+      if (!d || !d.clientSecret || !d.publishableKey) { say("Your cart is empty. Go back to the shop."); return; }
+      if (d.testMode) { banner.className = "co-test"; banner.textContent = "PREVIEW · Stripe TEST mode · no real cards are charged"; }
+      else { banner.className = "co-test"; banner.textContent = "Secure checkout"; }
+      var box = document.getElementById("lines");
+      d.lines.forEach(function (l) {
+        var r = document.createElement("div"); r.className = "co-line";
+        var a = document.createElement("span"); a.textContent = l.qty + " × " + l.name;
+        var b = document.createElement("span"); b.textContent = money.format(l.unitPrice * l.qty);
+        r.appendChild(a); r.appendChild(b); box.appendChild(r);
+      });
+      document.getElementById("total").textContent = money.format(d.subtotal);
+      var stripe = Stripe(d.publishableKey);
+      var elements = stripe.elements({ clientSecret: d.clientSecret, appearance: { theme: "night", variables: { colorPrimary: "#c9a227" } } });
+      var pe = elements.create("payment"); pe.mount("#payment-element");
+      var btn = document.getElementById("pay");
+      pe.on("ready", function () { btn.disabled = false; btn.textContent = "Pay " + money.format(d.subtotal); });
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); btn.disabled = true; msg.hidden = true;
+        stripe.confirmPayment({ elements: elements, confirmParams: { return_url: location.origin + "/thanks.html" } })
+          .then(function (r) { if (r.error) { say(r.error.message || "Payment failed."); btn.disabled = false; } });
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

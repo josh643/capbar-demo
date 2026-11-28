@@ -9,6 +9,24 @@
   document.querySelectorAll("[data-facebook]").forEach(function (a) { a.href = S.facebook; });
   document.querySelectorAll("[data-year]").forEach(function (n) { n.textContent = new Date().getFullYear(); });
 
+  /* Preview branch ribbon so this is never mistaken for the live site. */
+  if (!document.querySelector(".preview-ribbon")) {
+    var rib = document.createElement("div");
+    rib.className = "preview-ribbon";
+    rib.setAttribute("role", "note");
+    var shopOn = !!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled);
+    rib.textContent = shopOn
+      ? "Preview · this is not the live site"
+      : "Preview · this is not the live site · online ordering coming soon";
+    document.body.insertBefore(rib, document.body.firstChild);
+  }
+  document.querySelectorAll("[data-checkout-soon]").forEach(function (n) {
+    n.hidden = !!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled);
+  });
+  document.querySelectorAll("[data-checkout-secure]").forEach(function (n) {
+    n.hidden = !(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled);
+  });
+
   var btn = document.querySelector(".menu-toggle");
   var nav = document.getElementById("site-nav");
   if (btn && nav) {

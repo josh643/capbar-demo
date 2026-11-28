@@ -22,7 +22,7 @@
   <link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/greatvibes.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=15">
+  <link rel="stylesheet" href="css/styles.css?v=16">
   <script>
     // Old collection hash #grizz-901 -> #the-901 (Marlon renamed to 901 Collection)
     (function () {
@@ -43,6 +43,7 @@
     </a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
       <a href="collections.html" aria-current="page">Collections</a>
       <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
@@ -50,6 +51,10 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
+      <a class="cart-btn" href="shop.html#cart" data-cart-open aria-label="Cart, 0 items">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .92l1 13A1 1 0 0 1 20.2 22H3.8a1 1 0 0 1-1-1.08l1-13A1 1 0 0 1 4.8 7H7Zm2 0h6V6a3 3 0 0 0-6 0v1Zm-2 2H5.73l-.85 11h14.24l-.85-11H17v2a1 1 0 1 1-2 0V9H9v2a1 1 0 1 1-2 0V9Z"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </a>
       <a class="btn btn-gold btn-sm" href="collections.html">Collections</a>
       <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -76,6 +81,7 @@
     <p class="footer-script">It's not just a hat shop, it's an experience.</p>
     <nav class="footer-nav" aria-label="Footer">
       <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
       <a href="collections.html">Collections</a>
       <a href="gallery.html">Gallery</a>
       <a href="story.html">Our story</a>
@@ -100,9 +106,12 @@
     <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
     <button class="lb-btn lb-next" type="button" data-next aria-label="Next photo">›</button>
   </dialog>
+  <script src="js/shop-config.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/showcase-data.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/site.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/showcase.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
   "use strict";
   var S = window.CAPBAR_SETTINGS || {};
   var P = window.CAPBAR_PRODUCTS || [];
-  var API = "https://admin.capbarexperience.com";
+  var API = ""; // shop-ready uses js/products.js; do not pull the live admin catalog
   var money = new Intl.NumberFormat("en-US", { style: "currency", currency: S.currency || "USD", maximumFractionDigits: 2, minimumFractionDigits: 0 });
 
   function el(tag, attrs, children) {
@@ -54,9 +54,16 @@
       chip.hidden = own;
       chipSw.style.setProperty("--sw", c.swatch || "#777");
       chipName.textContent = c.name;
-      buy.disabled = !!c.soldOut;
-      buy.textContent = c.soldOut ? "Sold out" : "Add to cart · " + money.format(p.price);
-      buy.setAttribute("aria-label", c.soldOut ? p.name + ", " + c.name + ": sold out" : "Add " + p.name + ", " + c.name + " to cart, " + money.format(p.price));
+      var checkoutOn = !!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled);
+      if (!checkoutOn) {
+        buy.disabled = true;
+        buy.textContent = "Online ordering coming soon";
+        buy.setAttribute("aria-label", "Online ordering coming soon");
+      } else {
+        buy.disabled = !!c.soldOut;
+        buy.textContent = c.soldOut ? "Sold out" : "Add to cart · " + money.format(p.price);
+        buy.setAttribute("aria-label", c.soldOut ? p.name + ", " + c.name + ": sold out" : "Add " + p.name + ", " + c.name + " to cart, " + money.format(p.price));
+      }
     }
     var swatches = el("div", { class: "swatches" + (many ? " swatches-many" : ""), role: "radiogroup", "aria-label": p.name + " color" });
     p.colors.forEach(function (c, i) {
@@ -75,6 +82,7 @@
       swatches.appendChild(b);
     });
     buy.addEventListener("click", function () {
+      if (!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled)) return;
       if (window.CapBarCart) window.CapBarCart.add(p, p.colors[state.color], 1);
     });
     [img, p.tag ? el("span", { class: "card-tag", text: p.tag }) : null, chip].forEach(function (n) { if (n) media.appendChild(n); });
@@ -162,6 +170,7 @@
   });
 
   function loadShop() {
+    if (!API) { renderShop(); return; }
     var done = false;
     var timer = setTimeout(function () { if (!done) { done = true; renderShop(); } }, 4000);
     fetch(API + "/api/public/products").then(function (r) {

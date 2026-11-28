@@ -1,9 +1,10 @@
 name: Deploy to Cloudflare Pages
-# staging branch -> preview https://staging.capbar.pages.dev
-# main branch    -> production https://capbarexperience.com (merge staging into main only)
+# staging branch    -> preview https://staging.capbar.pages.dev
+# main branch       -> production https://capbarexperience.com (merge staging into main only)
+# shop-ready branch -> preview https://shop-ready.capbar.pages.dev (do not merge to main)
 on:
   push:
-    branches: [staging, main]
+    branches: [staging, main, shop-ready]
 jobs:
   deploy:
     runs-on: ubuntu-latest

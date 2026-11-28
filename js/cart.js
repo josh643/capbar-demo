@@ -6,10 +6,11 @@
 (function () {
   "use strict";
   var KEY = "capbar_cart_v1";
-  var API = "https://admin.capbarexperience.com";
+  var API = ""; // same-origin Pages Function when checkout is on
   var MAX_QTY = 10;
   var S = window.CAPBAR_SETTINGS || {};
   var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2, minimumFractionDigits: 0 });
+  function checkoutOn() { return !!(window.CAPBAR_SHOP && window.CAPBAR_SHOP.checkoutEnabled); }
 
   function slug(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
@@ -62,6 +63,7 @@
     var fallback = function () { return window.CAPBAR_PRODUCTS || []; };
     catalogPromise = new Promise(function (resolve) {
       if (window.CAPBAR_CATALOG_LIVE) return resolve(window.CAPBAR_CATALOG_LIVE);
+      if (!API) return resolve(fallback());
       var done = false;
       var t = setTimeout(function () { if (!done) { done = true; resolve(fallback()); } }, 4000);
       fetch(API + "/api/public/products").then(function (r) { if (!r.ok) throw new Error("api"); return r.json(); })
@@ -261,7 +263,12 @@
     subEl.textContent = "";
     if (reg > sub + 0.001) subEl.appendChild(el("s", { text: money.format(reg) }));
     subEl.appendChild(el("strong", { text: money.format(sub) }));
-    coBtn.disabled = lines.some(function (l) { return !!l.problem && !/^Only/.test(l.problem); }) || busy;
+    if (!checkoutOn()) {
+      coBtn.disabled = true;
+      coBtn.textContent = "Online ordering coming soon";
+    } else {
+      coBtn.disabled = lines.some(function (l) { return !!l.problem && !/^Only/.test(l.problem); }) || busy;
+    }
   }
 
   var busy = false;
@@ -291,6 +298,7 @@
 
   coBtn.addEventListener("click", function () {
     if (!lines.length || busy) return;
+    if (!checkoutOn()) { coBtn.disabled = true; coBtn.textContent = "Online ordering coming soon"; return; }
     busy = true; coBtn.disabled = true; coBtn.textContent = "Checking your cart…";
     msgEl.hidden = true; demoEl.hidden = true;
     var items = lines.map(function (l) { return { productId: l.productId, color: l.variantId, qty: l.qty }; });
@@ -300,6 +308,7 @@
         busy = false;
         var b = res.body || {};
         if (res.ok && b.url) { window.location.href = b.url; return; }
+        if (res.ok && b.clientSecret) { try { sessionStorage.setItem("capbar_pi", JSON.stringify(b)); } catch (e) {} window.location.href = "checkout.html"; return; }
         if (res.ok && b.demo) {
           // Server-checked prices and quantities.
           (b.lines || []).forEach(function (sl) {
